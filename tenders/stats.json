@@ -1,28 +1,28 @@
 {
- "date": "2026-10-20",
+ "date": "2026-10-19",
  "stats": {
   "FRA": {
-   "relaunch": 105,
+   "relaunch": 109,
    "failed": 69
   },
   "DEU": {
-   "relaunch": 134,
+   "relaunch": 143,
    "failed": 231
   },
   "ITA": {
-   "relaunch": 40,
+   "relaunch": 43,
    "failed": 243
   },
   "ESP": {
-   "relaunch": 46,
+   "relaunch": 53,
    "failed": 117
   },
   "POL": {
-   "relaunch": 574,
+   "relaunch": 623,
    "failed": 457
   },
   "ROU": {
-   "relaunch": 196,
+   "relaunch": 206,
    "failed": 151
   },
   "NLD": {
@@ -30,7 +30,7 @@
    "failed": 17
   },
   "BEL": {
-   "relaunch": 8,
+   "relaunch": 10,
    "failed": 38
   },
   "AUT": {
@@ -42,19 +42,19 @@
    "failed": 45
   },
   "CZE": {
-   "relaunch": 89,
+   "relaunch": 96,
    "failed": 97
   },
   "SWE": {
-   "relaunch": 24,
+   "relaunch": 25,
    "failed": 38
   },
   "FIN": {
-   "relaunch": 7,
+   "relaunch": 8,
    "failed": 25
   },
   "DNK": {
-   "relaunch": 10,
+   "relaunch": 11,
    "failed": 26
   },
   "IRL": {
