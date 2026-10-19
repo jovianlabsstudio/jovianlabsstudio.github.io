@@ -1,0 +1,35 @@
+name: Second-chance tenders (weekly)
+
+on:
+  schedule:
+    - cron: "41 5 * * 1"        # chaque lundi 05:41 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tenders
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build tender pages (TED + BOAMP, no key needed)
+        working-directory: tools/tenders
+        run: python build.py --out ../..
+      - name: Commit
+        run: |
+          git config user.name "Jovian Labs"
+          git config user.email "jovianlabsstudio@gmail.com"
+          git add tenders sitemap.xml sitemap-home.xml
+          if git diff --cached --quiet; then echo "No change"; exit 0; fi
+          git commit -m "Second-chance tenders: weekly update $(date -u +%G-W%V)"
+          git pull --rebase
+          git push

@@ -1,0 +1,30 @@
+{
+  "site_base": "https://jovianlabsstudio.github.io",
+  "path": "ai-index",
+  "contact_email": "jovianlabsstudio@gmail.com",
+  "categories": [
+    {"slug": "plumbers", "singular": "plumber", "plural": "plumbers", "label": "Plumbers"},
+    {"slug": "dentists", "singular": "dentist", "plural": "dentists", "label": "Dentists"}
+  ],
+  "cities": [
+    {"slug": "new-york-ny", "name": "New York", "state": "NY"},
+    {"slug": "los-angeles-ca", "name": "Los Angeles", "state": "CA"},
+    {"slug": "chicago-il", "name": "Chicago", "state": "IL"},
+    {"slug": "houston-tx", "name": "Houston", "state": "TX"},
+    {"slug": "phoenix-az", "name": "Phoenix", "state": "AZ"},
+    {"slug": "philadelphia-pa", "name": "Philadelphia", "state": "PA"},
+    {"slug": "san-antonio-tx", "name": "San Antonio", "state": "TX"},
+    {"slug": "san-diego-ca", "name": "San Diego", "state": "CA"},
+    {"slug": "dallas-tx", "name": "Dallas", "state": "TX"},
+    {"slug": "austin-tx", "name": "Austin", "state": "TX"}
+  ],
+  "prompts": [
+    "Who is the best {singular} in {city}, {state}?",
+    "Can you recommend a reliable {singular} in {city}, {state}?",
+    "What are the top-rated {plural} in {city}, {state}?"
+  ],
+  "engines": ["gemini", "perplexity"],
+  "samples_per_prompt": 2,
+  "rolling_weeks": 4,
+  "max_calls_per_run": 700
+}

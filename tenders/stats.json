@@ -1,0 +1,70 @@
+{
+ "date": "2026-10-20",
+ "stats": {
+  "FRA": {
+   "relaunch": 105,
+   "failed": 69
+  },
+  "DEU": {
+   "relaunch": 134,
+   "failed": 231
+  },
+  "ITA": {
+   "relaunch": 40,
+   "failed": 243
+  },
+  "ESP": {
+   "relaunch": 46,
+   "failed": 117
+  },
+  "POL": {
+   "relaunch": 574,
+   "failed": 457
+  },
+  "ROU": {
+   "relaunch": 196,
+   "failed": 151
+  },
+  "NLD": {
+   "relaunch": 9,
+   "failed": 17
+  },
+  "BEL": {
+   "relaunch": 8,
+   "failed": 38
+  },
+  "AUT": {
+   "relaunch": 4,
+   "failed": 8
+  },
+  "PRT": {
+   "relaunch": 16,
+   "failed": 45
+  },
+  "CZE": {
+   "relaunch": 89,
+   "failed": 97
+  },
+  "SWE": {
+   "relaunch": 24,
+   "failed": 38
+  },
+  "FIN": {
+   "relaunch": 7,
+   "failed": 25
+  },
+  "DNK": {
+   "relaunch": 10,
+   "failed": 26
+  },
+  "IRL": {
+   "relaunch": 2,
+   "failed": 18
+  },
+  "GRC": {
+   "relaunch": 9,
+   "failed": 30
+  }
+ },
+ "failures": []
+}
