@@ -81,6 +81,38 @@ def _urls(resp):
     return res
 
 
+REDIRECT_HOSTS = ("vertexaisearch.cloud.google.com", "grounding-api-redirect")
+
+
+def _gemini_sources(resp):
+    """Sources citées par Gemini. Les liens de « grounding » passent par une redirection Google
+    (vertexaisearch.cloud.google.com/grounding-api-redirect/...) : le vrai site est alors dans « title »."""
+    out = []
+
+    def visit(o):
+        if isinstance(o, dict):
+            u = o.get("uri") or o.get("url")
+            if isinstance(u, str) and u.startswith("http"):
+                t = str(o.get("title") or o.get("domain") or "").strip().lower()
+                if any(h in u for h in REDIRECT_HOSTS):
+                    if t and " " not in t and "." in t:
+                        out.append("https://" + t.removeprefix("www.") + "/")
+                else:
+                    out.append(u)
+            for v in o.values():
+                visit(v)
+        elif isinstance(o, list):
+            for v in o:
+                visit(v)
+    visit(resp)
+    seen, res = set(), []
+    for u in out:
+        if u not in seen:
+            seen.add(u)
+            res.append(u)
+    return res
+
+
 class Gemini:
     """Gemini avec « Grounding with Google Search » (API Interactions, repli sur generateContent)."""
     name = "gemini"
@@ -100,14 +132,18 @@ class Gemini:
             text = r.get("output_text") or "\n".join(
                 c.get("text", "") for s in r.get("steps", []) if s.get("type") == "model_output"
                 for c in s.get("content", []) if isinstance(c, dict))
-        except EngineError:
+            self.last_endpoint = "interactions"
+        except EngineError as ex:
+            self.last_error = str(ex)[:300]
+            self.last_endpoint = "generateContent"
             r = _post(f"https://generativelanguage.googleapis.com/v1beta/models/{self.model}:generateContent",
                       {"contents": [{"parts": [{"text": prompt}]}], "tools": [{"google_search": {}}]}, h)
             parts = (((r.get("candidates") or [{}])[0].get("content") or {}).get("parts") or [])
             text = "\n".join(p.get("text", "") for p in parts)
         if not text.strip():
             raise EngineError("Gemini: empty answer")
-        return {"engine": self.name, "text": text, "sources": _urls(r)}
+        self.last_raw_keys = sorted(r.keys()) if isinstance(r, dict) else []
+        return {"engine": self.name, "text": text, "sources": _gemini_sources(r)}
 
     def complete_json(self, prompt):
         """Appel sans recherche, réponse JSON (pour l'extraction des noms)."""

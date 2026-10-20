@@ -22,6 +22,12 @@ def probe(cfg):
         try:
             ans = e.ask(q)
             print(f"{e.name} with web search: OK, {len(ans['text'])} characters, {len(ans['sources'])} sources")
+            print(f"  endpoint: {getattr(e, 'last_endpoint', '?')}  response keys: {getattr(e, 'last_raw_keys', '?')}")
+            if getattr(e, "last_error", None):
+                print(f"  first endpoint error: {e.last_error}")
+            for u in ans["sources"][:8]:
+                print(f"  source: {u}")
+            print("  answer: " + ans["text"][:400].replace("\n", " / "))
         except E.EngineError as ex:
             print(f"{e.name} with web search: FAILED {ex}")
 
