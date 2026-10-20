@@ -47,13 +47,14 @@ jobs:
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
           ONLY: ${{ github.event.inputs.only }}
         run: |
+          if [ "$ONLY" = "probe" ]; then python -m aiindex probe; exit 0; fi
           if [ -n "$ONLY" ]; then python -m aiindex run --only $ONLY; else python -m aiindex run; fi
       - name: Build pages
-        if: steps.keys.outputs.ok == 'true'
+        if: steps.keys.outputs.ok == 'true' && github.event.inputs.only != 'probe'
         working-directory: tools/ai-index
         run: python -m aiindex render --out ../..
       - name: Commit
-        if: steps.keys.outputs.ok == 'true'
+        if: steps.keys.outputs.ok == 'true' && github.event.inputs.only != 'probe'
         run: |
           git config user.name "Jovian Labs"
           git config user.email "jovianlabsstudio@gmail.com"

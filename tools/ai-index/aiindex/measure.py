@@ -21,7 +21,7 @@ def run(config, mock=False, out_dir=None, only=None):
         raise SystemExit("No engine available: set GEMINI_API_KEY and/or PERPLEXITY_API_KEY.")
     extractor = next((e for e in eng if hasattr(e, "complete_json")), None)
     budget = config.get("max_calls_per_run", 700)
-    calls, records, errors = 0, [], []
+    calls, records, errors, exhausted = 0, [], [], set()
     for cat in config["categories"]:
         for city in config["cities"]:
             if only and f"{cat['slug']}/{city['slug']}" not in only:
@@ -33,9 +33,16 @@ def run(config, mock=False, out_dir=None, only=None):
                         if calls >= budget:
                             errors.append("budget reached")
                             break
+                        if e.name in exhausted:
+                            continue
                         try:
                             ans = e.ask(q)
                             calls += 1
+                        except E.QuotaError as ex:
+                            exhausted.add(e.name)  # quota épuisé : on arrête ce moteur pour ce run, sans insister
+                            errors.append(f"{e.name}: {ex}")
+                            print(f"engine {e.name} stopped: {ex}", file=sys.stderr)
+                            continue
                         except E.EngineError as ex:
                             errors.append(f"{e.name}: {ex}")
                             continue

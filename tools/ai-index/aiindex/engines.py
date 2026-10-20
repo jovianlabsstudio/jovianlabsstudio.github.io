@@ -19,6 +19,22 @@ class EngineError(RuntimeError):
     pass
 
 
+class QuotaError(EngineError):
+    """Quota épuisé ou absent (HTTP 429 « exceeded your current quota ») : inutile de réessayer."""
+
+
+def _error_summary(code, raw):
+    """Résumé lisible d'une erreur d'API : message et, pour Google, les quotas en cause (quotaId)."""
+    try:
+        err = json.loads(raw).get("error", {})
+    except Exception:  # noqa: BLE001
+        return f"HTTP {code}: {raw[:300]!r}"
+    msg = str(err.get("message", ""))[:200]
+    quotas = sorted({str(v.get("quotaId") or v.get("quotaMetric")) for d in err.get("details", []) or []
+                     for v in d.get("violations", []) or [] if isinstance(v, dict)} - {"None"})
+    return f"HTTP {code}: {msg}" + (f" [quota: {', '.join(quotas)}]" if quotas else "")
+
+
 def _post(url, body, headers, retries=4, timeout=120):
     data = json.dumps(body).encode()
     last = None
@@ -28,7 +44,10 @@ def _post(url, body, headers, retries=4, timeout=120):
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
-            last = f"HTTP {e.code}: {e.read()[:300]!r}"
+            raw = e.read()[:6000].decode("utf-8", "replace")
+            last = _error_summary(e.code, raw)
+            if e.code == 429 and ("exceeded your current quota" in raw.lower() or "limit: 0" in raw.lower()):
+                raise QuotaError(f"{url}: {last}") from None
             if e.code in (400, 401, 403, 404):
                 break
         except Exception as e:  # noqa: BLE001
