@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SITE = "https://jovianlabsstudio.github.io"
 APIFY_PS = "https://apify.com/jovianlabs/sem-tem-particle-size"
 APIFY_PO = "https://apify.com/jovianlabs/porosity-analyzer"
+APIFY_FI = "https://apify.com/jovianlabs/fiber-diameter-analyzer"
 MAIL = "jovianlabsstudio@gmail.com"
 
 
@@ -69,6 +70,10 @@ meets / not met / borderline verdict.</div></a>
 <div class="t">Porosity of polished cross-sections</div>
 <div class="s">Area porosity with 95% confidence interval and relative accuracy, pore sizes, largest pores, round vs
 lack-of-fusion pores.</div></a>
+<a class="tile" href="/metrology/fiber-diameter/"><div class="k">SEM · electrospinning & filters</div>
+<div class="t">Fiber diameter</div>
+<div class="s">Length-weighted diameter distribution with 95% confidence interval, measured like a CD-SEM line width,
+plus beads and fiber alignment.</div></a>
 <a class="tile" href="/metrology/eu-nanomaterial-definition/"><div class="k">Guide</div>
 <div class="t">The EU nanomaterial definition, explained</div>
 <div class="s">What the 2022 Recommendation says, why electron microscopy is used, and how to read a screening result.</div></a>
@@ -87,8 +92,8 @@ and MCP server.</li>
 <div class="cta"><b>Need a reviewed report?</b><p class="small">A materials imaging scientist can check the outlines and sign the
 report. Write to <a href="mailto:{MAIL}">{MAIL}</a>.</p></div>"""
     urls.append(page("metrology/", "Microscopy image analysis tools: particle size, nanomaterial screening, porosity | Jovian Labs",
-                     "Online SEM/TEM particle size analysis with EU nanomaterial screening, and porosity measurement of polished "
-                     "cross-sections, with confidence intervals, quality checks and PDF reports.", body))
+                     "Online SEM/TEM particle size analysis with EU nanomaterial screening, fiber diameter measurement and porosity "
+                     "of polished cross-sections, with confidence intervals, quality checks and PDF reports.", body))
 
     # ------------------------------------------------------------------ particle size
     faq = [
@@ -185,6 +190,50 @@ smearing) are not detected automatically; a 2D section does not give volume poro
                      body, jsonld=[app_ld("Porosity Analyzer for Metallography (AM & Coatings)",
                                           "Area porosity and pore analysis from polished cross-section micrographs.",
                                           f"{SITE}/metrology/porosity/", APIFY_PO), faq_ld(faq)]))
+
+    # ------------------------------------------------------------------ fibres
+    faq = [
+        ("Which images can I use?", "SEM images of one sample at the same magnification, with at least 8 pixels across a typical "
+         "fiber, as TIFF, PNG or JPG. Original Zeiss or Thermo Fisher TIFF files are calibrated from their metadata; otherwise give "
+         "the scale bar length or the pixel size."),
+        ("How is the diameter measured?", "At each point of the fiber axis, on the intensity profile perpendicular to the fiber: the "
+         "full width at half maximum between the local background and the peak, with sub-pixel interpolation, as a CD-SEM measures a "
+         "line width. Crossings, fiber ends and beads are excluded."),
+        ("Are beads counted?", "Yes, with a prudent rule: the count is a lower bound, because beads on a crossing or under other "
+         "fibers are not counted."),
+        ("How does it compare with DiameterJ or manual ImageJ measurements?", "It uses the same idea as DiameterJ (fiber axis and "
+         "local width) but measures the width on the grey-level profile instead of a binary mask, weights by length, and gives a "
+         "confidence interval from a bootstrap over fiber segments. No installation is needed."),
+        ("What does it cost?", "1 US dollar per image analysed, billed by Apify. Demo runs on synthetic images are free."),
+    ]
+    body = f"""<h1>Fiber diameter analysis from SEM images</h1>
+<p class="lede">For electrospun nanofiber mats, filter media, nonwovens and scaffolds: upload SEM images and get the length-weighted
+diameter distribution with its 95% confidence interval, D10/D50/D90, beads, fiber alignment, eight quality checks and a PDF
+report. No more drawing 100 lines by hand.</p>
+<p><a class="tag hot" href="{APIFY_FI}">Run it on Apify</a> &nbsp; <a class="tag" href="/metrology/examples/fiber-diameter-demo-report.pdf">Example report (PDF)</a></p>
+<h2>Measured like a line width, not guessed from a threshold</h2>
+<p>Most automatic tools measure fibers on a black-and-white mask, so the result moves with the threshold. Here the fiber axis is
+traced, and at each point the width is read on the grey-level profile across the fiber, at half maximum, to a fraction of a pixel.
+On isolated fibers 8 to 40 pixels wide it reads within 0.6 pixel of the truth.</p>
+<h2>Accuracy on synthetic nanofiber mats</h2>
+<div class="card"><table><thead><tr><th>Case</th><th>True mean</th><th>Measured</th><th>95% CI</th></tr></thead><tbody>
+<tr><td>Demo, 28 fibers per image</td><td class="num">295 nm</td><td class="num">292 nm</td><td class="num">284–300 nm</td></tr>
+<tr><td>Dense mat, 38 fibers per image</td><td class="num">299 nm</td><td class="num">295 nm</td><td class="num">287–304 nm</td></tr>
+<tr><td>Thin fibers, about 7 px across</td><td class="num">148 nm</td><td class="num">153 nm</td><td class="num">150–156 nm</td></tr>
+<tr><td>Aligned mat</td><td class="num">305 nm</td><td class="num">302 nm</td><td class="num">293–311 nm</td></tr>
+</tbody></table></div>
+<p class="small">Limit: in very dense mats of thick fibers, fibers partly hidden by others read too thin, and the run flags a large
+share of excluded axis.</p>
+<h2>Control sheet from the demo</h2>
+<p><img src="/metrology/examples/fiber-control-sheet.jpg" alt="Synthetic nanofiber images with measured axes, crossings and beads"
+style="max-width:100%;height:auto;border-radius:10px;border:1px solid var(--line)"></p>
+<h2>Questions</h2>{faq_html(faq)}"""
+    urls.append(page("metrology/fiber-diameter/", "Fiber diameter analysis online from SEM images (electrospinning) | Jovian Labs",
+                     "Measure nanofiber diameters from SEM images: length-weighted mean with 95% confidence interval, D10/D50/D90, "
+                     "beads and alignment, measured like a CD-SEM line width. 1 USD per image, free demo.",
+                     body, jsonld=[app_ld("Fiber Diameter Analyzer for SEM",
+                                          "Fiber diameter distribution, beads and alignment from SEM images of fiber mats.",
+                                          f"{SITE}/metrology/fiber-diameter/", APIFY_FI), faq_ld(faq)]))
 
     # ------------------------------------------------------------------ guide EN / FR
     alt = {"en": "metrology/eu-nanomaterial-definition/", "fr": "metrologie/definition-nanomateriau-ue/"}
