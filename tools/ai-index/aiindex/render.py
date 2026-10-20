@@ -112,7 +112,7 @@ def build(cfg, data_dir, out_root, mock=False):
             body = f"""{header(base)}<main>{banner}
 <h1>Which {esc(cat['plural'])} do AI assistants recommend in {esc(place)}?</h1>
 <p class="lede">We ask {esc(eng_txt)} the questions people really type, such as “Who is the best {esc(cat['singular'])} in {esc(place)}?”,
-several times a week, and count which businesses they name. Period: {esc(period)}. Updated {esc(updated)}.</p>
+every week, sampling each question several times, and count which businesses they name. Period: {esc(period)}. Updated {esc(updated)}.</p>
 <div class="kpis"><div class="kpi"><b>{sm['answers']}</b><span>AI answers analysed</span></div>
 <div class="kpi"><b>{sm['distinct_businesses']}</b><span>different businesses named</span></div>
 <div class="kpi"><b>{pct(sm['top3_share'])}</b><span>of answers name one of the top 3</span></div>
