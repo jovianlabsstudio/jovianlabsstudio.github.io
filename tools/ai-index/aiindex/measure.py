@@ -53,6 +53,8 @@ def run(config, mock=False, out_dir=None, only=None):
                                     question=q, singular=cat["singular"], city=city["name"], state=city["state"],
                                     answer=ans["text"][:6000]))
                                 calls += 1
+                                if "businesses" not in js:
+                                    raise ValueError(f"no 'businesses' key in extractor reply: {str(js)[:120]}")
                                 names = [str(x) for x in js.get("businesses", []) if str(x).strip()]
                             except Exception as ex:  # noqa: BLE001
                                 errors.append(f"extract: {ex}")

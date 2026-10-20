@@ -15,8 +15,8 @@ def probe(cfg):
     for e in E.make(cfg["engines"], skip_missing=True):
         if hasattr(e, "complete_json"):
             try:
-                e.complete_json('Reply with the JSON {"ok": true}')
-                print(f"{e.name} without web search: OK")
+                js = e.complete_json('Reply only with this JSON object: {"ok": true, "businesses": ["A", "B"]}')
+                print(f"{e.name} without web search: OK, parsed {js}")
             except E.EngineError as ex:
                 print(f"{e.name} without web search: FAILED {ex}")
         try:
@@ -27,6 +27,8 @@ def probe(cfg):
                 print(f"  first endpoint error: {e.last_error}")
             for u in ans["sources"][:8]:
                 print(f"  source: {u}")
+            for path, u, ctx in list(E.url_paths(getattr(e, "last_raw", {})))[:15]:
+                print(f"  link {path}: {u} {ctx}")
             print("  answer: " + ans["text"][:400].replace("\n", " / "))
         except E.EngineError as ex:
             print(f"{e.name} with web search: FAILED {ex}")

@@ -113,6 +113,27 @@ def _gemini_sources(resp):
     return res
 
 
+def _interaction_text(r):
+    """Texte final d'une réponse de l'API Interactions (étapes « model_output »)."""
+    if r.get("output_text"):
+        return r["output_text"]
+    return "\n".join(c.get("text", "") for s in r.get("steps", []) or [] if s.get("type") == "model_output"
+                     for c in s.get("content", []) or [] if isinstance(c, dict))
+
+
+def url_paths(obj, path=""):
+    """Diagnostic : chemins JSON de chaque lien trouvé dans une réponse (sans le texte)."""
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if k in ("uri", "url") and isinstance(v, str) and v.startswith("http"):
+                yield f"{path}.{k}", v[:90], {kk: str(vv)[:40] for kk, vv in obj.items() if kk not in ("uri", "url", "text")}
+            else:
+                yield from url_paths(v, f"{path}.{k}")
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            yield from url_paths(v, f"{path}[{i}]")
+
+
 class Gemini:
     """Gemini avec « Grounding with Google Search » (API Interactions, repli sur generateContent)."""
     name = "gemini"
@@ -129,9 +150,7 @@ class Gemini:
         try:
             r = _post("https://generativelanguage.googleapis.com/v1beta/interactions",
                       {"model": self.model, "input": prompt, "tools": [{"type": "google_search"}]}, h)
-            text = r.get("output_text") or "\n".join(
-                c.get("text", "") for s in r.get("steps", []) if s.get("type") == "model_output"
-                for c in s.get("content", []) if isinstance(c, dict))
+            text = _interaction_text(r)
             self.last_endpoint = "interactions"
         except EngineError as ex:
             self.last_error = str(ex)[:300]
@@ -143,6 +162,7 @@ class Gemini:
         if not text.strip():
             raise EngineError("Gemini: empty answer")
         self.last_raw_keys = sorted(r.keys()) if isinstance(r, dict) else []
+        self.last_raw = r
         return {"engine": self.name, "text": text, "sources": _gemini_sources(r)}
 
     def complete_json(self, prompt):
@@ -151,7 +171,9 @@ class Gemini:
         model = os.environ.get("GEMINI_EXTRACT_MODEL", self.model)
         try:
             r = _post("https://generativelanguage.googleapis.com/v1beta/interactions", {"model": model, "input": prompt}, h)
-            text = r.get("output_text") or json.dumps(r)
+            text = _interaction_text(r)
+            if not text.strip():
+                raise EngineError("Gemini: empty JSON answer")
         except EngineError:
             r = _post(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
                       {"contents": [{"parts": [{"text": prompt}]}],
