@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SEM/TEM particle size analysis online, with EU nanomaterial screening | Jovian Labs</title><meta name="description" content="Upload SEM or TEM images and get D10/D50/D90 with 95% confidence intervals, Feret diameters, quality checks, a PDF report and an EU nanomaterial definition screening. 1 USD per image, free demo.">
+<link rel="canonical" href="https://jovianlabsstudio.github.io/metrology/particle-size/"><link rel="icon" href="/assets/favicon.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:title" content="SEM/TEM particle size analysis online, with EU nanomaterial screening | Jovian Labs"><meta property="og:description" content="Upload SEM or TEM images and get D10/D50/D90 with 95% confidence intervals, Feret diameters, quality checks, a PDF report and an EU nanomaterial definition screening. 1 USD per image, free demo.">
+<link rel="stylesheet" href="/assets/style.css"><script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "SEM/TEM Particle Size & Nanomaterial Screening", "description": "Particle size distribution and EU nanomaterial screening from electron microscope images.", "url": "https://jovianlabsstudio.github.io/metrology/particle-size/", "applicationCategory": "ScientificApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "1.00", "priceCurrency": "USD", "description": "per image analysed; demo runs are free"}, "sameAs": ["https://apify.com/jovianlabs/sem-tem-particle-size"], "publisher": {"@type": "Organization", "name": "Jovian Labs", "url": "https://jovianlabsstudio.github.io/"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which images can I use?", "acceptedAnswer": {"@type": "Answer", "text": "SEM or TEM images of one sample, all at the same magnification, as TIFF, PNG or JPG. Original Zeiss or Thermo Fisher TIFF files are calibrated from their metadata; otherwise give the scale bar length or the pixel size."}}, {"@type": "Question", "name": "How many particles should I measure?", "acceptedAnswer": {"@type": "Answer", "text": "At least 300 for a size distribution and 500 for the nanomaterial screening. The report shows the precision reached on D50 and how many particles a ±2 % precision would need."}}, {"@type": "Question", "name": "Is the nanomaterial verdict a regulatory determination?", "acceptedAnswer": {"@type": "Answer", "text": "No. It screens criterion (a) of the EU definition on the particles measured, with its uncertainty. It does not assess the volume specific surface area, dimensions below 1 nm or the thickness of platelets lying flat."}}, {"@type": "Question", "name": "What does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "1 US dollar per image analysed, billed by Apify. Demo runs on synthetic images are free."}}]}]</script></head><body>
+<header><a class="brand" href="/"><img src="/assets/logo.svg" alt="">Jovian Labs</a><nav><a href="/metrology/">Metrology</a><a href="/tenders/">Tenders</a><a href="/ai-index/">AI Index</a><a href="mailto:jovianlabsstudio@gmail.com">Contact</a></nav></header>
+<main><h1>SEM/TEM particle size analysis with EU nanomaterial screening</h1>
+<p class="lede">Turn electron microscope images into a particle size distribution report in about ten seconds per image:
+D10, D50 and D90 with 95% confidence intervals, minimum and maximum Feret diameters, shape factors, nine automatic quality checks
+and a screening against the EU definition of nanomaterial.</p>
+<p><a class="tag hot" href="https://apify.com/jovianlabs/sem-tem-particle-size">Run it on Apify</a> &nbsp; <a class="tag" href="/metrology/examples/particle-size-demo-report.pdf">Example report (PDF)</a></p>
+<h2>EU nanomaterial screening</h2>
+<p>Under Commission Recommendation 2022/C 229/01, a material meets criterion (a) when 50% or more of its particles, counted by
+number, have at least one external dimension between 1 and 100 nm. Each run reports the share of particles whose minimum Feret
+diameter is 100 nm or less, a Wilson confidence interval, a wider interval that adds calibration error and edge blur, the median
+minimum Feret, and a verdict: <b>meets</b>, <b>not met</b>, or <b>borderline</b> when the interval includes 50%.
+<a href="/metrology/eu-nanomaterial-definition/">Read the guide</a>.</p>
+<h2>What you get</h2>
+<div class="card"><table><thead><tr><th>Output</th><th>Content</th></tr></thead><tbody>
+<tr><td>PDF report</td><td>Results and confidence intervals, nanomaterial screening, distribution and cumulative curve, results per
+image, quality checks, method, traceability</td></tr>
+<tr><td>Per-particle CSV</td><td>Status, equivalent diameter, min/max Feret, aspect ratio, circularity, solidity, position</td></tr>
+<tr><td>Control sheet</td><td>Every image with the detected outlines</td></tr>
+<tr><td>JSON and dataset row</td><td>All statistics in machine-readable form, for scripts, spreadsheets and AI agents</td></tr>
+</tbody></table></div>
+<h2>Accuracy</h2>
+<ul><li>Synthetic SEM images with known sizes (the free demo): 580 particles measured for 578 present, D50 within +3.7% of the truth.</li>
+<li>Nanomaterial screening on synthetic samples with a known share at or below 100 nm (96%, 70%, 62%, 10%): measured within 1 to 6
+points, always inside the reported interval; the 62% sample is correctly reported as borderline.</li>
+<li>Limit: strongly agglomerated powders read high, and the agglomerate check turns amber or red.</li></ul>
+<h2>Control sheet from the demo</h2>
+<p><img src="/metrology/examples/particle-size-control-sheet.jpg" alt="Synthetic SEM images with detected particle outlines"
+style="max-width:100%;height:auto;border-radius:10px;border:1px solid var(--line)"></p>
+<h2>Questions</h2><details><summary>Which images can I use?</summary><p>SEM or TEM images of one sample, all at the same magnification, as TIFF, PNG or JPG. Original Zeiss or Thermo Fisher TIFF files are calibrated from their metadata; otherwise give the scale bar length or the pixel size.</p></details><details><summary>How many particles should I measure?</summary><p>At least 300 for a size distribution and 500 for the nanomaterial screening. The report shows the precision reached on D50 and how many particles a ±2 % precision would need.</p></details><details><summary>Is the nanomaterial verdict a regulatory determination?</summary><p>No. It screens criterion (a) of the EU definition on the particles measured, with its uncertainty. It does not assess the volume specific surface area, dimensions below 1 nm or the thickness of platelets lying flat.</p></details><details><summary>What does it cost?</summary><p>1 US dollar per image analysed, billed by Apify. Demo runs on synthetic images are free.</p></details>
+<div class="cta"><b>Try it free</b><p class="small">Open the <a href="https://apify.com/jovianlabs/sem-tem-particle-size">Actor on Apify</a> and press Start with an empty
+image list: it analyses three synthetic images and compares the result with the truth.</p></div></main>
+<footer>© Jovian Labs. Independent; not affiliated with Apify, the European Commission or any standards body.
+Automated image analysis, not an accredited (ISO/IEC 17025) measurement.</footer></body></html>

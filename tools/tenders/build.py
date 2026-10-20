@@ -252,8 +252,9 @@ def write_sitemaps(out, urls, today):
     (out / "tenders" / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
     maps = [f"{SITE}/sitemap-home.xml", f"{SITE}/tenders/sitemap.xml"]
-    if (out / "ai-index" / "sitemap.xml").exists():
-        maps.append(f"{SITE}/ai-index/sitemap.xml")
+    for sub in ("ai-index", "metrology"):
+        if (out / sub / "sitemap.xml").exists():
+            maps.append(f"{SITE}/{sub}/sitemap.xml")
     root = "".join(f"<sitemap><loc>{m}</loc><lastmod>{today}</lastmod></sitemap>" for m in maps)
     home = f"{SITE}/"
     (out / "sitemap.xml").write_text(
