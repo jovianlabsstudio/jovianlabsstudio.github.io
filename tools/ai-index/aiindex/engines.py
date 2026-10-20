@@ -5,6 +5,7 @@ Les formats des API évoluent : les fonctions de lecture cherchent le texte et l
 """
 import json
 import os
+import sys
 import random
 import re
 import time
@@ -157,11 +158,17 @@ class Mock:
         return {"engine": self.name, "text": "\n".join(lines), "sources": srcs}
 
 
-def make(names, mock=False):
+def make(names, mock=False, skip_missing=False):
+    """Instancie les moteurs. Avec skip_missing, un moteur sans clé d'API est ignoré (on démarre avec les clés disponibles)."""
     if mock:
         return [Mock(seed=i, label_suffix=f"-{n}") for i, n in enumerate(names)]
     out = []
     for n in names:
         cls = {"gemini": Gemini, "perplexity": Perplexity}[n]
-        out.append(cls())
+        try:
+            out.append(cls())
+        except EngineError as ex:
+            if not skip_missing:
+                raise
+            print(f"engine {n} skipped: {ex}", file=sys.stderr)
     return out

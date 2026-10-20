@@ -32,8 +32,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
         run: |
-          if [ -z "$GEMINI_API_KEY" ] || [ -z "$PERPLEXITY_API_KEY" ]; then
-            echo "API keys not set yet: skipping the measurement." >> "$GITHUB_STEP_SUMMARY"
+          # On démarre avec les clés disponibles : Gemini seul suffit, Perplexity s'ajoute quand sa clé existe.
+          if [ -z "$GEMINI_API_KEY" ] && [ -z "$PERPLEXITY_API_KEY" ]; then
+            echo "No API key set yet: skipping the measurement." >> "$GITHUB_STEP_SUMMARY"
             echo "ok=false" >> "$GITHUB_OUTPUT"
           else
             echo "ok=true" >> "$GITHUB_OUTPUT"

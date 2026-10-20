@@ -16,7 +16,9 @@ def week_id(d=None):
 
 
 def run(config, mock=False, out_dir=None, only=None):
-    eng = E.make(config["engines"], mock=mock)
+    eng = E.make(config["engines"], mock=mock, skip_missing=True)
+    if not eng:
+        raise SystemExit("No engine available: set GEMINI_API_KEY and/or PERPLEXITY_API_KEY.")
     extractor = next((e for e in eng if hasattr(e, "complete_json")), None)
     budget = config.get("max_calls_per_run", 700)
     calls, records, errors = 0, [], []

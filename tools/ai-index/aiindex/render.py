@@ -85,6 +85,7 @@ def build(cfg, data_dir, out_root, mock=False):
             groups[(r["category"], r["city"])].append(r)
     banner = '<div class="banner">TEST DATA: simulated answers, not real AI results. This page is not indexed.</div>' if mock else ""
     eng_txt = " and ".join(labels.get(e, e) for e in sorted(labels))
+    eng_short = " and ".join(dict.fromkeys(labels.get(e, e).split(" (")[0] for e in sorted(labels)))
     summaries, urls = {}, []
     for cat in cfg["categories"]:
         for city in cfg["cities"]:
@@ -95,7 +96,7 @@ def build(cfg, data_dir, out_root, mock=False):
             summaries[(cat["slug"], city["slug"])] = sm
             place = f"{city['name']}, {city['state']}"
             title = f"Which {cat['plural']} do AI assistants recommend in {place}? | AI Recommendation Index"
-            desc = (f"Measured weekly: the {cat['plural']} that Gemini and Perplexity name when asked for the best {cat['singular']} "
+            desc = (f"Measured weekly: the {cat['plural']} that {eng_short} name when asked for the best {cat['singular']} "
                     f"in {place}, with mention rates and 95% confidence intervals.")
             url = f"{site}/{cat['slug']}/{city['slug']}/"
             urls.append(url)
@@ -153,7 +154,7 @@ which businesses {esc(eng_txt)} actually name in large US cities, with confidenc
 {''.join(tiles)}<div class="cta"><b>Want this for your business or your clients?</b><p class="small">Custom tracking of your brand, your competitors and your own questions:
 <a href="mailto:{esc(cfg['contact_email'])}">{esc(cfg['contact_email'])}</a>.</p></div></main>{footer(cfg, base)}"""
     (out / "index.html").write_text(page("AI Recommendation Index: which local businesses do AI assistants recommend?",
-                                         "Weekly measurement of the businesses Gemini and Perplexity recommend in US cities, with confidence intervals.",
+                                         f"Weekly measurement of the businesses {eng_short} recommend in US cities, with confidence intervals.",
                                          f"{site}/", body, noindex=mock), encoding="utf-8")
     urls.insert(0, f"{site}/")
     # méthodologie
