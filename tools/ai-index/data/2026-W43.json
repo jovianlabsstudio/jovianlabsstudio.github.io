@@ -1,0 +1,109 @@
+{
+ "week": "2026-W43",
+ "date": "2026-10-20",
+ "mock": false,
+ "calls": 12,
+ "engines": {
+  "gemini": "Google Gemini (with Google Search)"
+ },
+ "records": [
+  {
+   "category": "plumbers",
+   "city": "austin-tx",
+   "prompt": "Who is the best plumber in Austin, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [],
+   "sources": [
+    "https://expertise.com/",
+    "https://radiantplumbing.com/",
+    "https://austinchronicle.com/",
+    "https://virtuance.com/",
+    "https://reliantplumbing.com/",
+    "https://consumeraffairs.com/",
+    "https://reddit.com/",
+    "https://austinsbestplumbing.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "austin-tx",
+   "prompt": "Who is the best plumber in Austin, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [],
+   "sources": [
+    "https://virtuance.com/",
+    "https://angi.com/",
+    "https://austinsbestplumbing.com/",
+    "https://forbes.com/",
+    "https://redbudplumbing.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "austin-tx",
+   "prompt": "Can you recommend a reliable plumber in Austin, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [],
+   "sources": [
+    "https://consumeraffairs.com/",
+    "https://virtuance.com/",
+    "https://reddit.com/",
+    "https://threebestrated.com/",
+    "https://forbes.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "austin-tx",
+   "prompt": "Can you recommend a reliable plumber in Austin, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [],
+   "sources": [
+    "https://virtuance.com/",
+    "https://redbudplumbing.com/",
+    "https://forbes.com/",
+    "https://reddit.com/",
+    "https://callproven.com/",
+    "https://austinsbestplumbing.com/",
+    "https://thumbtack.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "austin-tx",
+   "prompt": "What are the top-rated plumbers in Austin, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [],
+   "sources": [
+    "https://reliantplumbing.com/",
+    "https://virtuance.com/",
+    "https://threebestrated.com/",
+    "https://forbes.com/",
+    "https://consumeraffairs.com/",
+    "https://angi.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "austin-tx",
+   "prompt": "What are the top-rated plumbers in Austin, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [],
+   "sources": [
+    "https://callproven.com/",
+    "https://reddit.com/",
+    "https://virtuance.com/",
+    "https://reliantplumbing.com/",
+    "https://thumbtack.com/"
+   ]
+  }
+ ],
+ "errors": []
+}

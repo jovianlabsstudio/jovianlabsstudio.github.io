@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology | AI Recommendation Index</title><meta name="description" content="How the AI Recommendation Index measures AI assistant recommendations."><link rel="canonical" href="https://jovianlabsstudio.github.io/ai-index/methodology/">
+<meta property="og:title" content="Methodology | AI Recommendation Index"><meta property="og:description" content="How the AI Recommendation Index measures AI assistant recommendations."><style>
+:root{--bg:#f7f6f2;--card:#fff;--ink:#16173a;--ink2:#55566e;--line:#e4e2da;--accent:#2a2e78;--gold:#c98f2c;--goldsoft:#f4e3bd;--bar:#d9dbf2}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1024;--card:#171936;--ink:#eceaf6;--ink2:#a6a8c4;--line:#2a2c52;--accent:#aab0ff;--gold:#e9c46a;--goldsoft:#3a3220;--bar:#2c2f5e}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}header,main,footer{max-width:1040px;margin:0 auto;padding:0 16px}
+header{display:flex;align-items:center;gap:10px;padding-top:20px}header .brand{font-weight:700;letter-spacing:.2px;color:var(--ink);text-decoration:none}
+header .dot{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#3a3f96,#1c1f5a);box-shadow:inset 0 0 0 2px var(--gold)}
+h1{font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.15;margin:28px 0 8px}h2{font-size:1.25rem;margin:36px 0 12px}
+.lede{color:var(--ink2);max-width:720px}.banner{background:#b3261e;color:#fff;padding:10px 14px;border-radius:8px;margin-top:16px;font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:22px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}.kpi b{display:block;font-size:1.5rem}.kpi span{color:var(--ink2);font-size:.9rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 14px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font-size:.82rem;color:var(--ink2);font-weight:600;text-transform:uppercase;letter-spacing:.04em}tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}.ci{position:relative;height:10px;background:var(--bar);border-radius:5px;min-width:140px}
+.ci i{position:absolute;top:0;height:10px;background:var(--goldsoft);border:1px solid var(--gold);border-radius:5px}.ci b{position:absolute;top:-3px;width:4px;height:16px;background:var(--gold);border-radius:2px}
+.small{font-size:.86rem;color:var(--ink2)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink)}
+.tile:hover{border-color:var(--gold)}.tile .t{font-weight:650}.tile .s{color:var(--ink2);font-size:.9rem;margin-top:4px}
+.cta{background:var(--card);border:1px solid var(--gold);border-radius:12px;padding:18px;margin:36px 0}
+footer{color:var(--ink2);font-size:.85rem;padding:36px 16px 48px}details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+</style></head>
+<body><header><span class="dot"></span><a class="brand" href="/ai-index/">Jovian Labs · AI Recommendation Index</a></header><main><h1>Methodology</h1>
+<p class="lede">How the AI Recommendation Index is measured, and what it does not say.</p>
+<h2>Questions</h2><p>For each category and city we ask 3 wordings, each 2 times per assistant and per week:</p><ul><li>Who is the best {singular} in {city}, {state}?</li><li>Can you recommend a reliable {singular} in {city}, {state}?</li><li>What are the top-rated {plural} in {city}, {state}?</li></ul>
+<h2>Assistants</h2><p>Google Gemini (with Google Search), through their official APIs with live web search. Consumer apps may answer differently,
+for example because of location, history or personalization.</p>
+<h2>Counting</h2><p>Each answer is read by a language model that lists the businesses it names (directories such as Yelp or Google are excluded).
+Variants of the same name are merged. The mention rate is the share of answers naming the business, pooled over the last 4 weekly runs.</p>
+<h2>Uncertainty</h2><p>AI answers vary from one run to the next. We report 95% Wilson confidence intervals: if two businesses' intervals overlap,
+their difference may be noise.</p>
+<h2>Limits</h2><p>This measures visibility in AI answers, not quality. Names can be misread or invented by the assistants; open the business's own website before relying on it.
+Jovian Labs is independent and not affiliated with Google, Perplexity or any business listed.</p></main><footer><p>Jovian Labs measures what AI assistants answer; it does not endorse or rank businesses on quality. Answers vary between runs and users. <a href="/ai-index/methodology/">Methodology</a> · Contact: <a href="mailto:jovianlabsstudio@gmail.com">jovianlabsstudio@gmail.com</a></p></footer></body></html>

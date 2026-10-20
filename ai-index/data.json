@@ -1,0 +1,67 @@
+{
+ "plumbers/austin-tx": {
+  "answers": 6,
+  "rows": [],
+  "engines": {
+   "gemini": 6
+  },
+  "engine_labels": {
+   "gemini": "Google Gemini (with Google Search)"
+  },
+  "top_domains": [
+   [
+    "virtuance.com",
+    6,
+    1.0
+   ],
+   [
+    "reddit.com",
+    5,
+    0.8333333333333334
+   ],
+   [
+    "forbes.com",
+    4,
+    0.6666666666666666
+   ],
+   [
+    "consumeraffairs.com",
+    3,
+    0.5
+   ],
+   [
+    "austinsbestplumbing.com",
+    3,
+    0.5
+   ],
+   [
+    "reliantplumbing.com",
+    3,
+    0.5
+   ],
+   [
+    "angi.com",
+    2,
+    0.3333333333333333
+   ],
+   [
+    "redbudplumbing.com",
+    2,
+    0.3333333333333333
+   ],
+   [
+    "threebestrated.com",
+    2,
+    0.3333333333333333
+   ],
+   [
+    "thumbtack.com",
+    2,
+    0.3333333333333333
+   ]
+  ],
+  "answers_without_business": 6,
+  "top3_share": 0.0,
+  "distinct_businesses": 0
+ }
+}
