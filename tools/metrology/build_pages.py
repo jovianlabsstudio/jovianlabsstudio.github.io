@@ -89,6 +89,8 @@ always give the same numbers.</li>
 <li><b>No installation, no licence.</b> Pay per image on Apify, or call the tools from scripts and AI agents through the Apify API
 and MCP server.</li>
 </ul>
+<p class="small">Also on Hugging Face: <a href="https://huggingface.co/spaces/jovianlabs/microscopy-image-analysis">Microscopy
+Image Analysis</a>.</p>
 <div class="cta"><b>Need a reviewed report?</b><p class="small">A materials imaging scientist can check the outlines and sign the
 report. Write to <a href="mailto:{MAIL}">{MAIL}</a>.</p></div>"""
     urls.append(page("metrology/", "Microscopy image analysis tools: particle size, nanomaterial screening, porosity | Jovian Labs",
