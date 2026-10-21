@@ -81,9 +81,18 @@ def setup_resend(zid):
     for rec in dom.get("records", []):
         ensure(zid, rec["type"], rec["name"], rec["value"], rec.get("priority"))
     ensure(zid, "TXT", "_dmarc", "v=DMARC1; p=none")
+    show = lambda d: print("Resend:", d.get("status"), "|", ", ".join(f"{r['type']} {r['name']}={r.get('status')}" for r in d.get("records", [])))
+    show(dom)
+    if dom.get("status") == "verified":
+        return
     time.sleep(5)
     rs("POST", f"/domains/{dom['id']}/verify")
-    print("Resend: verification requested (status:", rs("GET", f"/domains/{dom['id']}").get("status"), ")")
+    for _ in range(12):
+        time.sleep(15)
+        dom = rs("GET", f"/domains/{dom['id']}")
+        if dom.get("status") in ("verified", "failed"):
+            break
+    show(dom)
 
 
 def report(zid):
