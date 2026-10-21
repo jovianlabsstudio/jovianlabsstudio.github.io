@@ -33,7 +33,6 @@ jobs:
         if: steps.keys.outputs.ok == 'true'
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: |
           pip install --quiet "huggingface_hub==2.2.0"
           python hf-space/deploy.py

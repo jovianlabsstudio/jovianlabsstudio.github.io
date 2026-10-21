@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Microscopy Image Analysis · Jovian Labs</title>
+<meta name="description" content="Particle size with EU nanomaterial screening, porosity of cross-sections and fiber diameter from microscope images, with confidence intervals, quality checks and PDF reports.">
+<style>
+:root{--bg:#f7f6f2;--card:#fff;--ink:#16173a;--ink2:#55566e;--line:#e4e2da;--accent:#2a2e78;--gold:#c98f2c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1024;--card:#171936;--ink:#eceaf6;--ink2:#a6a8c4;--line:#2a2c52;--accent:#aab0ff;--gold:#e9c46a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}main{max-width:1040px;margin:0 auto;padding:24px 16px 48px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}.brand img{width:30px;height:30px;border-radius:50%}
+h1{font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.15;margin:22px 0 8px}h2{font-size:1.3rem;margin:0 0 6px}
+.lede{color:var(--ink2);max-width:760px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:22px 0;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){.tool{grid-template-columns:1fr}}
+.k{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.tool img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}
+ul{padding-left:20px}li{margin:3px 0}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.btn{display:inline-block;padding:7px 14px;border-radius:999px;border:1px solid var(--gold);text-decoration:none;color:var(--ink);font-size:.92rem}
+.btn.primary{background:var(--gold);color:#16173a;font-weight:650}
+.small{font-size:.86rem;color:var(--ink2)}
+.how{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:22px}
+</style>
+</head>
+<body>
+<main>
+<div class="brand"><img src="img/logo.svg" alt="">Jovian Labs</div>
+<h1>Microscopy image analysis, with the uncertainty attached</h1>
+<p class="lede">Send microscope images, get a measurement you can file: statistics with confidence intervals, automatic quality
+checks rated green, amber or red, a control image showing exactly what was measured, and a PDF report. No installation, no licence:
+1 USD per image, and a free demo run on synthetic images whose true values are known.</p>
+
+<section class="tool">
+<div>
+<div class="k">SEM / TEM · powders &amp; nanoparticles</div>
+<h2>Particle size &amp; EU nanomaterial screening</h2>
+<ul>
+<li>D10, D50, D90 with 95% bootstrap confidence intervals; minimum and maximum Feret diameters</li>
+<li>Share of particles whose smallest dimension is ≤ 100 nm, with its uncertainty, and a <b>meets / not met / borderline</b>
+verdict for criterion (a) of the EU definition (Recommendation 2022/C 229/01)</li>
+<li>Zeiss and Thermo Fisher TIFF files calibrated from their metadata</li>
+<li>Demo accuracy: 580 particles found for 578 present, D50 within +3.7%</li>
+</ul>
+<div class="btns">
+<a class="btn primary" href="https://apify.com/jovianlabs/sem-tem-particle-size">Run on Apify</a>
+<a class="btn" href="https://jovianlabsstudio.github.io/metrology/examples/particle-size-demo-report.pdf">Example report (PDF)</a>
+<a class="btn" href="https://jovianlabsstudio.github.io/metrology/particle-size/">Method &amp; accuracy</a>
+</div>
+</div>
+<img src="img/particle-size-control-sheet.jpg" alt="Synthetic SEM images with detected particle outlines" loading="lazy">
+</section>
+
+<section class="tool">
+<div>
+<div class="k">Metallography · AM, castings, coatings</div>
+<h2>Porosity of polished cross-sections</h2>
+<ul>
+<li>Area porosity with 95% confidence interval and relative accuracy (%RA), and how many fields would reach 10%</li>
+<li>Pore sizes, the five largest pores with their position, round (gas, keyhole) vs irregular (lack of fusion) pores</li>
+<li>Uneven illumination corrected, mounting resin excluded, threshold sensitivity reported</li>
+<li>Synthetic sections: 0.59 / 2.17 / 6.16% true → 0.59 / 2.19 / 6.21% measured</li>
+</ul>
+<div class="btns">
+<a class="btn primary" href="https://apify.com/jovianlabs/porosity-analyzer">Run on Apify</a>
+<a class="btn" href="https://jovianlabsstudio.github.io/metrology/examples/porosity-demo-report.pdf">Example report (PDF)</a>
+<a class="btn" href="https://jovianlabsstudio.github.io/metrology/porosity/">Method &amp; accuracy</a>
+</div>
+</div>
+<img src="img/porosity-control-sheet.jpg" alt="Synthetic cross-sections with pores outlined by type" loading="lazy">
+</section>
+
+<section class="tool">
+<div>
+<div class="k">SEM · electrospinning &amp; filters</div>
+<h2>Fiber diameter</h2>
+<ul>
+<li>Width measured on the grey-level profile across the fiber, at half maximum, like a CD-SEM line width: no threshold to tune</li>
+<li>Length-weighted distribution, 95% confidence interval from a bootstrap over fiber segments, D10/D50/D90</li>
+<li>Beads (lower bound) and fiber alignment index</li>
+<li>Synthetic mats: 295 nm true → 292 nm measured; 305 nm → 302 nm on an aligned mat</li>
+</ul>
+<div class="btns">
+<a class="btn primary" href="https://apify.com/jovianlabs/fiber-diameter-analyzer">Run on Apify</a>
+<a class="btn" href="https://jovianlabsstudio.github.io/metrology/examples/fiber-diameter-demo-report.pdf">Example report (PDF)</a>
+<a class="btn" href="https://jovianlabsstudio.github.io/metrology/fiber-diameter/">Method &amp; accuracy</a>
+</div>
+</div>
+<img src="img/fiber-control-sheet.jpg" alt="Synthetic nanofiber images with measured axes, crossings and beads" loading="lazy">
+</section>
+
+<section class="how">
+<h2>Run it on your images</h2>
+<ol>
+<li>Open a tool on Apify and press <b>Start</b> with an empty image list: the free demo shows the full report on synthetic images.</li>
+<li>Paste direct links to your images (TIFF, PNG or JPG; several fields of view of one sample) and the scale bar length.</li>
+<li>Get the PDF report, the control image, a CSV of every object and a JSON summary. The same tools are callable from Python,
+from a scheduler and from AI agents through the Apify API and MCP server.</li>
+</ol>
+<p class="small">Need a report reviewed and signed by a materials imaging scientist? Write to
+<a href="mailto:jovianlabsstudio@gmail.com">jovianlabsstudio@gmail.com</a>. Automated image analysis, not an accredited
+(ISO/IEC 17025) measurement.</p>
+</section>
+</main>
+</body>
+</html>

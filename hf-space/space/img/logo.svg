@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<defs>
+ <radialGradient id="bg" cx="50%" cy="42%" r="70%"><stop offset="0" stop-color="#2A2E78"/><stop offset="1" stop-color="#0F1133"/></radialGradient>
+ <radialGradient id="disc" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#3A3F96"/><stop offset="1" stop-color="#1C1F5A"/></radialGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#F7DA8C"/><stop offset="1" stop-color="#C98F2C"/></linearGradient>
+ <clipPath id="clip"><circle cx="256" cy="256" r="240"/></clipPath>
+</defs>
+<rect width="512" height="512" fill="url(#bg)"/>
+<circle cx="256" cy="256" r="240" fill="url(#disc)"/>
+<g clip-path="url(#clip)"><rect x="0" y="81" width="512" height="34" fill="#8C93FF" opacity="0.11"/><rect x="0" y="144" width="512" height="26" fill="#8C93FF" opacity="0.07"/><rect x="0" y="208" width="512" height="40" fill="#8C93FF" opacity="0.11"/><rect x="0" y="278" width="512" height="30" fill="#8C93FF" opacity="0.07"/><rect x="0" y="336" width="512" height="36" fill="#8C93FF" opacity="0.11"/><rect x="0" y="396" width="512" height="22" fill="#8C93FF" opacity="0.07"/><rect x="0" y="452" width="512" height="28" fill="#8C93FF" opacity="0.11"/></g>
+<circle cx="256" cy="256" r="240" fill="none" stroke="#E9C46A" stroke-opacity="0.55" stroke-width="4"/>
+<circle cx="121.0" cy="121.0" r="18.50" fill="url(#gold)"/><circle cx="211.0" cy="121.0" r="34.61" fill="url(#gold)"/><circle cx="301.0" cy="121.0" r="35.83" fill="url(#gold)"/><circle cx="391.0" cy="121.0" r="9.25" fill="#F6EEDC"/><circle cx="121.0" cy="211.0" r="27.75" fill="url(#gold)"/><circle cx="211.0" cy="211.0" r="24.47" fill="url(#gold)"/><circle cx="301.0" cy="211.0" r="22.66" fill="url(#gold)"/><circle cx="391.0" cy="211.0" r="32.04" fill="url(#gold)"/><circle cx="121.0" cy="301.0" r="20.68" fill="url(#gold)"/><circle cx="211.0" cy="301.0" r="30.68" fill="url(#gold)"/><circle cx="301.0" cy="301.0" r="29.25" fill="url(#gold)"/><circle cx="391.0" cy="301.0" r="26.16" fill="url(#gold)"/><circle cx="121.0" cy="391.0" r="37.00" fill="url(#gold)"/><circle cx="211.0" cy="391.0" r="13.08" fill="url(#gold)"/><circle cx="301.0" cy="391.0" r="16.02" fill="url(#gold)"/><circle cx="391.0" cy="391.0" r="33.35" fill="url(#gold)"/>
+</svg>
