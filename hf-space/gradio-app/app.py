@@ -22,7 +22,7 @@ DAILY_CAP = int(os.environ.get("DAILY_CAP", "15"))
 MAX_MB = 15
 STORE = "hf-demo-uploads"
 EX = Path(__file__).parent / "examples"
-SITE = "https://jovianlabsstudio.github.io/metrology/"
+SITE = "https://jovianlabsstudio.com/metrology/"
 
 TOOLS = {
     "particle": dict(actor="jovianlabs/sem-tem-particle-size", scale="scaleBarNm", px="pixelSizeNm", scale_int=True,

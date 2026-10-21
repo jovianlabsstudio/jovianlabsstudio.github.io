@@ -1,7 +1,7 @@
 {
   "from": "Jovian Labs <alerts@jovianlabsstudio.com>",
   "reply_to": "jovianlabsstudio@gmail.com",
-  "site": "https://jovianlabsstudio.github.io",
+  "site": "https://jovianlabsstudio.com",
   "portal_url": "https://polar.sh/jovianlabs/portal",
   "apify_actor": "https://apify.com/jovianlabs/failed-public-tenders",
   "products": {"free": "", "pro": ""},

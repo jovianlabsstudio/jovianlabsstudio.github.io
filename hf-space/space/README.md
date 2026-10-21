@@ -18,4 +18,4 @@ Automated measurements from microscope images, each with confidence intervals, q
 - **Porosity of polished cross-sections** (AM parts, castings, coatings)
 - **Fiber diameter** (electrospinning, filter media, nonwovens)
 
-The tools run on [Apify](https://apify.com/jovianlabs) (1 USD per image; demo runs on synthetic images are free). Method, accuracy and example reports: https://jovianlabsstudio.github.io/metrology/
+The tools run on [Apify](https://apify.com/jovianlabs) (1 USD per image; demo runs on synthetic images are free). Method, accuracy and example reports: https://jovianlabsstudio.com/metrology/

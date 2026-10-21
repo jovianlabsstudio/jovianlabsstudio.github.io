@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-SITE = "https://jovianlabsstudio.github.io"
+SITE = "https://jovianlabsstudio.com"
 APIFY_PS = "https://apify.com/jovianlabs/sem-tem-particle-size"
 APIFY_PO = "https://apify.com/jovianlabs/porosity-analyzer"
 APIFY_FI = "https://apify.com/jovianlabs/fiber-diameter-analyzer"

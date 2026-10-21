@@ -22,4 +22,4 @@ Free demo of the Jovian Labs microscopy tools. Upload one image and get the meas
 
 This Space is a front end: the analysis runs on [Apify](https://apify.com/jovianlabs), where the same tools take several images per sample, run in batch and through an API (1 USD per image, demo runs free).
 
-More information and example reports: https://jovianlabsstudio.github.io/metrology/
+More information and example reports: https://jovianlabsstudio.com/metrology/

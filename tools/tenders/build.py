@@ -17,7 +17,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from tenderslib import boamp, ted  # noqa: E402
 
-SITE = "https://jovianlabsstudio.github.io"
+SITE = "https://jovianlabsstudio.com"
 ACTOR = "https://apify.com/jovianlabs/failed-public-tenders"
 EMAIL = "jovianlabsstudio@gmail.com"
 
