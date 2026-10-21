@@ -86,6 +86,17 @@ def setup_resend(zid):
     print("Resend: verification requested (status:", rs("GET", f"/domains/{dom['id']}").get("status"), ")")
 
 
+def report(zid):
+    """Liste des enregistrements (sans les valeurs longues) pour vérifier la configuration."""
+    recs = cf("GET", f"/zones/{zid}/dns_records?per_page=100")["result"]
+    for r in sorted(recs, key=lambda r: (r["name"], r["type"])):
+        c = r["content"]
+        c = c if len(c) <= 60 else c[:57] + "..."
+        print(f"  {r['type']:5s} {r['name']:40s} {c}{'  (prio ' + str(r.get('priority')) + ')' if r['type'] == 'MX' else ''}")
+    mx_root = [r for r in recs if r["type"] == "MX" and r["name"] == DOMAIN]
+    print("Email Routing (MX at the root):", "present" if mx_root else "absent")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--pages", action="store_true")
@@ -99,6 +110,7 @@ def main():
         setup_resend(zid)
     if a.txt:
         ensure(zid, "TXT", "@", a.txt)
+    report(zid)
 
 
 if __name__ == "__main__":
