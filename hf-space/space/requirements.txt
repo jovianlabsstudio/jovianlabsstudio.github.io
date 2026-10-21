@@ -1,0 +1,2 @@
+apify-client==3.3.0
+pillow>=10.0
