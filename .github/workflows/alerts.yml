@@ -1,0 +1,61 @@
+name: Second-chance email alerts
+
+on:
+  workflow_run:
+    workflows: ["Second-chance tenders (weekly)"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      test_to:
+        description: "Send one test email to this address (empty = send to all subscribers)"
+        required: false
+        default: ""
+      country:
+        description: "Country for the test email (ISO alpha-3)"
+        required: false
+        default: "FRA"
+      plan:
+        description: "Plan for the test email (free or pro)"
+        required: false
+        default: "pro"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: alerts
+  cancel-in-progress: false
+
+jobs:
+  send:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Send
+        working-directory: tools/alerts
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          POLAR_TOKEN: ${{ secrets.POLAR_TOKEN }}
+          TEST_TO: ${{ github.event.inputs.test_to }}
+          COUNTRY: ${{ github.event.inputs.country }}
+          PLAN: ${{ github.event.inputs.plan }}
+        run: |
+          if [ -n "$TEST_TO" ]; then python alerts.py --test-to "$TEST_TO" --country "${COUNTRY:-FRA}" --plan "${PLAN:-pro}"; exit 0; fi
+          python alerts.py
+      - name: Save the state (items already announced)
+        if: ${{ github.event.inputs.test_to == '' || github.event_name != 'workflow_dispatch' }}
+        run: |
+          git config user.name "Jovian Labs"
+          git config user.email "jovianlabsstudio@gmail.com"
+          git add tools/alerts/state
+          if git diff --cached --quiet; then echo "No change"; exit 0; fi
+          git commit -m "Alerts: items announced $(date -u +%F)"
+          git pull --rebase
+          git push

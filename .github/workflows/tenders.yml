@@ -28,7 +28,7 @@ jobs:
         run: |
           git config user.name "Jovian Labs"
           git config user.email "jovianlabsstudio@gmail.com"
-          git add tenders sitemap.xml sitemap-home.xml
+          git add tenders sitemap.xml sitemap-home.xml tools/alerts/data
           if git diff --cached --quiet; then echo "No change"; exit 0; fi
           git commit -m "Second-chance tenders: weekly update $(date -u +%G-W%V)"
           git pull --rebase

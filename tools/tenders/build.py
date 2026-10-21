@@ -263,6 +263,28 @@ def write_sitemaps(out, urls, today):
         f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{home}</loc><lastmod>{today}</lastmod></url></urlset>')
 
 
+def export_alert_items(out, code, data, today):
+    """Données structurées pour les alertes e-mail (tools/alerts) : une ligne par appel relancé ou procédure infructueuse."""
+    items = []
+    for x in data["relaunch"]:
+        title = x.get("procedureTitle") or x.get("noticeTitle") or ""
+        items.append(dict(key=f"R|{x.get('source')}|{x.get('noticeId')}", kind="relaunch", country=code, source=x.get("source"),
+                          title=title[:300], buyer=x.get("buyer"), deadline=x.get("deadline"), published=(x.get("published") or "")[:10],
+                          cpv=x.get("cpv"), sector=sector_of(x.get("cpv"), title)[0], value=x.get("estimatedValue"),
+                          currency=x.get("currency"), url=x.get("url"),
+                          confidence=x.get("relaunchConfidence") or ("text" if x.get("source") == "BOAMP" else None),
+                          previous=x.get("previousNoticeId"), department=x.get("department")))
+    for n in data["failed"]:
+        items.append(dict(key=f"F|{n['noticeId']}", kind="failed", country=code, source="TED", title=(n.get("title") or "")[:300],
+                          buyer=n.get("buyer"), published=(n.get("published") or "")[:10], cpv=n.get("cpv"),
+                          sector=sector_of(n.get("cpv"), n.get("title"))[0], value=n.get("value"), currency=n.get("currency"),
+                          url=n.get("url"), reasons=n.get("reasons"), n_lots=n.get("n_lots"), lots=n.get("lots"),
+                          relaunch_planned=n.get("relaunch_planned")))
+    d = out / "tools" / "alerts" / "data"
+    d.mkdir(parents=True, exist_ok=True)
+    (d / f"{code}.json").write_text(json.dumps(dict(date=today.isoformat(), country=code, items=items), ensure_ascii=False))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(HERE.parent.parent))
@@ -281,6 +303,7 @@ def main():
             failures.append(code)
             continue
         stats[code] = dict(relaunch=len(data["relaunch"]), failed=len(data["failed"]))
+        export_alert_items(out, code, data, today)
         if code == "FRA":
             urls.append(render_country(out, code, data, today, week, "fr"))
             for sec in SECTORS:

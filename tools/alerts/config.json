@@ -1,0 +1,12 @@
+{
+  "from": "Jovian Labs <alerts@jovianlabsstudio.com>",
+  "reply_to": "jovianlabsstudio@gmail.com",
+  "site": "https://jovianlabsstudio.github.io",
+  "portal_url": "https://polar.sh/jovianlabs/portal",
+  "apify_actor": "https://apify.com/jovianlabs/failed-public-tenders",
+  "products": {"free": "", "pro": ""},
+  "checkout_links": {"free": "", "pro": ""},
+  "free_top": 5,
+  "daily_send_cap": 95,
+  "custom_fields": {"country": "country", "sector": "sector", "keywords": "keywords", "language": "language"}
+}
