@@ -119,7 +119,8 @@ L = {
                more="more lots", planned="relaunch planned", none="Nothing this week.",
                cta="Get these opportunities for your sector every morning: run our Apify Actor with a daily schedule and send the results to email, Slack or Google Sheets.",
                cta_link="Failed & Relaunched Public Tenders on Apify", updated="Updated", sources="Sources: TED (EU Publications Office) and BOAMP (DILA, Licence Ouverte). Always check the official notice before acting.",
-               nav_all="All countries"),
+               nav_all="All countries", alerts_cta="Prefer email? Get the ones for your country and sector every Monday, free or Pro:",
+               alerts_link="second-chance tender alerts", alerts_path="/alerts/"),
     "fr": dict(rel="Appels d'offres ouverts qui relancent une procédure infructueuse", fail="Procédures récentes infructueuses (aucune offre ou toutes rejetées)",
                deadline="Date limite", buyer="Acheteur", proc="Procédure", sector="Secteur", value="Valeur est.", why="Motif", notice="Avis",
                published="Publié", lots="Lots", no_rece="aucune offre", all_rej="offres rejetées", relaunch="relance",
@@ -127,7 +128,8 @@ L = {
                more="autres lots", planned="relance prévue", none="Rien cette semaine.",
                cta="Recevez ces opportunités pour votre secteur chaque matin : lancez notre Actor Apify avec une planification quotidienne et recevez les résultats par e-mail, Slack ou Google Sheets.",
                cta_link="Failed & Relaunched Public Tenders sur Apify", updated="Mise à jour", sources="Sources : TED (Office des publications de l'UE) et BOAMP (DILA, Licence Ouverte). Vérifiez toujours l'avis officiel avant d'agir.",
-               nav_all="Tous les pays"),
+               nav_all="Tous les pays", alerts_cta="Plutôt par e-mail ? Recevez ceux de votre pays et de votre secteur chaque lundi, en gratuit ou en Pro :",
+               alerts_link="alertes seconde chance", alerts_path="/fr/alertes/"),
 }
 
 
@@ -181,8 +183,19 @@ def table_failed(items, t, lang, limit=150):
             f"<th>{t['value']}</th><th>{t['why']}</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>")
 
 
+def alerts_live():
+    """Vrai quand les liens de paiement Polar des alertes e-mail existent (tools/alerts/config.json)."""
+    try:
+        links = json.loads((HERE.parent / "alerts" / "config.json").read_text()).get("checkout_links", {})
+        return bool(links.get("free") and links.get("pro"))
+    except (OSError, ValueError):
+        return False
+
+
 def cta(t):
-    return f"<div class='cta'><b>Alerts</b><p class='small'>{esc(t['cta'])} <a href='{ACTOR}'>{esc(t['cta_link'])}</a>.</p></div>"
+    mail = (f"<p class='small'>{esc(t['alerts_cta'])} <a href='{t['alerts_path']}'>{esc(t['alerts_link'])}</a>.</p>"
+            if alerts_live() else "")
+    return f"<div class='cta'><b>Alerts</b>{mail}<p class='small'>{esc(t['cta'])} <a href='{ACTOR}'>{esc(t['cta_link'])}</a>.</p></div>"
 
 
 def render_country(out, code, data, today, week, lang, sector=None):
@@ -252,7 +265,7 @@ def write_sitemaps(out, urls, today):
     (out / "tenders" / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
     maps = [f"{SITE}/sitemap-home.xml", f"{SITE}/tenders/sitemap.xml"]
-    for sub in ("ai-index", "metrology"):
+    for sub in ("ai-index", "metrology", "alerts"):
         if (out / sub / "sitemap.xml").exists():
             maps.append(f"{SITE}/{sub}/sitemap.xml")
     root = "".join(f"<sitemap><loc>{m}</loc><lastmod>{today}</lastmod></sitemap>" for m in maps)

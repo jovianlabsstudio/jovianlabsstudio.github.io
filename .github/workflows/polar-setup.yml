@@ -1,0 +1,32 @@
+name: Polar setup (alerts products)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Create fields, products and checkout links
+        env:
+          POLAR_TOKEN: ${{ secrets.POLAR_TOKEN }}
+        run: python tools/infra/polar_setup.py
+      - name: Build the alerts pages
+        run: python tools/alerts/page.py
+      - name: Commit
+        run: |
+          git config user.name "Jovian Labs"
+          git config user.email "jovianlabsstudio@gmail.com"
+          git add tools/alerts/config.json alerts fr sitemap.xml
+          if git diff --cached --quiet; then echo "No change"; exit 0; fi
+          git commit -m "Alerts: Polar products and checkout links"
+          git pull --rebase
+          git push
