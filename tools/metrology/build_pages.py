@@ -15,7 +15,7 @@ APIFY_FI = "https://apify.com/jovianlabs/fiber-diameter-analyzer"
 MAIL = "jovianlabsstudio@gmail.com"
 
 
-def page(path, title, desc, body, lang="en", jsonld=None, alt=None):
+def page(path, title, desc, body, lang="en", jsonld=None, alt=None, head=""):
     url = f"{SITE}/{path}"
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
     alts = "".join(f'<link rel="alternate" hreflang="{h}" href="{SITE}/{p}">' for h, p in (alt or {}).items())
@@ -25,7 +25,7 @@ def page(path, title, desc, body, lang="en", jsonld=None, alt=None):
 <title>{title}</title><meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">{alts}<link rel="icon" href="/assets/favicon.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">
-<link rel="stylesheet" href="/assets/style.css">{ld}</head><body>
+<link rel="stylesheet" href="/assets/style.css">{ld}{head}</head><body>
 <header><a class="brand" href="/"><img src="/assets/logo.svg" alt="">Jovian Labs</a>{nav}</header>
 <main>{body}</main>
 <footer>© Jovian Labs. Independent; not affiliated with Apify, the European Commission or any standards body.
@@ -74,6 +74,10 @@ lack-of-fusion pores.</div></a>
 <div class="t">Fiber diameter</div>
 <div class="s">Length-weighted diameter distribution with 95% confidence interval, measured like a CD-SEM line width,
 plus beads and fiber alignment.</div></a>
+<a class="tile" href="/metrology/scale-check/"><div class="k">Free tool · runs in your browser</div>
+<div class="t">SEM scale &amp; pixel-size check</div>
+<div class="s">Read the pixel size from Zeiss and Thermo Fisher TIFF metadata, measure the scale bar, cross-check them for a
+whole folder and add a clean scale bar. Images never leave your computer.</div></a>
 <a class="tile" href="/metrology/eu-nanomaterial-definition/"><div class="k">Guide</div>
 <div class="t">The EU nanomaterial definition, explained</div>
 <div class="s">What the 2022 Recommendation says, why electron microscopy is used, and how to read a screening result.</div></a>
@@ -236,6 +240,56 @@ style="max-width:100%;height:auto;border-radius:10px;border:1px solid var(--line
                      body, jsonld=[app_ld("Fiber Diameter Analyzer for SEM",
                                           "Fiber diameter distribution, beads and alignment from SEM images of fiber mats.",
                                           f"{SITE}/metrology/fiber-diameter/", APIFY_FI), faq_ld(faq)]))
+
+    # ------------------------------------------------------------------ outil gratuit : contrôle d'échelle (navigateur)
+    faq = [
+        ("Where is the pixel size stored in a Zeiss SEM TIFF?", "In the private TIFF tag 34118 (CZ_SEM), a text block written by "
+         "SmartSEM: the line AP_IMAGE_PIXEL_SIZE is followed by \u201cImage Pixel Size = 2.233 nm\u201d. If the image was saved at a "
+         "different resolution than it was scanned, DP_IMAGE_STORE gives the stored size and the pixel size must be scaled."),
+        ("And in a Thermo Fisher (FEI) TIFF?", "In tag 34682 (or 34680 on older instruments), an INI-style text: the [Scan] section "
+         "holds PixelWidth in metres (for example 1.953125e-009) and the [Image] section holds ResolutionX."),
+        ("Why cross-check with the scale bar?", "Images get resized, cropped or exported to PNG and lose their metadata; a mismatch "
+         "between metadata and bar reveals a wrong file, a resized image or a calibration problem before it ruins a measurement."),
+        ("Are my images uploaded?", "No. Everything runs in your browser with JavaScript; the files are read locally and nothing is "
+         "sent to a server. You can disconnect from the internet after the page has loaded."),
+        ("Can it read the number printed next to the bar?", "Not yet: type the bar length once for the whole folder (or leave it "
+         "empty for original Zeiss or Thermo Fisher TIFF files, which carry their calibration)."),
+    ]
+    head = ('<style>#drop{border:2px dashed var(--line);border-radius:14px;padding:26px;text-align:center;background:var(--card)}'
+            '#drop.over{border-color:var(--gold)}.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0}'
+            '.row input[type=number]{width:110px;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink)}'
+            '.row select,.row button,td button{padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}'
+            'td.st{font-weight:700;text-align:center}td.st.ok{color:var(--ok)}td.st.warn{color:var(--gold)}td.st.bad{color:#d6402a}'
+            '#summary{font-weight:600;margin:10px 0}</style>'
+            '<script src="/assets/vendor/pako_inflate.min.js" defer></script><script src="/assets/vendor/UTIF.js" defer></script>'
+            '<script src="/assets/scale-check.js" defer></script>')
+    body = f"""<h1>SEM scale bar &amp; pixel-size check</h1>
+<p class="lede">Drop a folder of SEM or TEM images: the page reads the pixel size stored by Zeiss and Thermo Fisher (FEI)
+microscopes, finds and measures the scale bar in the data band, cross-checks the two, flags mixed magnifications and lets you
+download each image with a clean scale bar. <b>Free, and your images never leave your computer.</b></p>
+<div id="drop"><p><b>Drop images here</b> or <label style="text-decoration:underline;cursor:pointer">choose files
+<input id="files" type="file" multiple accept=".tif,.tiff,.png,.jpg,.jpeg,.bmp" style="display:none"></label></p>
+<p class="small">TIFF (8 or 16 bit, uncompressed, LZW or Deflate), PNG, JPG. Original TIFF files keep their calibration.</p></div>
+<div class="row"><span>Length printed on the scale bar:</span><input id="barValue" type="number" min="0" step="any" placeholder="e.g. 200">
+<select id="barUnit"><option value="nm">nm</option><option value="µm">µm</option><option value="mm">mm</option></select>
+<button id="csv" disabled>Download CSV</button><button id="clear">Clear</button><span id="progress" class="small"></span></div>
+<div id="summary"></div>
+<div class="card"><table><thead><tr><th></th><th>Image</th><th>Size (px)</th><th>Metadata</th><th>Scale bar</th>
+<th>From bar</th><th>Field of view</th><th>Check</th><th>Clean bar</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p class="small">✓ consistent (metadata and bar within 1 %) · ! check (1 to 3 %, or bar length missing) · ✗ problem (over 3 %, or no
+calibration). The PNG button exports the image without the data band and with a clean, round-length scale bar.</p>
+<div class="cta"><b>Next step: measure</b><p class="small">Calibrated images can go straight into the
+<a href="/metrology/particle-size/">particle size &amp; nanomaterial screening</a>, <a href="/metrology/porosity/">porosity</a> or
+<a href="/metrology/fiber-diameter/">fiber diameter</a> tools, which use the same calibration logic.</p></div>
+<h2>Questions</h2>{faq_html(faq)}"""
+    tool_ld = {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "SEM scale bar & pixel-size check",
+               "applicationCategory": "ScientificApplication", "operatingSystem": "Web browser", "url": f"{SITE}/metrology/scale-check/",
+               "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+               "publisher": {"@type": "Organization", "name": "Jovian Labs", "url": f"{SITE}/"}}
+    urls.append(page("metrology/scale-check/", "SEM scale bar & pixel size checker (Zeiss, Thermo Fisher TIFF) — free, in your browser | Jovian Labs",
+                     "Read the pixel size from Zeiss and Thermo Fisher SEM TIFF metadata, measure the scale bar, cross-check a whole "
+                     "folder and export images with a clean scale bar. Free; images never leave your computer.",
+                     body, jsonld=[tool_ld, faq_ld(faq)], head=head))
 
     # ------------------------------------------------------------------ guide EN / FR
     alt = {"en": "metrology/eu-nanomaterial-definition/", "fr": "metrologie/definition-nanomateriau-ue/"}
