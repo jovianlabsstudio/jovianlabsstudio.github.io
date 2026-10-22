@@ -25,16 +25,16 @@ TXT = {
         path="alerts/", other="fr/alertes/", other_label="Version française",
         title="Second-chance public tender alerts: failed and relaunched contracts, every Monday | Jovian Labs",
         desc="Weekly email alerts on public procurement procedures that failed (no tenders, all rejected) and the open calls that "
-             "relaunch them, by country and sector across 16 EU countries. Free plan, Pro at 19 EUR per month.",
+             "relaunch them, by country and sector across 16 EU countries. Free plan, Pro at 19 EUR per month excl. VAT.",
         h1="Second-chance tender alerts, every Monday",
         lede=("Every week, public contracts close without a winner because nobody bid or every bid was rejected. Most come back, "
               "with fewer competitors, and the buyer is sometimes allowed to negotiate directly. We find them in {n} countries and "
               "email you the ones that match your sector."),
         stat="This week: <b>{r}</b> open calls relaunching a failed procedure and <b>{f}</b> procedures that failed in the last 30 days.",
         country="Country", sector="Sector", all="All sectors", keywords="Keywords (optional, comma-separated)",
-        kw_ph="e.g. cleaning, software", lang="Email language", free_btn="Start free", pro_btn="Go Pro · 19 € / month",
+        kw_ph="e.g. cleaning, software", lang="Email language", free_btn="Start free", pro_btn="Go Pro · €19 / month + VAT",
         soon="Subscriptions open in a few days.",
-        plans=[("", "Free", "Pro · 19 € / month"),
+        plans=[("", "Free", "Pro · €19 / month + VAT"),
                ("Open calls relaunching a failed procedure", "5 most urgent", "All"),
                ("Procedures that failed this week (contact the buyer early)", "Count only", "All, with reason"),
                ("Deadlines within 14 days", "—", "Yes"),
@@ -48,7 +48,7 @@ TXT = {
               "suitable tenders, the buyer may relaunch it or negotiate without prior publication. A supplier who knows early can "
               "position itself. This is not legal advice."),
              ("How do I cancel?", "In one click from the link at the bottom of every email (customer portal). No commitment."),
-             ("Who handles the payment?", "Polar, our merchant of record, processes the payment and the VAT. We never see your card."),
+             ("Who handles the payment?", "Polar, our merchant of record, processes the payment and the VAT. Prices exclude VAT, which is added at checkout according to your country; businesses can enter their VAT number there. We never see your card."),
              ("What data do you keep?", "Your email address and your filters, stored by Polar for the subscription; emails are sent "
               "through Resend. Nothing is sold or shared.")],
         thanks_h1="You are subscribed", thanks=("Your first email arrives next Monday morning. You can change your filters or cancel "
@@ -58,16 +58,16 @@ TXT = {
         path="fr/alertes/", other="alerts/", other_label="English version",
         title="Alertes appels d'offres infructueux et relancés, chaque lundi | Jovian Labs",
         desc="Alertes e-mail hebdomadaires sur les procédures de marchés publics infructueuses (aucune offre, offres rejetées) et les "
-             "appels d'offres qui les relancent, par pays et secteur, dans 16 pays de l'UE. Offre gratuite, Pro à 19 € par mois.",
+             "appels d'offres qui les relancent, par pays et secteur, dans 16 pays de l'UE. Offre gratuite, Pro à 19 € HT par mois.",
         h1="Alertes « seconde chance » sur les appels d'offres, chaque lundi",
         lede=("Chaque semaine, des marchés publics se terminent sans attributaire : aucune offre, ou toutes rejetées. La plupart "
               "reviennent, avec moins de concurrents, et l'acheteur peut parfois négocier directement. Nous les repérons dans {n} pays "
               "et vous envoyons ceux de votre secteur."),
         stat="Cette semaine : <b>{r}</b> appels ouverts qui relancent une procédure infructueuse et <b>{f}</b> procédures infructueuses sur 30 jours.",
         country="Pays", sector="Secteur", all="Tous secteurs", keywords="Mots-clés (facultatif, séparés par des virgules)",
-        kw_ph="ex. nettoyage, logiciel", lang="Langue des e-mails", free_btn="Commencer gratuitement", pro_btn="Passer Pro · 19 € / mois",
+        kw_ph="ex. nettoyage, logiciel", lang="Langue des e-mails", free_btn="Commencer gratuitement", pro_btn="Passer Pro · 19 € HT / mois",
         soon="Les abonnements ouvrent dans quelques jours.",
-        plans=[("", "Gratuit", "Pro · 19 € / mois"),
+        plans=[("", "Gratuit", "Pro · 19 € HT / mois"),
                ("Appels ouverts qui relancent une procédure infructueuse", "Les 5 plus urgents", "Tous"),
                ("Procédures infructueuses de la semaine (se signaler tôt à l'acheteur)", "Nombre seulement", "Toutes, avec le motif"),
                ("Échéances à 14 jours", "—", "Oui"),
@@ -80,7 +80,8 @@ TXT = {
               "peut relancer, ou passer un marché sans publicité ni mise en concurrence (article R2122-2 du code de la commande publique). "
               "Un fournisseur informé tôt peut se positionner. Ceci n'est pas un avis juridique."),
              ("Comment résilier ?", "En un clic, depuis le lien en bas de chaque e-mail (portail client). Sans engagement."),
-             ("Qui gère le paiement ?", "Polar, notre revendeur officiel (merchant of record), encaisse et gère la TVA. Nous ne voyons "
+             ("Qui gère le paiement ?", "Polar, notre revendeur officiel (merchant of record), encaisse et gère la TVA. Les prix sont hors taxes : "
+              "la TVA de votre pays s'ajoute au paiement, et les entreprises peuvent y saisir leur numéro de TVA. Nous ne voyons "
               "jamais votre carte."),
              ("Quelles données gardez-vous ?", "Votre adresse e-mail et vos filtres, conservés par Polar pour l'abonnement ; les e-mails "
               "partent par Resend. Rien n'est vendu ni partagé.")],
