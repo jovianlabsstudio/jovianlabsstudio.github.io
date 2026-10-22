@@ -5,12 +5,12 @@
   "portal_url": "https://polar.sh/jovianlabs/portal",
   "apify_actor": "https://apify.com/jovianlabs/failed-public-tenders",
   "products": {
-    "free": "",
-    "pro": ""
+    "free": "557c3bf6-d7d7-4e8a-a2f8-dce5c3718770",
+    "pro": "e0d5cd34-94ff-4729-8489-03a7adcd279e"
   },
   "checkout_links": {
-    "free": "",
-    "pro": ""
+    "free": "https://buy.polar.sh/polar_cl_5AIfRlsc4dkfI1V5apROBmi8uSnfHVrjTIWsg4MUYKX",
+    "pro": "https://buy.polar.sh/polar_cl_bs5weEoufdQQP6o8Okgz6BSp1i20EyObVxqYw4bsotX"
   },
   "free_top": 5,
   "daily_send_cap": 95,
