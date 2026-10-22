@@ -24,11 +24,15 @@ jobs:
       - name: Build tender pages (TED + BOAMP, no key needed)
         working-directory: tools/tenders
         run: python build.py --out ../..
+      - name: Refresh home, pricing and alerts pages (weekly figures)
+        run: |
+          python tools/site/build_site.py
+          python tools/alerts/page.py
       - name: Commit
         run: |
           git config user.name "Jovian Labs"
           git config user.email "jovianlabsstudio@gmail.com"
-          git add tenders sitemap.xml sitemap-home.xml tools/alerts/data
+          git add tenders sitemap.xml sitemap-home.xml tools/alerts/data index.html pricing 404.html alerts fr
           if git diff --cached --quiet; then echo "No change"; exit 0; fi
           git commit -m "Second-chance tenders: weekly update $(date -u +%G-W%V)"
           git pull --rebase

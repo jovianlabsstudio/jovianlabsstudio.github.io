@@ -1,32 +1,63 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Jovian Labs · Data tools for public procurement, materials imaging and AI search</title>
-<meta name="description" content="Jovian Labs builds small, reliable data tools: second-chance public tenders in Europe, SEM/TEM particle size and nanomaterial screening, porosity analysis, and the AI Recommendation Index.">
-<link rel="canonical" href="https://jovianlabsstudio.com/"><link rel="icon" href="/assets/favicon.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta property="og:title" content="Jovian Labs"><meta property="og:description" content="Small, reliable data tools: public procurement, materials imaging, AI search.">
-<link rel="stylesheet" href="/assets/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Jovian Labs","url":"https://jovianlabsstudio.com/","logo":"https://jovianlabsstudio.com/assets/apple-touch-icon.png","email":"contact@jovianlabsstudio.com"}</script>
-</head><body>
-<header><a class="brand" href="/"><img src="/assets/logo.svg" alt="">Jovian Labs</a>
-<nav><a href="/metrology/">Metrology</a><a href="/tenders/">Tenders</a><a href="/ai-index/">AI Index</a><a href="mailto:contact@jovianlabsstudio.com">Contact</a></nav></header>
-<main>
-<h1>Small, reliable data tools.</h1>
-<p class="lede">Jovian Labs measures things carefully: which public contracts nobody answered, how big the particles in a microscope image really are,
-and which businesses AI assistants recommend. Every number comes with its method and, where it matters, its uncertainty.</p>
-<div class="grid">
-<a class="tile" href="/tenders/"><div class="k">Public procurement · EU</div><div class="t">Second-chance public tenders</div>
-<div class="s">Lots that closed with no tenders, and the open calls that relaunch them. Updated every week. Pages in English and French.</div></a>
-<a class="tile" href="/metrology/particle-size/"><div class="k">Materials imaging · SEM/TEM</div><div class="t">Particle size &amp; EU nanomaterial screening</div>
-<div class="s">D10/D50/D90 with 95% confidence intervals, quality checks, a PDF report and the share of particles at or below 100 nm.</div></a>
-<a class="tile" href="/metrology/porosity/"><div class="k">Metallography · AM &amp; coatings</div><div class="t">Porosity of polished cross-sections</div>
-<div class="s">Area porosity with its confidence interval, pore sizes, largest pores, gas vs lack-of-fusion pores.</div></a>
-<a class="tile" href="/ai-index/"><div class="k">AI search · US</div><div class="t">AI Recommendation Index</div>
-<div class="s">Which local businesses do AI assistants recommend? A weekly measurement in large US cities.</div></a>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jovian Labs · Tender alerts, microscope image analysis and AI search data</title><meta name="description" content="Weekly alerts on failed and relaunched public tenders in 16 EU countries, microscope image analysis with confidence intervals (particle size, nanomaterial screening, porosity, fiber diameter), and the AI Recommendation Index."><link rel="canonical" href="https://jovianlabsstudio.com/"><link rel="icon" href="/assets/favicon.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"><meta property="og:type" content="website"><meta property="og:title" content="Jovian Labs · Tender alerts, microscope image analysis and AI search data"><meta property="og:description" content="Weekly alerts on failed and relaunched public tenders in 16 EU countries, microscope image analysis with confidence intervals (particle size, nanomaterial screening, porosity, fiber diameter), and the AI Recommendation Index."><meta property="og:image" content="https://jovianlabsstudio.com/assets/img/home-alerts.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="/assets/style.css"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Jovian Labs", "url": "https://jovianlabsstudio.com/", "logo": "https://jovianlabsstudio.com/assets/apple-touch-icon.png", "email": "contact@jovianlabsstudio.com", "sameAs": ["https://apify.com/jovianlabs", "https://huggingface.co/jovianlabs"]}</script></head><body><header class="site"><a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="30" height="30">Jovian Labs</a><nav aria-label="Main"><a href="/tenders/">Tenders</a><a href="/alerts/" class="navcta">Alerts</a><a href="/metrology/">Metrology</a><a href="/ai-index/">AI Index</a><a href="/pricing/">Pricing</a></nav></header><main><section class="hero">
+<h1>Data tools that find what others miss.</h1>
+<p class="lede">Jovian Labs turns official data and microscope images into answers you can act on: which public contracts are
+coming back with fewer bidders, how big the particles in an image really are, and which businesses AI assistants recommend.
+Every number comes with its method and, where it matters, its uncertainty.</p>
+<p><a class="btn pro" href="/alerts/">Get tender alerts, free</a><a class="btn" href="/metrology/">Analyse microscope images</a></p>
+<ul class="facts"><li>16 EU countries checked every week</li><li>1,275 open calls relaunching a failed procedure right now</li>
+<li>Methods validated on images with known truth</li><li>No account needed</li></ul>
+</section>
+
+<section class="prod">
+<div>
+<div class="k">Public procurement · 16 EU countries</div>
+<h2>Second-chance tender alerts</h2>
+<p>Every month, about 1,574 public procurement procedures in Europe end without a winner: nobody bid, or every bid was rejected.
+Most come back, often with fewer competitors, and the buyer is sometimes allowed to negotiate directly. We find them and email you
+the ones in your country and sector every Monday.</p>
+<ul><li>Open calls that relaunch a failed procedure, with buyer and deadline</li>
+<li>Procedures that failed this week, so you can contact the buyer early</li>
+<li>Filters by country, sector and keywords; CSV file on Pro</li></ul>
+<span class="price">Free · Pro €19 / month + VAT</span>
+<p><a class="btn pro" href="/alerts/">Start free</a><a class="btn ghost" href="/tenders/">See this week's list</a></p>
+<p class="small">Developers: the same data on demand through our <a href="https://apify.com/jovianlabs/failed-public-tenders">Apify Actor</a>, $0.02 per result.</p>
 </div>
-<div class="cta"><b>Automate it</b><p class="small">The tenders and imaging tools also run on demand on Apify:
-<a href="https://apify.com/jovianlabs/failed-public-tenders">Failed &amp; Relaunched Public Tenders</a> ·
-<a href="https://apify.com/jovianlabs/sem-tem-particle-size">SEM/TEM Particle Size &amp; Nanomaterial Screening</a> ·
-<a href="https://apify.com/jovianlabs/porosity-analyzer">Porosity Analyzer</a>. Questions or a custom need:
-<a href="mailto:contact@jovianlabsstudio.com">contact@jovianlabsstudio.com</a>.</p></div>
-</main>
-<footer>© Jovian Labs. Independent; not affiliated with the EU Publications Office, DILA, Apify, Google or Perplexity.</footer>
-</body></html>
+<div class="media"><img src="/assets/img/home-alerts.jpg" width="760" height="640" alt="A Pro alert email listing open calls in Germany that relaunch failed procedures"></div>
+</section>
+
+<section class="prod flip">
+<div>
+<div class="k">Materials imaging · SEM, TEM, optical</div>
+<h2>Microscope image analysis, with the uncertainty attached</h2>
+<p>Send microscope images, get a measurement you can file: statistics with 95% confidence intervals, automatic quality checks,
+a control image showing exactly what was measured, and a PDF report. No software to install.</p>
+<ul><li><a href="/metrology/particle-size/">Particle size and EU nanomaterial screening</a></li>
+<li><a href="/metrology/porosity/">Porosity of polished cross-sections</a> (additive manufacturing, castings, coatings)</li>
+<li><a href="/metrology/fiber-diameter/">Fiber diameter</a> of electrospun mats and filters</li>
+<li>Free: <a href="/metrology/scale-check/">check the scale bar and pixel size</a> of a whole folder, in your browser</li></ul>
+<span class="price">$1 per image · free demo run</span>
+<p><a class="btn pro" href="/metrology/">See the tools</a><a class="btn ghost" href="/metrology/examples/particle-size-demo-report.pdf">Example report (PDF)</a></p>
+</div>
+<div class="media"><img src="/assets/img/home-metrology.jpg" width="800" height="588" alt="Detected particles, pores and fibers on synthetic microscope images" loading="lazy"></div>
+</section>
+
+<section class="prod">
+<div>
+<div class="k">AI search · US cities</div>
+<h2>AI Recommendation Index</h2>
+<p>When someone asks an AI assistant for “the best plumber in Austin”, which businesses come up? We ask the same questions every
+week, several times each, and publish who gets named, with confidence intervals and the sources the assistant cites.</p>
+<span class="price">Free to read</span>
+<p><a class="btn pro" href="/ai-index/">Read the index</a><a class="btn ghost" href="/ai-index/methodology/">Methodology</a></p>
+</div>
+<div class="media"><img src="/assets/img/home-ai-index.jpg" width="948" height="482" alt="Table of plumbers named by an AI assistant in Austin with confidence intervals" loading="lazy"></div>
+</section>
+
+<h2>How buying works</h2>
+<div class="how">
+<div><b>No account with us</b><p>Alerts are paid through Polar, our merchant of record: card payment, VAT handled, cancel in one click.</p></div>
+<div><b>Pay per use for tools</b><p>Image analysis and tender data run on Apify. You pay only for what you process; demo runs are free.</p></div>
+<div><b>Methods in the open</b><p>Every page explains how the numbers are made. Demo images are synthetic, so their true values are known.</p></div>
+<div><b>Custom work</b><p>A signed report, another country, a bulk dataset? Write to <a href="mailto:contact@jovianlabsstudio.com">contact@jovianlabsstudio.com</a>.</p></div>
+</div>
+<p><a class="btn" href="/pricing/">See all prices</a></p></main><footer class="site"><div class="fgrid"><div><b>Jovian Labs</b><p>Small, reliable data tools. Every number comes with its method and, where it matters, its uncertainty.</p><p><a href="mailto:contact@jovianlabsstudio.com">contact@jovianlabsstudio.com</a></p></div><div><b>Products</b><a href="/alerts/">Tender alerts</a><a href="/tenders/">Second-chance tenders</a><a href="/metrology/">Microscopy image analysis</a><a href="/pricing/">Pricing</a></div><div><b>Free</b><a href="/metrology/scale-check/">SEM scale-bar check</a><a href="/ai-index/">AI Recommendation Index</a><a href="/metrology/eu-nanomaterial-definition/">EU nanomaterial definition guide</a></div></div><p class="small">© 2026 Jovian Labs. Independent; not affiliated with the EU Publications Office, DILA, Apify, Polar, Google or Perplexity.</p></footer></body></html>

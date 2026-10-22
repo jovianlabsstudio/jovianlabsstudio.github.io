@@ -11,6 +11,8 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 sys.path.insert(0, str(ROOT / "tools" / "tenders"))
 from build import COUNTRIES, SECTORS  # noqa: E402
+sys.path.insert(0, str(ROOT / "tools" / "site"))
+from chrome import footer as site_footer, header as site_header, hreflang_links  # noqa: E402
 
 CFG = json.loads((HERE / "config.json").read_text())
 SITE = CFG["site"]
@@ -40,7 +42,7 @@ TXT = {
                ("Deadlines within 14 days", "—", "Yes"),
                ("CSV file attached", "—", "Yes"),
                ("Filters: country, sector, keywords", "Yes", "Yes")],
-        sample="A Pro email (France · repair and maintenance, real data)",
+        sample="A Pro email (Germany, all sectors, real data)", sample_img="/alerts/sample-email-en.png",
         faq=[("Where does the data come from?", "From TED, the EU's official tenders journal, and BOAMP, France's official bulletin. "
               "Relaunches are matched to the earlier failed procedure of the same buyer (same CPV code, similar title), or detected "
               "in the notice text."),
@@ -73,7 +75,7 @@ TXT = {
                ("Échéances à 14 jours", "—", "Oui"),
                ("Fichier CSV joint", "—", "Oui"),
                ("Filtres : pays, secteur, mots-clés", "Oui", "Oui")],
-        sample="Un e-mail Pro (France · maintenance et réparation, données réelles)",
+        sample="Un e-mail Pro (France · maintenance et réparation, données réelles)", sample_img="/alerts/sample-email.png",
         faq=[("D'où viennent les données ?", "De TED, le journal officiel des marchés de l'UE, et du BOAMP. Les relances sont rapprochées "
               "de la procédure infructueuse du même acheteur (même code CPV, titre proche) ou repérées dans le texte de l'avis."),
              ("Pourquoi les procédures infructueuses comptent ?", "Après un appel d'offres sans offre ou sans offre appropriée, l'acheteur "
@@ -96,20 +98,20 @@ def esc(s):
 
 
 def shell(lang, path, title, desc, body, noindex, alt=None):
-    alts = "".join(f'<link rel="alternate" hreflang="{h}" href="{SITE}/{p}">' for h, p in (alt or {}).items())
+    alternates = {h: "/" + p for h, p in (alt or {}).items()}
     rb = '<meta name="robots" content="noindex">' if noindex else ""
+    extra = ("Payments by Polar (merchant of record). Data: TED (EU Publications Office) and BOAMP (DILA)." if lang == "en" else
+             "Paiements par Polar (revendeur officiel). Données : TED (Office des publications de l'UE) et BOAMP (DILA).")
     return (f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-            f'<title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{SITE}/{path}">{alts}{rb}'
+            f'<title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{SITE}/{path}">'
+            f'{hreflang_links(alternates)}{rb}'
             f'<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/assets/style.css">'
+            f'<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}">'
+            f'<meta property="og:image" content="{SITE}/alerts/sample-email.png">'
             f'<style>.form{{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}}'
             f'.form label{{display:block;font-size:.86rem;color:var(--ink2);margin-bottom:4px}}'
-            f'.form select,.form input{{width:100%;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink)}}'
-            f'.btn{{display:inline-block;padding:10px 18px;border-radius:999px;border:1px solid var(--gold);background:var(--card);color:var(--ink);'
-            f'font-weight:600;cursor:pointer;margin:4px 8px 4px 0}}.btn.pro{{background:var(--gold);color:#16173a}}.btn[disabled]{{opacity:.5;cursor:default}}'
-            f'</style></head><body><header><a class="brand" href="/"><img src="/assets/logo.svg" alt="">Jovian Labs</a>'
-            f'<nav><a href="/tenders/">Tenders</a><a href="/alerts/">Alerts</a><a href="/metrology/">Metrology</a><a href="/ai-index/">AI Index</a></nav>'
-            f'</header><main>{body}</main><footer>Jovian Labs · <a href="mailto:{MAIL}">{MAIL}</a> · Payments by Polar (merchant of record). '
-            f'Data: TED (EU Publications Office) and BOAMP (DILA). Independent; not affiliated with either.</footer></body></html>')
+            f'.form select,.form input{{width:100%;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit}}'
+            f'</style></head><body>{site_header(lang, "alerts", alternates)}<main>{body}</main>{site_footer(lang, extra)}</body></html>')
 
 
 def build():
@@ -147,7 +149,7 @@ def build():
 <h2>Free · Pro</h2>
 <div class="card"><table><thead><tr>{head_row}</tr></thead><tbody>{rows}</tbody></table></div>
 <h2>{esc(t['sample'])}</h2>
-<p><img src="/alerts/sample-email.png" alt="" style="max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px"></p>
+<p><img src="{t['sample_img']}" alt="" loading="lazy" style="max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px"></p>
 <h2>FAQ</h2>{faq}
 <p class="small"><a href="{SITE}/{t['other']}">{esc(t['other_label'])}</a></p>
 <script>

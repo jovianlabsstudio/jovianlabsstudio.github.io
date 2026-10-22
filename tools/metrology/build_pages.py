@@ -5,9 +5,12 @@ Contenu rédigé à la main ici ; les rapports d'exemple sont dans metrology/exa
 """
 import datetime as dt
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "tools" / "site"))
+from chrome import footer as site_footer, header as site_header, hreflang_links  # noqa: E402
 SITE = "https://jovianlabsstudio.com"
 APIFY_PS = "https://apify.com/jovianlabs/sem-tem-particle-size"
 APIFY_PO = "https://apify.com/jovianlabs/porosity-analyzer"
@@ -18,18 +21,16 @@ MAIL = "contact@jovianlabsstudio.com"
 def page(path, title, desc, body, lang="en", jsonld=None, alt=None, head=""):
     url = f"{SITE}/{path}"
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
-    alts = "".join(f'<link rel="alternate" hreflang="{h}" href="{SITE}/{p}">' for h, p in (alt or {}).items())
-    nav = ('<nav><a href="/metrology/">Metrology</a><a href="/tenders/">Tenders</a><a href="/ai-index/">AI Index</a>'
-           f'<a href="mailto:{MAIL}">Contact</a></nav>')
+    alternates = {h: "/" + p for h, p in (alt or {}).items()}
+    alts = hreflang_links(alternates)
     html = f"""<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title><meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">{alts}<link rel="icon" href="/assets/favicon.png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">
 <link rel="stylesheet" href="/assets/style.css">{ld}{head}</head><body>
-<header><a class="brand" href="/"><img src="/assets/logo.svg" alt="">Jovian Labs</a>{nav}</header>
+{site_header(lang, "metrology", alternates)}
 <main>{body}</main>
-<footer>© Jovian Labs. Independent; not affiliated with Apify, the European Commission or any standards body.
-Automated image analysis, not an accredited (ISO/IEC 17025) measurement.</footer></body></html>"""
+{site_footer(lang, "Automated image analysis, not an accredited (ISO/IEC 17025) measurement. Not affiliated with the European Commission or any standards body." if lang == "en" else "Analyse d'images automatisée, pas une mesure accréditée (ISO/IEC 17025). Sans lien avec la Commission européenne ni un organisme de normalisation.")}</body></html>"""
     out = ROOT / path / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")

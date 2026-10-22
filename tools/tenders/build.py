@@ -16,6 +16,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from tenderslib import boamp, ted  # noqa: E402
+sys.path.insert(0, str(HERE.parent / "site"))
+from chrome import footer as site_footer, header as site_header  # noqa: E402
 
 SITE = "https://jovianlabsstudio.com"
 ACTOR = "https://apify.com/jovianlabs/failed-public-tenders"
@@ -139,13 +141,11 @@ def head(lang, title, desc, canonical, noindex=False):
             f'<title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{esc(canonical)}">{rb}'
             f'<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/assets/style.css">'
             f'<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"></head><body>'
-            f'<header><a class="brand" href="/"><img src="/assets/logo.svg" alt="">Jovian Labs</a>'
-            f'<nav><a href="/tenders/">Tenders</a><a href="/tenders/france/">France</a><a href="/ai-index/">AI Index</a></nav></header><main>')
+            + site_header(lang, "tenders") + '<main>')
 
 
-def foot(t):
-    return (f'</main><footer>{esc(t["sources"])} Jovian Labs is independent and not affiliated with the EU Publications Office or DILA. '
-            f'Contact: <a href="mailto:{EMAIL}">{EMAIL}</a></footer></body></html>')
+def foot(t, lang="en"):
+    return '</main>' + site_footer(lang, esc(t["sources"])) + '</body></html>'
 
 
 def table_relaunch(items, t, lang, limit=250):
@@ -231,7 +231,7 @@ def render_country(out, code, data, today, week, lang, sector=None):
             f"<div class='kpi'><b>{len(fail)}</b><span>{esc(t['fail'])}</span></div></div>"
             f"<p class='small'>{t['updated']} {today.isoformat()}.</p>"
             f"<h2>{esc(t['rel'])}</h2>{table_relaunch(rel, t, lang)}{cta(t)}"
-            f"<h2>{esc(t['fail'])}</h2>{table_failed(fail, t, lang)}" + foot(t))
+            f"<h2>{esc(t['fail'])}</h2>{table_failed(fail, t, lang)}" + foot(t, lang))
     p = out / path / "index.html"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(body, encoding="utf-8")
@@ -273,7 +273,7 @@ def write_sitemaps(out, urls, today):
     (out / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{root}</sitemapindex>')
     (out / "sitemap-home.xml").write_text(
-        f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{home}</loc><lastmod>{today}</lastmod></url></urlset>')
+        f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{home}</loc><lastmod>{today}</lastmod></url><url><loc>{home}pricing/</loc><lastmod>{today}</lastmod></url></urlset>')
 
 
 def export_alert_items(out, code, data, today):

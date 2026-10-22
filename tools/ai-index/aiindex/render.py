@@ -7,28 +7,16 @@ from pathlib import Path
 
 from .analyze import summarize
 
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "site"))
+from chrome import footer as site_footer, header as site_header  # noqa: E402
+
 CSS = """
-:root{--bg:#f7f6f2;--card:#fff;--ink:#16173a;--ink2:#55566e;--line:#e4e2da;--accent:#2a2e78;--gold:#c98f2c;--goldsoft:#f4e3bd;--bar:#d9dbf2}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1024;--card:#171936;--ink:#eceaf6;--ink2:#a6a8c4;--line:#2a2c52;--accent:#aab0ff;--gold:#e9c46a;--goldsoft:#3a3220;--bar:#2c2f5e}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}header,main,footer{max-width:1040px;margin:0 auto;padding:0 16px}
-header{display:flex;align-items:center;gap:10px;padding-top:20px}header .brand{font-weight:700;letter-spacing:.2px;color:var(--ink);text-decoration:none}
-header .dot{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#3a3f96,#1c1f5a);box-shadow:inset 0 0 0 2px var(--gold)}
-h1{font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.15;margin:28px 0 8px}h2{font-size:1.25rem;margin:36px 0 12px}
-.lede{color:var(--ink2);max-width:720px}.banner{background:#b3261e;color:#fff;padding:10px 14px;border-radius:8px;margin-top:16px;font-weight:600}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:22px 0}
-.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}.kpi b{display:block;font-size:1.5rem}.kpi span{color:var(--ink2);font-size:.9rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 14px;overflow-x:auto}
-table{border-collapse:collapse;width:100%;min-width:560px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
-th{font-size:.82rem;color:var(--ink2);font-weight:600;text-transform:uppercase;letter-spacing:.04em}tr:last-child td{border-bottom:0}
-td.num{font-variant-numeric:tabular-nums;white-space:nowrap}.ci{position:relative;height:10px;background:var(--bar);border-radius:5px;min-width:140px}
+.banner{background:#b3261e;color:#fff;padding:10px 14px;border-radius:8px;margin-top:16px;font-weight:600}
+table{min-width:560px}th,td{vertical-align:middle}
+.ci{position:relative;height:10px;background:var(--bar);border-radius:5px;min-width:140px}
 .ci i{position:absolute;top:0;height:10px;background:var(--goldsoft);border:1px solid var(--gold);border-radius:5px}.ci b{position:absolute;top:-3px;width:4px;height:16px;background:var(--gold);border-radius:2px}
-.small{font-size:.86rem;color:var(--ink2)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
-.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-decoration:none;color:var(--ink)}
-.tile:hover{border-color:var(--gold)}.tile .t{font-weight:650}.tile .s{color:var(--ink2);font-size:.9rem;margin-top:4px}
-.cta{background:var(--card);border:1px solid var(--gold);border-radius:12px;padding:18px;margin:36px 0}
-footer{color:var(--ink2);font-size:.85rem;padding:36px 16px 48px}details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0}
-summary{cursor:pointer;font-weight:600}
+.grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.tile{border-radius:12px;padding:14px}.tile .t{font-weight:650;font-size:1rem;margin:0}.tile .s{font-size:.9rem;margin-top:4px}
 """
 
 
@@ -45,18 +33,18 @@ def page(title, desc, canonical, body, noindex=False, jsonld=None):
     ld = f'<script type="application/ld+json">{json.dumps(jsonld)}</script>' if jsonld else ""
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{esc(canonical)}">{robots}
-<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><style>{CSS}</style>{ld}</head>
+<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}">
+<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/assets/style.css"><style>{CSS}</style>{ld}</head>
 <body>{body}</body></html>"""
 
 
 def header(base):
-    return f'<header><span class="dot"></span><a class="brand" href="{base}/">Jovian Labs · AI Recommendation Index</a></header>'
+    return site_header("en", "ai-index")
 
 
 def footer(cfg, base):
-    return (f'<footer><p>Jovian Labs measures what AI assistants answer; it does not endorse or rank businesses on quality. '
-            f'Answers vary between runs and users. <a href="{base}/methodology/">Methodology</a> · '
-            f'Contact: <a href="mailto:{esc(cfg["contact_email"])}">{esc(cfg["contact_email"])}</a></p></footer>')
+    return site_footer("en", f'Jovian Labs measures what AI assistants answer; it does not endorse or rank businesses on quality. '
+                             f'Answers vary between runs and users. <a href="{base}/methodology/">AI Index methodology</a>.')
 
 
 def load(data_dir, weeks, mock):

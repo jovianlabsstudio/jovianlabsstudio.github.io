@@ -63,7 +63,7 @@
     }
    },
    {
-    "name": "Petri Plumbing, Heating, Cooling & Drain Cleaning",
+    "name": "Rite Plumbing & Heating",
     "mentions": 3,
     "answers": 6,
     "rate": 0.5,
@@ -78,7 +78,7 @@
     }
    },
    {
-    "name": "Rite Plumbing & Heating",
+    "name": "Petri Plumbing, Heating, Cooling & Drain Cleaning",
     "mentions": 3,
     "answers": 6,
     "rate": 0.5,
@@ -266,22 +266,22 @@
     0.6666666666666666
    ],
    [
-    "plumberusamagazine.com",
-    4,
-    0.6666666666666666
-   ],
-   [
     "angi.com",
     4,
     0.6666666666666666
    ],
    [
-    "agoodplumber.com",
+    "plumberusamagazine.com",
+    4,
+    0.6666666666666666
+   ],
+   [
+    "reddit.com",
     3,
     0.5
    ],
    [
-    "reddit.com",
+    "agoodplumber.com",
     3,
     0.5
    ],
@@ -309,7 +309,7 @@
   "answers": 6,
   "rows": [
    {
-    "name": "John’s Plumbing & Drain Services",
+    "name": "Red Lilly Plumbing",
     "mentions": 5,
     "answers": 6,
     "rate": 0.8333333333333334,
@@ -339,7 +339,7 @@
     }
    },
    {
-    "name": "Red Lilly Plumbing",
+    "name": "Pacific Plumbing Team",
     "mentions": 5,
     "answers": 6,
     "rate": 0.8333333333333334,
@@ -354,7 +354,7 @@
     }
    },
    {
-    "name": "Pacific Plumbing Team",
+    "name": "John’s Plumbing & Drain Services",
     "mentions": 5,
     "answers": 6,
     "rate": 0.8333333333333334,
@@ -399,7 +399,7 @@
     }
    },
    {
-    "name": "Western Rooter & Plumbing",
+    "name": "Leading Edge Plumbing & Rooter",
     "mentions": 2,
     "answers": 6,
     "rate": 0.3333333333333333,
@@ -414,7 +414,7 @@
     }
    },
    {
-    "name": "Leading Edge Plumbing & Rooter",
+    "name": "Western Rooter & Plumbing",
     "mentions": 2,
     "answers": 6,
     "rate": 0.3333333333333333,
@@ -467,12 +467,12 @@
   },
   "top_domains": [
    [
-    "bestplumbingservicesinlosangeles.com",
+    "consumeraffairs.com",
     6,
     1.0
    ],
    [
-    "consumeraffairs.com",
+    "bestplumbingservicesinlosangeles.com",
     6,
     1.0
    ],
@@ -555,7 +555,7 @@
     }
    },
    {
-    "name": "Rocket Plumbing",
+    "name": "J. Blanton Plumbing",
     "mentions": 5,
     "answers": 6,
     "rate": 0.8333333333333334,
@@ -570,7 +570,7 @@
     }
    },
    {
-    "name": "J. Blanton Plumbing",
+    "name": "Rocket Plumbing",
     "mentions": 5,
     "answers": 6,
     "rate": 0.8333333333333334,
@@ -673,7 +673,7 @@
     1.0
    ],
    [
-    "4abc.com",
+    "reddit.com",
     4,
     0.6666666666666666
    ],
@@ -683,7 +683,7 @@
     0.6666666666666666
    ],
    [
-    "reddit.com",
+    "4abc.com",
     4,
     0.6666666666666666
    ],
@@ -756,21 +756,6 @@
     }
    },
    {
-    "name": "Nick’s Plumbing & Air Conditioning",
-    "mentions": 4,
-    "answers": 6,
-    "rate": 0.6666666666666666,
-    "ci_low": 0.29998832134152864,
-    "ci_high": 0.9032306674407831,
-    "first_rank": 2,
-    "engines": {
-     "gemini": [
-      4,
-      6
-     ]
-    }
-   },
-   {
     "name": "S&B Plumbing",
     "mentions": 4,
     "answers": 6,
@@ -786,7 +771,22 @@
     }
    },
    {
-    "name": "John Moore Services",
+    "name": "Nick’s Plumbing & Air Conditioning",
+    "mentions": 4,
+    "answers": 6,
+    "rate": 0.6666666666666666,
+    "ci_low": 0.29998832134152864,
+    "ci_high": 0.9032306674407831,
+    "first_rank": 2,
+    "engines": {
+     "gemini": [
+      4,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Cooper Plumbing",
     "mentions": 3,
     "answers": 6,
     "rate": 0.5,
@@ -801,7 +801,7 @@
     }
    },
    {
-    "name": "Cooper Plumbing",
+    "name": "John Moore Services",
     "mentions": 3,
     "answers": 6,
     "rate": 0.5,
@@ -846,7 +846,7 @@
     }
    },
    {
-    "name": "MET Plumbing, LLC",
+    "name": "Nick’s Plumbing, Air Conditioning & Sewer Service",
     "mentions": 2,
     "answers": 6,
     "rate": 0.3333333333333333,
@@ -861,7 +861,7 @@
     }
    },
    {
-    "name": "Nick’s Plumbing, Air Conditioning & Sewer Service",
+    "name": "MET Plumbing, LLC",
     "mentions": 2,
     "answers": 6,
     "rate": 0.3333333333333333,
@@ -929,22 +929,17 @@
   },
   "top_domains": [
    [
-    "plumberranker.com",
-    6,
-    1.0
-   ],
-   [
     "consumeraffairs.com",
     6,
     1.0
    ],
    [
-    "reddit.com",
-    4,
-    0.6666666666666666
+    "plumberranker.com",
+    6,
+    1.0
    ],
    [
-    "nicksplumbing.com",
+    "reddit.com",
     4,
     0.6666666666666666
    ],
@@ -955,6 +950,11 @@
    ],
    [
     "bestpickreports.com",
+    4,
+    0.6666666666666666
+   ],
+   [
+    "nicksplumbing.com",
     4,
     0.6666666666666666
    ],
@@ -974,7 +974,7 @@
     0.3333333333333333
    ],
    [
-    "customerlobby.com",
+    "angi.com",
     1,
     0.16666666666666666
    ]
@@ -1210,12 +1210,12 @@
     0.3333333333333333
    ],
    [
-    "theaussieplumber.com",
+    "reddit.com",
     2,
     0.3333333333333333
    ],
    [
-    "reddit.com",
+    "theaussieplumber.com",
     2,
     0.3333333333333333
    ],
@@ -1248,6 +1248,21 @@
   "answers": 6,
   "rows": [
    {
+    "name": "Goodman Plumbing",
+    "mentions": 6,
+    "answers": 6,
+    "rate": 1.0,
+    "ci_low": 0.6096569663469354,
+    "ci_high": 0.9999999999999999,
+    "first_rank": 4,
+    "engines": {
+     "gemini": [
+      6,
+      6
+     ]
+    }
+   },
+   {
     "name": "Plumbing Pals",
     "mentions": 6,
     "answers": 6,
@@ -1270,21 +1285,6 @@
     "ci_low": 0.6096569663469354,
     "ci_high": 0.9999999999999999,
     "first_rank": 0,
-    "engines": {
-     "gemini": [
-      6,
-      6
-     ]
-    }
-   },
-   {
-    "name": "Goodman Plumbing",
-    "mentions": 6,
-    "answers": 6,
-    "rate": 1.0,
-    "ci_low": 0.6096569663469354,
-    "ci_high": 0.9999999999999999,
-    "first_rank": 4,
     "engines": {
      "gemini": [
       6,
@@ -1338,7 +1338,7 @@
     }
    },
    {
-    "name": "Joseph’s Affordable Plumbing & Heating",
+    "name": "IFIXDIT, LLC",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -1353,7 +1353,7 @@
     }
    },
    {
-    "name": "IFIXDIT, LLC",
+    "name": "Joseph’s Affordable Plumbing & Heating",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -1398,7 +1398,7 @@
     }
    },
    {
-    "name": "East Philly Plumbing and Heating",
+    "name": "Philly Plumbing Pros",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -1413,7 +1413,7 @@
     }
    },
    {
-    "name": "Philly Plumbing Pros",
+    "name": "East Philly Plumbing and Heating",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -1466,12 +1466,12 @@
   },
   "top_domains": [
    [
-    "reddit.com",
+    "phillymag.com",
     6,
     1.0
    ],
    [
-    "phillymag.com",
+    "reddit.com",
     6,
     1.0
    ],
@@ -1511,7 +1511,7 @@
     0.16666666666666666
    ],
    [
-    "jgiannoneplumbingheating.com",
+    "bestpickreports.com",
     1,
     0.16666666666666666
    ]
@@ -1757,12 +1757,12 @@
   },
   "top_domains": [
    [
-    "mysanantonio.com",
+    "reliantplumbing.com",
     5,
     0.8333333333333334
    ],
    [
-    "reliantplumbing.com",
+    "mysanantonio.com",
     5,
     0.8333333333333334
    ],
@@ -1802,7 +1802,7 @@
     0.16666666666666666
    ],
    [
-    "stultzplumbing.com",
+    "beyerplumbing.com",
     1,
     0.16666666666666666
    ]
@@ -1815,13 +1815,13 @@
   "answers": 6,
   "rows": [
    {
-    "name": "Black Mountain Plumbing",
+    "name": "Bill Howe Plumbing, Heating & Air",
     "mentions": 6,
     "answers": 6,
     "rate": 1.0,
     "ci_low": 0.6096569663469354,
     "ci_high": 0.9999999999999999,
-    "first_rank": 0,
+    "first_rank": 3,
     "engines": {
      "gemini": [
       6,
@@ -1830,13 +1830,13 @@
     }
    },
    {
-    "name": "Bill Howe Plumbing, Heating & Air",
+    "name": "Black Mountain Plumbing",
     "mentions": 6,
     "answers": 6,
     "rate": 1.0,
     "ci_low": 0.6096569663469354,
     "ci_high": 0.9999999999999999,
-    "first_rank": 3,
+    "first_rank": 0,
     "engines": {
      "gemini": [
       6,
@@ -2010,7 +2010,7 @@
     }
    },
    {
-    "name": "Colepepper Plumbing",
+    "name": "Frankie’s Plumbing",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -2025,7 +2025,7 @@
     }
    },
    {
-    "name": "Frankie’s Plumbing",
+    "name": "Colepepper Plumbing",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -2048,19 +2048,14 @@
   },
   "top_domains": [
    [
-    "blackmountainplumbing.com",
-    6,
-    1.0
-   ],
-   [
     "reddit.com",
     6,
     1.0
    ],
    [
-    "forbes.com",
-    5,
-    0.8333333333333334
+    "blackmountainplumbing.com",
+    6,
+    1.0
    ],
    [
     "consumeraffairs.com",
@@ -2068,12 +2063,17 @@
     0.8333333333333334
    ],
    [
-    "sdlocalpros.com",
+    "forbes.com",
+    5,
+    0.8333333333333334
+   ],
+   [
+    "angi.com",
     4,
     0.6666666666666666
    ],
    [
-    "angi.com",
+    "sdlocalpros.com",
     4,
     0.6666666666666666
    ],
@@ -2088,12 +2088,12 @@
     0.3333333333333333
    ],
    [
-    "samedaysd.com",
+    "californiaplumbingsd.com",
     1,
     0.16666666666666666
    ],
    [
-    "californiaplumbingsd.com",
+    "samedaysd.com",
     1,
     0.16666666666666666
    ]
@@ -2211,7 +2211,7 @@
     }
    },
    {
-    "name": "Workman Plumbing",
+    "name": "Casa View Plumbing",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -2226,7 +2226,7 @@
     }
    },
    {
-    "name": "Casa View Plumbing",
+    "name": "Workman Plumbing",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -2271,7 +2271,7 @@
     }
    },
    {
-    "name": "Augerpros Plumbing & Drain",
+    "name": "Berkeys Plumbing, Air Conditioning & Electrical",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -2286,7 +2286,7 @@
     }
    },
    {
-    "name": "Berkeys Plumbing, Air Conditioning & Electrical",
+    "name": "Augerpros Plumbing & Drain",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -2324,12 +2324,12 @@
     0.8333333333333334
    ],
    [
-    "bestpickreports.com",
+    "reddit.com",
     3,
     0.5
    ],
    [
-    "reddit.com",
+    "bestpickreports.com",
     3,
     0.5
    ],
@@ -2344,12 +2344,12 @@
     0.3333333333333333
    ],
    [
-    "homeguide.com",
+    "angi.com",
     1,
     0.16666666666666666
    ],
    [
-    "angi.com",
+    "homeguide.com",
     1,
     0.16666666666666666
    ],
@@ -2517,21 +2517,6 @@
     }
    },
    {
-    "name": "Infinity Plumbing Solutions",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 0,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
     "name": "Chris Burris Plumbing",
     "mentions": 1,
     "answers": 6,
@@ -2547,7 +2532,7 @@
     }
    },
    {
-    "name": "Stan’s Heating, Air & Plumbing",
+    "name": "Infinity Plumbing Solutions",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -2577,7 +2562,7 @@
     }
    },
    {
-    "name": "Blue Dragon Plumbing",
+    "name": "Stan’s Heating, Air & Plumbing",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -2593,6 +2578,21 @@
    },
    {
     "name": "Good Clean Plumbing",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Blue Dragon Plumbing",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -2660,12 +2660,12 @@
     0.6666666666666666
    ],
    [
-    "homeadvisor.com",
+    "consumeraffairs.com",
     3,
     0.5
    ],
    [
-    "consumeraffairs.com",
+    "homeadvisor.com",
     3,
     0.5
    ],
@@ -2675,12 +2675,12 @@
     0.5
    ],
    [
-    "reliantplumbing.com",
+    "austinsbestplumbing.com",
     3,
     0.5
    ],
    [
-    "austinsbestplumbing.com",
+    "reliantplumbing.com",
     3,
     0.5
    ],
@@ -2703,13 +2703,13 @@
   "answers": 6,
   "rows": [
    {
-    "name": "209 NYC Dental",
+    "name": "Sachar Dental NYC",
     "mentions": 6,
     "answers": 6,
     "rate": 1.0,
     "ci_low": 0.6096569663469354,
     "ci_high": 0.9999999999999999,
-    "first_rank": 4,
+    "first_rank": 0,
     "engines": {
      "gemini": [
       6,
@@ -2718,13 +2718,13 @@
     }
    },
    {
-    "name": "Sachar Dental NYC",
+    "name": "209 NYC Dental",
     "mentions": 6,
     "answers": 6,
     "rate": 1.0,
     "ci_low": 0.6096569663469354,
     "ci_high": 0.9999999999999999,
-    "first_rank": 0,
+    "first_rank": 4,
     "engines": {
      "gemini": [
       6,
@@ -2823,21 +2823,6 @@
     }
    },
    {
-    "name": "Shalman Dentistry",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 0,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
     "name": "Gramercy Dental Arts",
     "mentions": 1,
     "answers": 6,
@@ -2883,7 +2868,7 @@
     }
    },
    {
-    "name": "ColumbiaDoctors Dentistry",
+    "name": "Shalman Dentistry",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -2914,6 +2899,21 @@
    },
    {
     "name": "Luxury Dentistry NYC",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
+   },
+   {
+    "name": "ColumbiaDoctors Dentistry",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -2973,7 +2973,7 @@
     }
    },
    {
-    "name": "Zen Dentistry",
+    "name": "Advanced Dental Arts NYC",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -2988,7 +2988,7 @@
     }
    },
    {
-    "name": "Advanced Dental Arts NYC",
+    "name": "Zen Dentistry",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -3041,12 +3041,12 @@
     0.8333333333333334
    ],
    [
-    "maidenlanedental.com",
+    "reddit.com",
     3,
     0.5
    ],
    [
-    "reddit.com",
+    "maidenlanedental.com",
     3,
     0.5
    ],
@@ -3084,7 +3084,7 @@
   "answers": 6,
   "rows": [
    {
-    "name": "Downtown Dental",
+    "name": "Dr. Bill Dorfman, DDS",
     "mentions": 4,
     "answers": 6,
     "rate": 0.6666666666666666,
@@ -3099,7 +3099,7 @@
     }
    },
    {
-    "name": "Dr. Bill Dorfman, DDS",
+    "name": "Downtown Dental",
     "mentions": 4,
     "answers": 6,
     "rate": 0.6666666666666666,
@@ -3129,13 +3129,13 @@
     }
    },
    {
-    "name": "Dr. Kevin Sands, DDS",
+    "name": "Dr. Anthony Mobasser",
     "mentions": 3,
     "answers": 6,
     "rate": 0.5,
     "ci_low": 0.18761280689940868,
     "ci_high": 0.8123871931005913,
-    "first_rank": 1,
+    "first_rank": 0,
     "engines": {
      "gemini": [
       3,
@@ -3144,13 +3144,13 @@
     }
    },
    {
-    "name": "Dr. Anthony Mobasser",
+    "name": "Dr. Kevin Sands, DDS",
     "mentions": 3,
     "answers": 6,
     "rate": 0.5,
     "ci_low": 0.18761280689940868,
     "ci_high": 0.8123871931005913,
-    "first_rank": 0,
+    "first_rank": 1,
     "engines": {
      "gemini": [
       3,
@@ -3234,6 +3234,21 @@
     }
    },
    {
+    "name": "TruDentistry",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
+   },
+   {
     "name": "Lasting Impressions Dental Spa",
     "mentions": 1,
     "answers": 6,
@@ -3249,7 +3264,7 @@
     }
    },
    {
-    "name": "TruDentistry",
+    "name": "Dr. Kourosh Maddahi",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -3271,21 +3286,6 @@
     "ci_low": 0.03005258587173032,
     "ci_high": 0.563509436563646,
     "first_rank": 1,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
-    "name": "Dr. Kourosh Maddahi",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 0,
     "engines": {
      "gemini": [
       1,
@@ -3369,21 +3369,6 @@
     }
    },
    {
-    "name": "Los Angeles Dental Arts",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 0,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
     "name": "Elite Dental Group / Dr. Andre Eliasian",
     "mentions": 1,
     "answers": 6,
@@ -3399,7 +3384,7 @@
     }
    },
    {
-    "name": "S&C Dental",
+    "name": "Los Angeles Dental Arts",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -3430,6 +3415,21 @@
    },
    {
     "name": "Happy KiDDS Dental Studio",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
+   },
+   {
+    "name": "S&C Dental",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -3497,22 +3497,22 @@
     0.5
    ],
    [
-    "webmd.com",
-    2,
-    0.3333333333333333
-   ],
-   [
     "billdorfmandds.com",
     2,
     0.3333333333333333
    ],
    [
-    "angelenosmile.com",
+    "webmd.com",
     2,
     0.3333333333333333
    ],
    [
     "ratemds.com",
+    2,
+    0.3333333333333333
+   ],
+   [
+    "angelenosmile.com",
     2,
     0.3333333333333333
    ]
@@ -3524,6 +3524,21 @@
  "dentists/chicago-il": {
   "answers": 6,
   "rows": [
+   {
+    "name": "Boca Dental Studio",
+    "mentions": 5,
+    "answers": 6,
+    "rate": 0.8333333333333334,
+    "ci_low": 0.43649056343635395,
+    "ci_high": 0.9699474141282697,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      5,
+      6
+     ]
+    }
+   },
    {
     "name": "Dental Professionals",
     "mentions": 5,
@@ -3547,21 +3562,6 @@
     "ci_low": 0.43649056343635395,
     "ci_high": 0.9699474141282697,
     "first_rank": 1,
-    "engines": {
-     "gemini": [
-      5,
-      6
-     ]
-    }
-   },
-   {
-    "name": "Boca Dental Studio",
-    "mentions": 5,
-    "answers": 6,
-    "rate": 0.8333333333333334,
-    "ci_low": 0.43649056343635395,
-    "ci_high": 0.9699474141282697,
-    "first_rank": 0,
     "engines": {
      "gemini": [
       5,
@@ -3630,21 +3630,6 @@
     }
    },
    {
-    "name": "Lux Smiles Cosmetic Dentistry and Prosthodontics",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 0,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
     "name": "Smile Science Chicago",
     "mentions": 1,
     "answers": 6,
@@ -3660,7 +3645,7 @@
     }
    },
    {
-    "name": "Dr. Kevin Landers",
+    "name": "Lux Smiles Cosmetic Dentistry and Prosthodontics",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -3675,7 +3660,7 @@
     }
    },
    {
-    "name": "UIC College of Dentistry Clinics",
+    "name": "Dr. Kevin Landers",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -3735,7 +3720,22 @@
     }
    },
    {
-    "name": "Dental Masters",
+    "name": "UIC College of Dentistry Clinics",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Dentologie",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -3765,7 +3765,7 @@
     }
    },
    {
-    "name": "Dentologie",
+    "name": "Dental Masters",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -3810,36 +3810,6 @@
     }
    },
    {
-    "name": "Strobel Dentistry",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 1,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
-    "name": "Washington Dental Care",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 0,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
     "name": "Affinity Dental",
     "mentions": 1,
     "answers": 6,
@@ -3870,37 +3840,52 @@
     }
    },
    {
+    "name": "Strobel Dentistry",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 1,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Washington Dental Care",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Dentist on the Park",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
+   },
+   {
     "name": "In The Loop Dental",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 0,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
-    "name": "White Dental Studio",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 0,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
-    "name": "Lakeview East Dental Associates",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -3930,7 +3915,22 @@
     }
    },
    {
-    "name": "Dentist on the Park",
+    "name": "Lakeview East Dental Associates",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
+   },
+   {
+    "name": "White Dental Studio",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -3983,22 +3983,22 @@
     0.5
    ],
    [
-    "deltadental.com",
-    2,
-    0.3333333333333333
-   ],
-   [
     "mitchelldentalspa.com",
     2,
     0.3333333333333333
    ],
    [
-    "opencare.com",
+    "deltadental.com",
     2,
     0.3333333333333333
    ],
    [
     "zocdoc.com",
+    2,
+    0.3333333333333333
+   ],
+   [
+    "opencare.com",
     2,
     0.3333333333333333
    ]
@@ -4191,7 +4191,7 @@
     }
    },
    {
-    "name": "P+E Dental",
+    "name": "Fawcett Center for Dentistry",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -4206,7 +4206,7 @@
     }
    },
    {
-    "name": "Fawcett Center for Dentistry",
+    "name": "P+E Dental",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -4251,22 +4251,7 @@
     }
    },
    {
-    "name": "Downtown Houston Dental",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 0,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
-    "name": "Greenway Pediatric Dentistry",
+    "name": "Oaks Point Pediatric Dentistry",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -4296,7 +4281,7 @@
     }
    },
    {
-    "name": "Oaks Point Pediatric Dentistry",
+    "name": "Greenway Pediatric Dentistry",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -4311,7 +4296,7 @@
     }
    },
    {
-    "name": "My Dear Dentist",
+    "name": "Downtown Houston Dental",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -4341,7 +4326,7 @@
     }
    },
    {
-    "name": "Memorial Dental Care",
+    "name": "Sapphire Smiles",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -4356,7 +4341,22 @@
     }
    },
    {
-    "name": "Sapphire Smiles",
+    "name": "My Dear Dentist",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Memorial Dental Care",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -4379,12 +4379,12 @@
   },
   "top_domains": [
    [
-    "opencare.com",
+    "reddit.com",
     6,
     1.0
    ],
    [
-    "reddit.com",
+    "opencare.com",
     6,
     1.0
    ],
@@ -4409,7 +4409,7 @@
     0.6666666666666666
    ],
    [
-    "rankmydentist.com",
+    "bestdentistinhouston.com",
     3,
     0.5
    ],
@@ -4419,12 +4419,12 @@
     0.5
    ],
    [
-    "memorialdds.com",
+    "rankmydentist.com",
     3,
     0.5
    ],
    [
-    "bestdentistinhouston.com",
+    "memorialdds.com",
     3,
     0.5
    ]
@@ -4452,13 +4452,13 @@
     }
    },
    {
-    "name": "Arizona Biltmore Dentistry",
+    "name": "Artistic Dental at the Biltmore",
     "mentions": 4,
     "answers": 6,
     "rate": 0.6666666666666666,
     "ci_low": 0.29998832134152864,
     "ci_high": 0.9032306674407831,
-    "first_rank": 0,
+    "first_rank": 3,
     "engines": {
      "gemini": [
       4,
@@ -4467,13 +4467,13 @@
     }
    },
    {
-    "name": "Artistic Dental at the Biltmore",
+    "name": "Arizona Biltmore Dentistry",
     "mentions": 4,
     "answers": 6,
     "rate": 0.6666666666666666,
     "ci_low": 0.29998832134152864,
     "ci_high": 0.9032306674407831,
-    "first_rank": 3,
+    "first_rank": 0,
     "engines": {
      "gemini": [
       4,
@@ -4497,7 +4497,7 @@
     }
    },
    {
-    "name": "Desert Dentistry",
+    "name": "Biltmore Dental Center",
     "mentions": 3,
     "answers": 6,
     "rate": 0.5,
@@ -4512,7 +4512,7 @@
     }
    },
    {
-    "name": "Biltmore Dental Center",
+    "name": "Desert Dentistry",
     "mentions": 3,
     "answers": 6,
     "rate": 0.5,
@@ -4557,7 +4557,7 @@
     }
    },
    {
-    "name": "Central Valley Dentistry",
+    "name": "Harris Dental",
     "mentions": 2,
     "answers": 6,
     "rate": 0.3333333333333333,
@@ -4572,7 +4572,7 @@
     }
    },
    {
-    "name": "Harris Dental",
+    "name": "Central Valley Dentistry",
     "mentions": 2,
     "answers": 6,
     "rate": 0.3333333333333333,
@@ -4632,13 +4632,13 @@
     }
    },
    {
-    "name": "Studio B Smiles",
+    "name": "Life Smiles Dental Care",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
     "ci_low": 0.03005258587173032,
     "ci_high": 0.563509436563646,
-    "first_rank": 1,
+    "first_rank": 0,
     "engines": {
      "gemini": [
       1,
@@ -4647,13 +4647,13 @@
     }
    },
    {
-    "name": "Life Smiles Dental Care",
+    "name": "Studio B Smiles",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
     "ci_low": 0.03005258587173032,
     "ci_high": 0.563509436563646,
-    "first_rank": 0,
+    "first_rank": 1,
     "engines": {
      "gemini": [
       1,
@@ -4715,12 +4715,12 @@
   },
   "top_domains": [
    [
-    "toprateddentist.com",
+    "reddit.com",
     6,
     1.0
    ],
    [
-    "reddit.com",
+    "toprateddentist.com",
     6,
     1.0
    ],
@@ -4730,22 +4730,22 @@
     0.8333333333333334
    ],
    [
-    "deltadental.com",
-    4,
-    0.6666666666666666
-   ],
-   [
     "arizonabiltmoredentistry.com",
     4,
     0.6666666666666666
    ],
    [
-    "thevalleydentistry.com",
+    "deltadental.com",
+    4,
+    0.6666666666666666
+   ],
+   [
+    "creativedentalspecialists.com",
     3,
     0.5
    ],
    [
-    "creativedentalspecialists.com",
+    "thevalleydentistry.com",
     3,
     0.5
    ],
@@ -4833,6 +4833,21 @@
     }
    },
    {
+    "name": "Center City Dental Arts",
+    "mentions": 2,
+    "answers": 6,
+    "rate": 0.3333333333333333,
+    "ci_low": 0.09676933255921683,
+    "ci_high": 0.7000116786584712,
+    "first_rank": 1,
+    "engines": {
+     "gemini": [
+      2,
+      6
+     ]
+    }
+   },
+   {
     "name": "I.Dentical",
     "mentions": 2,
     "answers": 6,
@@ -4848,13 +4863,13 @@
     }
    },
    {
-    "name": "Center City Dental Arts",
+    "name": "Doc Bresler’s Cavity Busters",
     "mentions": 2,
     "answers": 6,
     "rate": 0.3333333333333333,
     "ci_low": 0.09676933255921683,
     "ci_high": 0.7000116786584712,
-    "first_rank": 1,
+    "first_rank": 0,
     "engines": {
      "gemini": [
       2,
@@ -4878,21 +4893,6 @@
     }
    },
    {
-    "name": "Rittenhouse Smiles",
-    "mentions": 2,
-    "answers": 6,
-    "rate": 0.3333333333333333,
-    "ci_low": 0.09676933255921683,
-    "ci_high": 0.7000116786584712,
-    "first_rank": 1,
-    "engines": {
-     "gemini": [
-      2,
-      6
-     ]
-    }
-   },
-   {
     "name": "Amsterdam Dental Group",
     "mentions": 2,
     "answers": 6,
@@ -4908,13 +4908,13 @@
     }
    },
    {
-    "name": "Doc Bresler’s Cavity Busters",
+    "name": "Rittenhouse Smiles",
     "mentions": 2,
     "answers": 6,
     "rate": 0.3333333333333333,
     "ci_low": 0.09676933255921683,
     "ci_high": 0.7000116786584712,
-    "first_rank": 0,
+    "first_rank": 1,
     "engines": {
      "gemini": [
       2,
@@ -4998,7 +4998,7 @@
     }
    },
    {
-    "name": "Fishtown Smiles",
+    "name": "Dentists on the Square",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -5013,7 +5013,7 @@
     }
    },
    {
-    "name": "Dentists on the Square",
+    "name": "Fishtown Smiles",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -5116,12 +5116,7 @@
     0.8333333333333334
    ],
    [
-    "openyourmouth.com",
-    4,
-    0.6666666666666666
-   ],
-   [
-    "phillymag.com",
+    "penndentalmedicine.org",
     4,
     0.6666666666666666
    ],
@@ -5131,12 +5126,17 @@
     0.6666666666666666
    ],
    [
-    "penndentalmedicine.org",
+    "phillymag.com",
     4,
     0.6666666666666666
    ],
    [
-    "rankmydentist.com",
+    "openyourmouth.com",
+    4,
+    0.6666666666666666
+   ],
+   [
+    "whitmandental.com",
     3,
     0.5
    ],
@@ -5146,17 +5146,17 @@
     0.5
    ],
    [
-    "whitmandental.com",
+    "rankmydentist.com",
     3,
     0.5
    ],
    [
-    "dentist-philadelphia.com",
+    "reddit.com",
     2,
     0.3333333333333333
    ],
    [
-    "reddit.com",
+    "dentistcityave.com",
     2,
     0.3333333333333333
    ]
@@ -5244,7 +5244,7 @@
     }
    },
    {
-    "name": "Schuchart Dentistry",
+    "name": "Cosmetic Dentistry of San Antonio",
     "mentions": 3,
     "answers": 6,
     "rate": 0.5,
@@ -5259,7 +5259,7 @@
     }
    },
    {
-    "name": "Cosmetic Dentistry of San Antonio",
+    "name": "Schuchart Dentistry",
     "mentions": 3,
     "answers": 6,
     "rate": 0.5,
@@ -5289,7 +5289,7 @@
     }
    },
    {
-    "name": "Joshua Austin, DDS",
+    "name": "Pediatric Dentistry of San Antonio",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -5319,6 +5319,21 @@
     }
    },
    {
+    "name": "Joshua Austin, DDS",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
+   },
+   {
     "name": "Cosmetic Dental Associates",
     "mentions": 1,
     "answers": 6,
@@ -5334,7 +5349,7 @@
     }
    },
    {
-    "name": "Pediatric Dentistry of San Antonio",
+    "name": "Inwood Family Dental",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -5349,7 +5364,7 @@
     }
    },
    {
-    "name": "Inwood Family Dental",
+    "name": "Family Dentistry of San Antonio",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -5380,21 +5395,6 @@
    },
    {
     "name": "UT Health San Antonio – Center for Oral Health Care",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 0,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
-    "name": "Family Dentistry of San Antonio",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -5457,12 +5457,12 @@
     0.8333333333333334
    ],
    [
-    "threebestrated.com",
+    "reddit.com",
     4,
     0.6666666666666666
    ],
    [
-    "reddit.com",
+    "threebestrated.com",
     4,
     0.6666666666666666
    ],
@@ -5477,12 +5477,12 @@
     0.5
    ],
    [
-    "deltadental.com",
+    "cosmeticdentistryofsa.com",
     2,
     0.3333333333333333
    ],
    [
-    "cosmeticdentistryofsa.com",
+    "deltadental.com",
     2,
     0.3333333333333333
    ],
@@ -5505,13 +5505,13 @@
   "answers": 6,
   "rows": [
    {
-    "name": "Mesa Dental",
+    "name": "Scripps Center for Dental Care",
     "mentions": 5,
     "answers": 6,
     "rate": 0.8333333333333334,
     "ci_low": 0.43649056343635395,
     "ci_high": 0.9699474141282697,
-    "first_rank": 0,
+    "first_rank": 3,
     "engines": {
      "gemini": [
       5,
@@ -5520,13 +5520,13 @@
     }
    },
    {
-    "name": "Scripps Center for Dental Care",
+    "name": "Mesa Dental",
     "mentions": 5,
     "answers": 6,
     "rate": 0.8333333333333334,
     "ci_low": 0.43649056343635395,
     "ci_high": 0.9699474141282697,
-    "first_rank": 3,
+    "first_rank": 0,
     "engines": {
      "gemini": [
       5,
@@ -5625,7 +5625,7 @@
     }
    },
    {
-    "name": "San Diego Dental Health Center",
+    "name": "Mission Hills Periodontics",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -5640,7 +5640,7 @@
     }
    },
    {
-    "name": "Mission Hills Periodontics",
+    "name": "San Diego Dental Health Center",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -5753,22 +5753,22 @@
   },
   "top_domains": [
    [
-    "scrippsdentalcare.com",
-    5,
-    0.8333333333333334
-   ],
-   [
     "reddit.com",
     5,
     0.8333333333333334
    ],
    [
-    "toprateddentist.com",
+    "scrippsdentalcare.com",
+    5,
+    0.8333333333333334
+   ],
+   [
+    "sutrads.com",
     4,
     0.6666666666666666
    ],
    [
-    "sutrads.com",
+    "toprateddentist.com",
     4,
     0.6666666666666666
    ],
@@ -5826,13 +5826,13 @@
     }
    },
    {
-    "name": "Lakewood Dental Group",
+    "name": "Pro Dental Dallas",
     "mentions": 5,
     "answers": 6,
     "rate": 0.8333333333333334,
     "ci_low": 0.43649056343635395,
     "ci_high": 0.9699474141282697,
-    "first_rank": 1,
+    "first_rank": 0,
     "engines": {
      "gemini": [
       5,
@@ -5841,13 +5841,13 @@
     }
    },
    {
-    "name": "Pro Dental Dallas",
+    "name": "Lakewood Dental Group",
     "mentions": 5,
     "answers": 6,
     "rate": 0.8333333333333334,
     "ci_low": 0.43649056343635395,
     "ci_high": 0.9699474141282697,
-    "first_rank": 0,
+    "first_rank": 1,
     "engines": {
      "gemini": [
       5,
@@ -5901,13 +5901,13 @@
     }
    },
    {
-    "name": "Turtle Creek Dental Associates",
+    "name": "Katy Trail Dental",
     "mentions": 2,
     "answers": 6,
     "rate": 0.3333333333333333,
     "ci_low": 0.09676933255921683,
     "ci_high": 0.7000116786584712,
-    "first_rank": 2,
+    "first_rank": 1,
     "engines": {
      "gemini": [
       2,
@@ -5916,13 +5916,13 @@
     }
    },
    {
-    "name": "Katy Trail Dental",
+    "name": "Turtle Creek Dental Associates",
     "mentions": 2,
     "answers": 6,
     "rate": 0.3333333333333333,
     "ci_low": 0.09676933255921683,
     "ci_high": 0.7000116786584712,
-    "first_rank": 1,
+    "first_rank": 2,
     "engines": {
      "gemini": [
       2,
@@ -5946,21 +5946,6 @@
     }
    },
    {
-    "name": "Midtown Family Dentistry of Dallas",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 0,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
     "name": "North Texas Periodontics",
     "mentions": 1,
     "answers": 6,
@@ -5977,6 +5962,21 @@
    },
    {
     "name": "Dallas Esthetics",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
+   },
+   {
+    "name": "Midtown Family Dentistry of Dallas",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -6036,7 +6036,7 @@
     }
    },
    {
-    "name": "Texas A&M School of Dentistry Clinics",
+    "name": "Vanderbrook Family Dentistry",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -6051,7 +6051,7 @@
     }
    },
    {
-    "name": "Vanderbrook Family Dentistry",
+    "name": "Texas A&M School of Dentistry Clinics",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -6104,17 +6104,17 @@
   },
   "top_domains": [
    [
-    "dallasdental.com",
-    5,
-    0.8333333333333334
-   ],
-   [
     "prodentaldallas.com",
     5,
     0.8333333333333334
    ],
    [
     "reddit.com",
+    5,
+    0.8333333333333334
+   ],
+   [
+    "dallasdental.com",
     5,
     0.8333333333333334
    ],
@@ -6207,6 +6207,21 @@
     }
    },
    {
+    "name": "Balcones Family Dental",
+    "mentions": 3,
+    "answers": 6,
+    "rate": 0.5,
+    "ci_low": 0.18761280689940868,
+    "ci_high": 0.8123871931005913,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      3,
+      6
+     ]
+    }
+   },
+   {
     "name": "Smile 360",
     "mentions": 3,
     "answers": 6,
@@ -6223,21 +6238,6 @@
    },
    {
     "name": "East Austin Dental",
-    "mentions": 3,
-    "answers": 6,
-    "rate": 0.5,
-    "ci_low": 0.18761280689940868,
-    "ci_high": 0.8123871931005913,
-    "first_rank": 0,
-    "engines": {
-     "gemini": [
-      3,
-      6
-     ]
-    }
-   },
-   {
-    "name": "Balcones Family Dental",
     "mentions": 3,
     "answers": 6,
     "rate": 0.5,
@@ -6282,7 +6282,7 @@
     }
    },
    {
-    "name": "Swish Dental",
+    "name": "Tech Ridge Dental",
     "mentions": 2,
     "answers": 6,
     "rate": 0.3333333333333333,
@@ -6312,7 +6312,7 @@
     }
    },
    {
-    "name": "Tech Ridge Dental",
+    "name": "Swish Dental",
     "mentions": 2,
     "answers": 6,
     "rate": 0.3333333333333333,
@@ -6402,7 +6402,7 @@
     }
    },
    {
-    "name": "38th Street Dental",
+    "name": "Dr. Daren Evans, DDS",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -6432,22 +6432,7 @@
     }
    },
    {
-    "name": "Dr. Daren Evans, DDS",
-    "mentions": 1,
-    "answers": 6,
-    "rate": 0.16666666666666666,
-    "ci_low": 0.03005258587173032,
-    "ci_high": 0.563509436563646,
-    "first_rank": 0,
-    "engines": {
-     "gemini": [
-      1,
-      6
-     ]
-    }
-   },
-   {
-    "name": "ATX Family Dental",
+    "name": "38th Street Dental",
     "mentions": 1,
     "answers": 6,
     "rate": 0.16666666666666666,
@@ -6490,6 +6475,21 @@
       6
      ]
     }
+   },
+   {
+    "name": "ATX Family Dental",
+    "mentions": 1,
+    "answers": 6,
+    "rate": 0.16666666666666666,
+    "ci_low": 0.03005258587173032,
+    "ci_high": 0.563509436563646,
+    "first_rank": 0,
+    "engines": {
+     "gemini": [
+      1,
+      6
+     ]
+    }
    }
   ],
   "engines": {
@@ -6515,12 +6515,12 @@
     0.5
    ],
    [
-    "rankmydentist.com",
+    "swishsmiles.com",
     2,
     0.3333333333333333
    ],
    [
-    "swishsmiles.com",
+    "rankmydentist.com",
     2,
     0.3333333333333333
    ],

@@ -28,7 +28,8 @@ concurrency:
 
 jobs:
   send:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    # Envoi seulement après la mise à jour planifiée du lundi (pas après une reconstruction lancée à la main).
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'schedule') }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
