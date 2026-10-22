@@ -59,10 +59,17 @@ PRODUCTS = {
         "Chaque lundi : tous les appels relancés, les procédures infructueuses de la semaine, les échéances à 14 jours et un CSV.")),
 }
 
+# Prix dans la devise par défaut de l'organisation quand ce n'est pas l'euro (Polar l'exige) : 19 € ≈ 22 $.
+OTHER_CURRENCY = {"usd": {"free": 0, "pro": 2200}}
+
 
 def main():
     orgs = call("GET", "/organizations/?limit=10").get("items", [])
     slug = orgs[0]["slug"] if orgs else "jovianlabs"
+    default_cur = ((orgs[0].get("default_presentment_currency") if orgs else None) or "usd").lower()
+    print("organization:", slug, "| default currency:", default_cur)
+    if default_cur != "eur" and default_cur not in OTHER_CURRENCY:
+        raise SystemExit(f"Default currency {default_cur}: set it to EUR or USD in Polar (Settings) and run again.")
     existing = {f["slug"]: f for f in call("GET", "/custom-fields/?limit=100").get("items", [])}
     ids = {}
     for f in FIELDS:
@@ -79,7 +86,9 @@ def main():
         if p is None:
             p = call("POST", "/products/", dict(
                 name=spec["name"], description=spec["description"], recurring_interval="month",
-                prices=[dict(amount_type="fixed", price_amount=spec["amount"], price_currency="eur")],
+                prices=[dict(amount_type="fixed", price_amount=spec["amount"], price_currency="eur")] + (
+                    [] if default_cur == "eur" else
+                    [dict(amount_type="fixed", price_amount=OTHER_CURRENCY[default_cur][plan], price_currency=default_cur)]),
                 attached_custom_fields=[dict(custom_field_id=ids[s], required=REQUIRED[s]) for s in ("country", "sector", "keywords", "language")],
                 metadata=dict(plan=plan)))
             print("product created", plan)
