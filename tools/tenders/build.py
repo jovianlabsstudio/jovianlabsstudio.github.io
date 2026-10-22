@@ -17,7 +17,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from tenderslib import boamp, ted  # noqa: E402
 sys.path.insert(0, str(HERE.parent / "site"))
-from chrome import footer as site_footer, header as site_header  # noqa: E402
+from chrome import footer as site_footer, header as site_header, hreflang_links  # noqa: E402
 
 SITE = "https://jovianlabsstudio.com"
 ACTOR = "https://apify.com/jovianlabs/failed-public-tenders"
@@ -58,6 +58,53 @@ KEYWORDS = [  # repli quand l'avis n'a pas de code CPV
     ("ingenierie-etudes", r"étude|etude|ingénierie|ingenierie|contrôle|controle|vérification|verification|audit|maîtrise d'oeuvre"),
     ("services-entreprises", r"intérim|interim|conseil|communication|impression|affranchissement|nettoyage"),
 ]
+
+
+# Libellés des secteurs et des pays dans les autres langues (fr et en sont dans SECTORS / COUNTRIES).
+SECTOR_I18N = {
+    "travaux": dict(de="Bauleistungen", es="Obras y construcción", it="Lavori e costruzioni"),
+    "sante": dict(de="Medizin und Pharma", es="Sanidad y farmacia", it="Sanità e farmaceutica"),
+    "nettoyage-dechets": dict(de="Reinigung, Abfall, Umwelt", es="Limpieza, residuos, medio ambiente", it="Pulizia, rifiuti, ambiente"),
+    "maintenance": dict(de="Wartung und Reparatur", es="Mantenimiento y reparación", it="Manutenzione e riparazione"),
+    "vehicules-transport": dict(de="Fahrzeuge und Transport", es="Vehículos y transporte", it="Veicoli e trasporti"),
+    "alimentation": dict(de="Lebensmittel und Verpflegung", es="Alimentación y restauración", it="Alimenti e ristorazione"),
+    "assurance-finance": dict(de="Versicherung und Finanzen", es="Seguros y finanzas", it="Assicurazioni e finanza"),
+    "ingenierie-etudes": dict(de="Ingenieurleistungen, Studien, Prüfungen", es="Ingeniería, estudios, ensayos", it="Ingegneria, studi, collaudi"),
+    "informatique": dict(de="IT und Software", es="Informática y software", it="Informatica e software"),
+    "services-entreprises": dict(de="Unternehmensdienstleistungen", es="Servicios a empresas", it="Servizi alle imprese"),
+    "formation": dict(de="Bildung und Schulung", es="Formación y educación", it="Formazione e istruzione"),
+    "equipements": dict(de="Ausrüstung, Möbel, Material", es="Equipos, mobiliario, suministros", it="Attrezzature, arredi, forniture"),
+    "autres": dict(de="Sonstiges", es="Otros", it="Altro"),
+}
+COUNTRY_NAMES = {
+    "fr": {"FRA": "France", "DEU": "Allemagne", "ITA": "Italie", "ESP": "Espagne", "POL": "Pologne", "ROU": "Roumanie", "NLD": "Pays-Bas",
+           "BEL": "Belgique", "AUT": "Autriche", "PRT": "Portugal", "CZE": "Tchéquie", "SWE": "Suède", "FIN": "Finlande", "DNK": "Danemark",
+           "IRL": "Irlande", "GRC": "Grèce"},
+    "de": {"FRA": "Frankreich", "DEU": "Deutschland", "ITA": "Italien", "ESP": "Spanien", "POL": "Polen", "ROU": "Rumänien",
+           "NLD": "Niederlande", "BEL": "Belgien", "AUT": "Österreich", "PRT": "Portugal", "CZE": "Tschechien", "SWE": "Schweden",
+           "FIN": "Finnland", "DNK": "Dänemark", "IRL": "Irland", "GRC": "Griechenland"},
+    "es": {"FRA": "Francia", "DEU": "Alemania", "ITA": "Italia", "ESP": "España", "POL": "Polonia", "ROU": "Rumanía", "NLD": "Países Bajos",
+           "BEL": "Bélgica", "AUT": "Austria", "PRT": "Portugal", "CZE": "Chequia", "SWE": "Suecia", "FIN": "Finlandia", "DNK": "Dinamarca",
+           "IRL": "Irlanda", "GRC": "Grecia"},
+    "it": {"FRA": "Francia", "DEU": "Germania", "ITA": "Italia", "ESP": "Spagna", "POL": "Polonia", "ROU": "Romania", "NLD": "Paesi Bassi",
+           "BEL": "Belgio", "AUT": "Austria", "PRT": "Portogallo", "CZE": "Cechia", "SWE": "Svezia", "FIN": "Finlandia", "DNK": "Danimarca",
+           "IRL": "Irlanda", "GRC": "Grecia"},
+}
+# Pays publiés aussi dans leur langue (en plus de l'anglais)
+LOCAL = {"DEU": "de", "AUT": "de", "ESP": "es", "ITA": "it"}
+
+
+def sector_name(sec, lang):
+    """sec = (slug, libellé fr, libellé en) renvoyé par sector_of."""
+    if lang == "fr":
+        return sec[1]
+    if lang in ("de", "es", "it"):
+        return SECTOR_I18N.get(sec[0], {}).get(lang, sec[2])
+    return sec[2]
+
+
+def country_name(code, lang):
+    return COUNTRY_NAMES.get(lang, {}).get(code) or COUNTRIES.get(code, (code,))[0]
 
 
 def sector_of(cpv, title=""):
@@ -132,16 +179,49 @@ L = {
                cta_link="Failed & Relaunched Public Tenders sur Apify", updated="Mise à jour", sources="Sources : TED (Office des publications de l'UE) et BOAMP (DILA, Licence Ouverte). Vérifiez toujours l'avis officiel avant d'agir.",
                nav_all="Tous les pays", alerts_cta="Plutôt par e-mail ? Recevez ceux de votre pays et de votre secteur chaque lundi, en gratuit ou en Pro :",
                alerts_link="alertes seconde chance", alerts_path="/fr/alertes/"),
+    "de": dict(rel="Offene Ausschreibungen nach einem gescheiterten Verfahren", fail="Kürzlich gescheiterte Verfahren (kein Angebot oder alle ausgeschlossen)",
+               deadline="Frist", buyer="Auftraggeber", proc="Verfahren", sector="Branche", value="Gesch. Wert", why="Grund", notice="Bekanntmachung",
+               published="Veröffentlicht", lots="Lose", no_rece="kein Angebot", all_rej="alle ausgeschlossen", relaunch="Neuausschreibung",
+               match_high="sehr wahrscheinlich", match_medium="wahrscheinlich", boamp="nennt das Scheitern", open="offen",
+               more="weitere Lose", planned="Neuausschreibung geplant", none="Diese Woche nichts.",
+               cta="Diese Chancen jeden Morgen für Ihre Branche: Starten Sie unseren Apify-Actor mit täglichem Zeitplan und erhalten Sie die Ergebnisse per E-Mail, Slack oder Google Sheets.",
+               cta_link="Failed & Relaunched Public Tenders auf Apify", updated="Aktualisiert",
+               sources="Quellen: TED (Amt für Veröffentlichungen der EU). Prüfen Sie vor jedem Schritt die offizielle Bekanntmachung.",
+               nav_all="Alle Länder", alerts_cta="Lieber per E-Mail? Erhalten Sie die für Ihr Land und Ihre Branche jeden Montag, kostenlos oder Pro:",
+               alerts_link="Ausschreibungs-Alerts", alerts_path="/de/alerts/", alerts_title="Alerts"),
+    "es": dict(rel="Licitaciones abiertas que relanzan un procedimiento fallido", fail="Procedimientos fallidos recientes (sin ofertas o todas rechazadas)",
+               deadline="Plazo", buyer="Órgano de contratación", proc="Procedimiento", sector="Sector", value="Valor est.", why="Motivo", notice="Anuncio",
+               published="Publicado", lots="Lotes", no_rece="sin ofertas", all_rej="todas rechazadas", relaunch="nueva licitación",
+               match_high="coincidencia alta", match_medium="coincidencia probable", boamp="menciona el fracaso", open="abierta",
+               more="lotes más", planned="nueva licitación prevista", none="Nada esta semana.",
+               cta="Reciba estas oportunidades de su sector cada mañana: ejecute nuestro Actor de Apify con una programación diaria y reciba los resultados por correo, Slack o Google Sheets.",
+               cta_link="Failed & Relaunched Public Tenders en Apify", updated="Actualizado",
+               sources="Fuentes: TED (Oficina de Publicaciones de la UE). Compruebe siempre el anuncio oficial antes de actuar.",
+               nav_all="Todos los países", alerts_cta="¿Prefiere el correo? Reciba cada lunes los de su país y su sector, gratis o Pro:",
+               alerts_link="alertas de licitaciones", alerts_path="/es/alerts/", alerts_title="Alertas"),
+    "it": dict(rel="Gare aperte che ripropongono una procedura fallita", fail="Procedure fallite di recente (nessuna offerta o tutte escluse)",
+               deadline="Scadenza", buyer="Stazione appaltante", proc="Procedura", sector="Settore", value="Valore stim.", why="Motivo", notice="Avviso",
+               published="Pubblicato", lots="Lotti", no_rece="nessuna offerta", all_rej="tutte escluse", relaunch="nuova gara",
+               match_high="corrispondenza forte", match_medium="corrispondenza probabile", boamp="cita l'esito negativo", open="aperta",
+               more="altri lotti", planned="nuova gara prevista", none="Niente questa settimana.",
+               cta="Riceva queste opportunità del suo settore ogni mattina: avvii il nostro Actor Apify con una pianificazione giornaliera e riceva i risultati via email, Slack o Google Sheets.",
+               cta_link="Failed & Relaunched Public Tenders su Apify", updated="Aggiornato",
+               sources="Fonti: TED (Ufficio delle pubblicazioni dell'UE). Verifichi sempre l'avviso ufficiale prima di agire.",
+               nav_all="Tutti i paesi", alerts_cta="Preferisce l'email? Riceva ogni lunedì quelle del suo paese e del suo settore, gratis o Pro:",
+               alerts_link="avvisi sulle gare", alerts_path="/it/alerts/", alerts_title="Avvisi"),
 }
+L["en"]["alerts_title"] = "Alerts"
+L["fr"]["alerts_title"] = "Alertes"
 
 
-def head(lang, title, desc, canonical, noindex=False):
+def head(lang, title, desc, canonical, noindex=False, alternates=None):
     rb = '<meta name="robots" content="noindex">' if noindex else ""
+    rb += hreflang_links(alternates)
     return (f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
             f'<title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{esc(canonical)}">{rb}'
             f'<link rel="icon" href="/assets/favicon.png"><link rel="stylesheet" href="/assets/style.css">'
             f'<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"></head><body>'
-            + site_header(lang, "tenders") + '<main>')
+            + site_header(lang, "tenders", alternates) + '<main>')
 
 
 def foot(t, lang="en"):
@@ -156,7 +236,7 @@ def table_relaunch(items, t, lang, limit=250):
         conf = x.get("relaunchConfidence")
         tag = (f"<span class='tag hot'>{t['match_high']}</span>" if conf == "high" else
                f"<span class='tag'>{t['match_medium']}</span>" if conf == "medium" else f"<span class='tag hot'>{t['boamp']}</span>")
-        sec = sector_of(x.get("cpv"), x.get("procedureTitle") or x.get("noticeTitle"))[1 if lang == "fr" else 2]
+        sec = sector_name(sector_of(x.get("cpv"), x.get("procedureTitle") or x.get("noticeTitle")), lang)
         rows.append(f"<tr><td class='num'>{esc(x.get('deadline'))}</td><td>{esc(x.get('buyer'))}</td>"
                     f"<td><a href='{esc(x.get('url'))}' rel='nofollow noopener' target='_blank'>{esc((x.get('procedureTitle') or x.get('noticeTitle') or '')[:160])}</a><div>{tag}</div></td>"
                     f"<td>{esc(sec)}</td><td class='num'>{esc(money(x.get('estimatedValue'), x.get('currency')))}</td></tr>")
@@ -174,7 +254,7 @@ def table_failed(items, t, lang, limit=150):
         lots = "; ".join(esc(l[:70]) for l in x["lots"])
         more = f" (+{x['n_lots'] - len(x['lots'])} {t['more']})" if x["n_lots"] > len(x["lots"]) else ""
         planned = f" <span class='tag hot'>{t['planned']}</span>" if x["relaunch_planned"] else ""
-        sec = sector_of(x.get("cpv"), x.get("title"))[1 if lang == "fr" else 2]
+        sec = sector_name(sector_of(x.get("cpv"), x.get("title")), lang)
         rows.append(f"<tr><td class='num'>{esc(x['published'])}</td><td>{esc(x['buyer'])}</td>"
                     f"<td><a href='{esc(x['url'])}' rel='nofollow noopener' target='_blank'>{esc((x['title'] or '')[:150])}</a>"
                     f"<div class='small'>{lots}{esc(more)}</div></td><td>{esc(sec)}</td><td class='num'>{esc(money(x['value'], x['currency']))}</td>"
@@ -195,7 +275,7 @@ def alerts_live():
 def cta(t):
     mail = (f"<p class='small'>{esc(t['alerts_cta'])} <a href='{t['alerts_path']}'>{esc(t['alerts_link'])}</a>.</p>"
             if alerts_live() else "")
-    return f"<div class='cta'><b>Alerts</b>{mail}<p class='small'>{esc(t['cta'])} <a href='{ACTOR}'>{esc(t['cta_link'])}</a>.</p></div>"
+    return f"<div class='cta'><b>{esc(t['alerts_title'])}</b>{mail}<p class='small'>{esc(t['cta'])} <a href='{ACTOR}'>{esc(t['cta_link'])}</a>.</p></div>"
 
 
 def render_country(out, code, data, today, week, lang, sector=None):
@@ -213,6 +293,35 @@ def render_country(out, code, data, today, week, lang, sector=None):
                 f"en France{scope}, mis à jour chaque semaine. Des marchés publics avec peu de concurrence.")
         lede = ("Quand un marché public ne reçoit aucune offre, il est souvent relancé, avec moins de concurrence. Après un appel d'offres infructueux, "
                 "l'acheteur peut aussi, sous conditions, négocier directement. Voici les relances ouvertes et les échecs récents.")
+    elif lang == "de":
+        n = country_name(code, "de")
+        scope = ""
+        h1 = f"Aufgehobene und neu ausgeschriebene öffentliche Aufträge: {n}"
+        title = f"Gescheiterte und neu ausgeschriebene Vergabeverfahren in {n} (Woche {week})"
+        desc = (f"{len(rel)} offene Ausschreibungen nach einem gescheiterten Verfahren und {len(fail)} Verfahren ohne Angebot oder mit "
+                f"ausgeschlossenen Angeboten in {n}, jede Woche aktualisiert. Öffentliche Aufträge mit wenig Wettbewerb.")
+        lede = ("Wenn ein öffentlicher Auftrag kein Angebot erhält, wird er meist erneut ausgeschrieben, oft mit weniger Wettbewerb. Nach einem "
+                "erfolglosen Verfahren darf der Auftraggeber laut EU-Richtlinie sogar direkt verhandeln. Hier sind die offenen Neuausschreibungen "
+                "und die jüngsten gescheiterten Verfahren.")
+    elif lang == "es":
+        n = country_name(code, "es")
+        scope = ""
+        h1 = f"Licitaciones desiertas y relanzadas en {n}"
+        title = f"Licitaciones públicas desiertas y relanzadas en {n} (semana {week})"
+        desc = (f"{len(rel)} licitaciones abiertas que relanzan un procedimiento fallido y {len(fail)} procedimientos sin ofertas o con "
+                f"todas rechazadas en {n}, actualizado cada semana. Contratos públicos con poca competencia.")
+        lede = ("Cuando un contrato público no recibe ofertas, casi siempre vuelve a licitarse, a menudo con menos competencia. Tras un "
+                "procedimiento desierto, la directiva europea permite incluso negociar directamente. Aquí están las nuevas licitaciones abiertas "
+                "y los procedimientos fallidos recientes.")
+    elif lang == "it":
+        n = country_name(code, "it")
+        scope = ""
+        h1 = f"Gare deserte e ripubblicate in {n}"
+        title = f"Gare d'appalto deserte e ripubblicate in {n} (settimana {week})"
+        desc = (f"{len(rel)} gare aperte che ripropongono una procedura fallita e {len(fail)} procedure senza offerte o con tutte le "
+                f"offerte escluse in {n}, aggiornato ogni settimana. Appalti pubblici con poca concorrenza.")
+        lede = ("Quando un appalto pubblico non riceve offerte, quasi sempre torna in gara, spesso con meno concorrenza. Dopo una procedura "
+                "andata deserta, la direttiva UE consente perfino di negoziare direttamente. Ecco le nuove gare aperte e le procedure fallite recenti.")
     else:
         scope = f": {sector[2].lower()}" if sector else ""
         h1 = f"Second-chance public tenders in {name}{scope}"
@@ -221,12 +330,15 @@ def render_country(out, code, data, today, week, lang, sector=None):
                 "updated weekly. Public contracts with little competition.")
         lede = ("When a public contract gets no tenders, it usually comes back, often with less competition. Under the EU directive, the buyer may even "
                 "negotiate directly after an unsuccessful procedure. Here are the open relaunches and the recent failures.")
-    path = f"tenders/{slug}/" + (f"{sector[0]}/" if sector else "")
+    path = (f"{lang}/" if lang in ("de", "es", "it") else "") + f"tenders/{slug}/" + (f"{sector[0]}/" if sector else "")
+    alternates = None
+    if code in LOCAL and not sector:
+        alternates = {"en": f"/tenders/{slug}/", LOCAL[code]: f"/{LOCAL[code]}/tenders/{slug}/"}
     chips = ""
     if code == "FRA" and lang == "fr":
         chips = "<div class='chips'>" + "".join(
             f"<a href='/tenders/france/{s}/'>{esc(fr)}</a>" for s, fr, en, _ in SECTORS) + "<a href='/tenders/'>Autres pays</a></div>"
-    body = (head(lang, title, desc, f"{SITE}/{path}") + f"<h1>{esc(h1)}</h1><p class='lede'>{esc(lede)}</p>{chips}"
+    body = (head(lang, title, desc, f"{SITE}/{path}", alternates=alternates) + f"<h1>{esc(h1)}</h1><p class='lede'>{esc(lede)}</p>{chips}"
             f"<div class='kpis'><div class='kpi'><b>{len(rel)}</b><span>{esc(t['rel'])}</span></div>"
             f"<div class='kpi'><b>{len(fail)}</b><span>{esc(t['fail'])}</span></div></div>"
             f"<p class='small'>{t['updated']} {today.isoformat()}.</p>"
@@ -323,6 +435,8 @@ def main():
                 urls.append(render_country(out, code, data, today, week, "fr", sector=sec))
         else:
             urls.append(render_country(out, code, data, today, week, "en"))
+            if code in LOCAL:
+                urls.append(render_country(out, code, data, today, week, LOCAL[code]))
         print(code, stats[code], flush=True)
     if not stats:
         raise SystemExit("no country could be built")

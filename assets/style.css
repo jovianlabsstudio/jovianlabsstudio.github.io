@@ -6,12 +6,21 @@ a{color:var(--accent)}header,main,footer{max-width:1080px;margin:0 auto;padding:
 /* En-tête commun */
 header{display:flex;align-items:center;justify-content:space-between;gap:10px 16px;padding-top:16px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap}.brand img{width:30px;height:30px;border-radius:50%}
-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-left:auto}
 nav a{padding:6px 11px;border-radius:999px;border:1px solid transparent;text-decoration:none;color:var(--ink2);font-size:.95rem;white-space:nowrap}
 nav a:hover{color:var(--ink);border-color:var(--line)}nav a.on{color:var(--ink);background:var(--card);border-color:var(--line);font-weight:600}
 nav a.navcta{border-color:var(--gold);color:var(--ink)}nav a.navcta.on{background:var(--goldsoft)}
-.langs{display:flex;gap:2px}.langs a{font-size:.78rem;padding:3px 7px;border-radius:6px;text-decoration:none;color:var(--ink2);border:1px solid var(--line)}
-.langs a.on{color:var(--ink);background:var(--card);font-weight:700}
+details.langmenu{position:relative;background:none;border:0;padding:0;margin:0}
+.langmenu summary{list-style:none;display:flex;align-items:center;gap:6px;cursor:pointer;padding:6px 11px;border:1px solid var(--line);border-radius:999px;
+color:var(--ink2);font-size:.85rem;font-weight:600;background:var(--card)}.langmenu summary::-webkit-details-marker{display:none}.langmenu summary:hover{color:var(--ink)}
+.langmenu>div{position:absolute;right:0;top:calc(100% + 6px);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px;min-width:160px;
+box-shadow:0 10px 30px rgba(0,0,0,.14);z-index:20;display:flex;flex-direction:column}
+.langmenu>div a{padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:.93rem}.langmenu>div a:hover{background:var(--bg)}
+.langmenu>div a.on{font-weight:700;background:var(--goldsoft)}
+.langs-foot a{text-decoration:none}
+:lang(ja) body,body:lang(ja){font-family:system-ui,-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI",Meiryo,"Noto Sans JP",sans-serif}
+:lang(zh) body,body:lang(zh){font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC",sans-serif}
+:lang(ko) body,body:lang(ko){font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif}
 @media (max-width:700px){header{padding-top:12px}nav{order:3;width:100%;gap:2px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
 nav a{font-size:.87rem;padding:6px 7px}}
 

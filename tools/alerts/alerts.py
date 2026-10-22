@@ -24,7 +24,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 CFG = json.loads((HERE / "config.json").read_text())
 sys.path.insert(0, str(HERE.parent / "tenders"))
-from build import COUNTRIES, SECTORS  # noqa: E402
+from build import COUNTRIES, LOCAL, SECTOR_I18N, SECTORS, country_name  # noqa: E402
 
 UA = "jovianlabs-alerts/1.0"
 SECTOR_LABEL = {s[0]: (s[1], s[2]) for s in SECTORS}
@@ -70,6 +70,63 @@ T = {
                manage="Manage or cancel my subscription", why_get="You receive this email because you subscribed to the Jovian Labs second-chance alerts.",
                daily="Need daily monitoring or several countries? Our Apify Actor runs the same search on demand.",
                sources="Sources: TED (EU Publications Office) and BOAMP (DILA, Licence Ouverte). Always check the official notice."),
+    "de": dict(subj="Zweite Chance · {n} Neuausschreibung(en), {m} gescheiterte(s) Verfahren · {where}",
+               subj_none="Zweite Chance · diese Woche nichts Neues · {where}",
+               hello="Das ist neu diese Woche für {where}.",
+               rel="Offene Ausschreibungen nach einem gescheiterten Verfahren",
+               fail="Diese Woche gescheiterte Verfahren (kein Angebot oder alle ausgeschlossen)",
+               soon="Noch offen, Frist in den nächsten 14 Tagen",
+               none="Diese Woche nichts Neues für Ihre Kriterien.",
+               deadline="Frist", buyer="Auftraggeber", proc="Verfahren", value="Gesch. Wert", published="Veröffentlicht", why="Grund",
+               no_rece="kein Angebot", all_rej="alle ausgeschlossen", high="sehr wahrscheinlich", medium="wahrscheinlich",
+               text="Bekanntmachung nennt das Scheitern",
+               tip=("Nach Artikel 32 der Richtlinie 2014/24/EU darf ein Auftraggeber, dessen Verfahren keine geeigneten Angebote erhielt, "
+                    "neu ausschreiben oder ohne vorherige Bekanntmachung verhandeln: Wer sich früh beim Auftraggeber meldet, hat eine echte Chance."),
+               free_more="+ {k} weitere Neuausschreibung(en) und {m} gescheiterte(s) Verfahren für Ihre Kriterien diese Woche.",
+               upgrade="Vollständige Liste, gescheiterte Verfahren und CSV-Datei: auf Pro wechseln",
+               csv="Die angehängte CSV-Datei enthält alle Zeilen.",
+               manage="Abonnement verwalten oder kündigen",
+               why_get="Sie erhalten diese E-Mail, weil Sie die Second-Chance-Alerts von Jovian Labs abonniert haben.",
+               daily="Tägliche Überwachung oder mehrere Länder? Unser Apify-Actor führt dieselbe Suche auf Abruf aus.",
+               sources="Quellen: TED (Amt für Veröffentlichungen der EU) und BOAMP (DILA). Prüfen Sie immer die offizielle Bekanntmachung."),
+    "es": dict(subj="Segunda oportunidad · {n} licitación(es) relanzada(s), {m} procedimiento(s) fallido(s) · {where}",
+               subj_none="Segunda oportunidad · nada nuevo esta semana · {where}",
+               hello="Esto es lo nuevo esta semana para {where}.",
+               rel="Licitaciones abiertas que relanzan un procedimiento fallido",
+               fail="Procedimientos que fracasaron esta semana (sin ofertas o todas rechazadas)",
+               soon="Aún abiertas, plazo en los próximos 14 días",
+               none="Nada nuevo esta semana con sus criterios.",
+               deadline="Plazo", buyer="Comprador", proc="Procedimiento", value="Valor est.", published="Publicado", why="Motivo",
+               no_rece="sin ofertas", all_rej="todas rechazadas", high="coincidencia alta", medium="coincidencia probable",
+               text="el anuncio menciona el fracaso",
+               tip=("Según el artículo 32 de la Directiva 2014/24/UE, un órgano de contratación cuyo procedimiento no recibió ofertas adecuadas "
+                    "puede volver a licitar o negociar sin publicación previa: el proveedor que contacta pronto tiene una oportunidad real."),
+               free_more="+ {k} licitación(es) relanzada(s) más y {m} procedimiento(s) fallido(s) con sus criterios esta semana.",
+               upgrade="Lista completa, procedimientos fallidos y archivo CSV: pase a Pro",
+               csv="El archivo CSV adjunto contiene todas las filas.",
+               manage="Gestionar o cancelar mi suscripción",
+               why_get="Recibe este correo porque se suscribió a las alertas de segunda oportunidad de Jovian Labs.",
+               daily="¿Necesita seguimiento diario o varios países? Nuestro Actor de Apify hace la misma búsqueda bajo demanda.",
+               sources="Fuentes: TED (Oficina de Publicaciones de la UE) y BOAMP (DILA). Compruebe siempre el anuncio oficial."),
+    "it": dict(subj="Seconda possibilità · {n} gara/e ripubblicata/e, {m} procedura/e fallita/e · {where}",
+               subj_none="Seconda possibilità · niente di nuovo questa settimana · {where}",
+               hello="Ecco le novità della settimana per {where}.",
+               rel="Gare aperte che ripropongono una procedura fallita",
+               fail="Procedure fallite questa settimana (nessuna offerta o tutte escluse)",
+               soon="Ancora aperte, scadenza entro 14 giorni",
+               none="Niente di nuovo questa settimana per i suoi criteri.",
+               deadline="Scadenza", buyer="Stazione appaltante", proc="Procedura", value="Valore stim.", published="Pubblicato", why="Motivo",
+               no_rece="nessuna offerta", all_rej="tutte escluse", high="corrispondenza forte", medium="corrispondenza probabile",
+               text="l'avviso cita l'esito negativo",
+               tip=("Secondo l'articolo 32 della direttiva 2014/24/UE, una stazione appaltante la cui procedura non ha ricevuto offerte adeguate "
+                    "può ripubblicare la gara o negoziare senza previa pubblicazione: il fornitore che si fa avanti presto ha una possibilità concreta."),
+               free_more="+ altre {k} gara/e ripubblicata/e e {m} procedura/e fallita/e per i suoi criteri questa settimana.",
+               upgrade="Elenco completo, procedure fallite e file CSV: passi a Pro",
+               csv="Il file CSV allegato contiene tutte le righe.",
+               manage="Gestisci o disdici l'abbonamento",
+               why_get="Riceve questa email perché si è iscritto agli avvisi «seconda possibilità» di Jovian Labs.",
+               daily="Serve un monitoraggio quotidiano o più paesi? Il nostro Actor Apify fa la stessa ricerca su richiesta.",
+               sources="Fonti: TED (Ufficio delle pubblicazioni dell'UE) e BOAMP (DILA). Verifichi sempre l'avviso ufficiale."),
 }
 
 
@@ -126,13 +183,18 @@ def money(v, cur):
 
 
 def where_label(sub, lang):
-    c = COUNTRY_FR.get(sub["country"]) if lang == "fr" else COUNTRIES.get(sub["country"], (sub["country"],))[0]
+    c = country_name(sub["country"], lang)
     sec = sub.get("sector")
     if sec and sec not in ("all", ""):
-        c += " · " + SECTOR_LABEL.get(sec, (sec, sec))[0 if lang == "fr" else 1]
+        fr, en = SECTOR_LABEL.get(sec, (sec, sec))
+        c += " · " + (fr if lang == "fr" else SECTOR_I18N.get(sec, {}).get(lang, en))
     if (sub.get("keywords") or "").strip():
         c += " · « " + sub["keywords"].strip() + " »" if lang == "fr" else " · “" + sub["keywords"].strip() + "”"
     return c
+
+
+def default_language(country):
+    return "fr" if country == "FRA" else LOCAL.get(country, "en")
 
 
 TD = "padding:7px 8px;border-bottom:1px solid #e4e2da;vertical-align:top;font-size:14px"
@@ -178,7 +240,7 @@ def csv_attachment(rel, fail):
 
 def compose(sub, items, seen, today):
     """Renvoie (sujet, html, texte, pièce jointe CSV ou None) pour un abonné."""
-    lang = sub.get("language") if sub.get("language") in T else ("fr" if sub["country"] == "FRA" else "en")
+    lang = sub.get("language") if sub.get("language") in T else default_language(sub["country"])
     t = T[lang]
     tomorrow = (today + dt.timedelta(days=1)).isoformat()
     # un appel qui se clôt aujourd'hui n'est plus utile : on garde les dates limites à partir de demain

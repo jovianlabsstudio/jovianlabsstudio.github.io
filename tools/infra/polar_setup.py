@@ -45,7 +45,8 @@ FIELDS = [
         max_length=200)),
     dict(type="select", slug="language", name="Language", properties=dict(
         form_label="Email language / Langue des e-mails",
-        options=[{"value": "en", "label": "English"}, {"value": "fr", "label": "Français"}])),
+        options=[{"value": "en", "label": "English"}, {"value": "fr", "label": "Français"}, {"value": "de", "label": "Deutsch"},
+                 {"value": "es", "label": "Español"}, {"value": "it", "label": "Italiano"}])),
 ]
 REQUIRED = {"country": True, "sector": True, "keywords": False, "language": True}
 
@@ -74,8 +75,15 @@ def main():
     ids = {}
     for f in FIELDS:
         if f["slug"] in existing:
-            ids[f["slug"]] = existing[f["slug"]]["id"]
-            print("field ok     ", f["slug"])
+            cur = existing[f["slug"]]
+            ids[f["slug"]] = cur["id"]
+            want = f["properties"].get("options")
+            have = (cur.get("properties") or {}).get("options")
+            if want and [o["value"] for o in want] != [o.get("value") for o in (have or [])]:
+                call("PATCH", f"/custom-fields/{cur['id']}", dict(type=f["type"], properties=f["properties"]))
+                print("field updated", f["slug"])
+            else:
+                print("field ok     ", f["slug"])
         else:
             ids[f["slug"]] = call("POST", "/custom-fields/", f)["id"]
             print("field created", f["slug"])

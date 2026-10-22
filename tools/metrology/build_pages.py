@@ -18,7 +18,7 @@ APIFY_FI = "https://apify.com/jovianlabs/fiber-diameter-analyzer"
 MAIL = "contact@jovianlabsstudio.com"
 
 
-def page(path, title, desc, body, lang="en", jsonld=None, alt=None, head=""):
+def page(path, title, desc, body, lang="en", jsonld=None, alt=None, head="", foot=None):
     url = f"{SITE}/{path}"
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
     alternates = {h: "/" + p for h, p in (alt or {}).items()}
@@ -30,11 +30,19 @@ def page(path, title, desc, body, lang="en", jsonld=None, alt=None, head=""):
 <link rel="stylesheet" href="/assets/style.css">{ld}{head}</head><body>
 {site_header(lang, "metrology", alternates)}
 <main>{body}</main>
-{site_footer(lang, "Automated image analysis, not an accredited (ISO/IEC 17025) measurement. Not affiliated with the European Commission or any standards body." if lang == "en" else "Analyse d'images automatisée, pas une mesure accréditée (ISO/IEC 17025). Sans lien avec la Commission européenne ni un organisme de normalisation.")}</body></html>"""
+{site_footer(lang, foot or ("Automated image analysis, not an accredited (ISO/IEC 17025) measurement. Not affiliated with the European Commission or any standards body." if lang == "en" else "Analyse d'images automatisée, pas une mesure accréditée (ISO/IEC 17025). Sans lien avec la Commission européenne ni un organisme de normalisation."))}</body></html>"""
     out = ROOT / path / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
     return url
+
+
+ASIA = ("ja", "zh", "ko")
+SUB = {"hub": "", "ps": "particle-size/", "po": "porosity/", "fi": "fiber-diameter/"}
+
+
+def alt_for(key):
+    return {"en": f"metrology/{SUB[key]}", **{l: f"{l}/metrology/{SUB[key]}" for l in ASIA}}
 
 
 def app_ld(name, desc, url, apify):
@@ -100,7 +108,7 @@ Image Analysis</a>.</p>
 report. Write to <a href="mailto:{MAIL}">{MAIL}</a>.</p></div>"""
     urls.append(page("metrology/", "Microscopy image analysis tools: particle size, nanomaterial screening, porosity | Jovian Labs",
                      "Online SEM/TEM particle size analysis with EU nanomaterial screening, fiber diameter measurement and porosity "
-                     "of polished cross-sections, with confidence intervals, quality checks and PDF reports.", body))
+                     "of polished cross-sections, with confidence intervals, quality checks and PDF reports.", body, alt=alt_for("hub")))
 
     # ------------------------------------------------------------------ particle size
     faq = [
@@ -117,7 +125,7 @@ report. Write to <a href="mailto:{MAIL}">{MAIL}</a>.</p></div>"""
 <p class="lede">Turn electron microscope images into a particle size distribution report in about ten seconds per image:
 D10, D50 and D90 with 95% confidence intervals, minimum and maximum Feret diameters, shape factors, nine automatic quality checks
 and a screening against the EU definition of nanomaterial.</p>
-<p><a class="tag hot" href="{APIFY_PS}">Run it on Apify</a> &nbsp; <a class="tag" href="/metrology/examples/particle-size-demo-report.pdf">Example report (PDF)</a></p>
+<p><a class="btn pro" href="{APIFY_PS}">Run it on Apify</a><a class="btn ghost" href="/metrology/examples/particle-size-demo-report.pdf">Example report (PDF)</a></p>
 <h2>EU nanomaterial screening</h2>
 <p>Under Commission Recommendation 2022/C 229/01, a material meets criterion (a) when 50% or more of its particles, counted by
 number, have at least one external dimension between 1 and 100 nm. Each run reports the share of particles whose minimum Feret
@@ -148,7 +156,7 @@ image list: it analyses three synthetic images and compares the result with the 
                      "a PDF report and an EU nanomaterial definition screening. 1 USD per image, free demo.",
                      body, jsonld=[app_ld("SEM/TEM Particle Size & Nanomaterial Screening",
                                           "Particle size distribution and EU nanomaterial screening from electron microscope images.",
-                                          f"{SITE}/metrology/particle-size/", APIFY_PS), faq_ld(faq)]))
+                                          f"{SITE}/metrology/particle-size/", APIFY_PS), faq_ld(faq)], alt=alt_for("ps")))
 
     # ------------------------------------------------------------------ porosity
     faq = [
@@ -168,7 +176,7 @@ image list: it analyses three synthetic images and compares the result with the 
 <p class="lede">For metal additive manufacturing, castings, sintered parts and thermal spray coatings: upload micrographs of a
 cross-section and get the area porosity with its 95% confidence interval and relative accuracy, the pore size distribution, the
 largest pores with their position, the share of round and lack-of-fusion pores, eight quality checks and a PDF report.</p>
-<p><a class="tag hot" href="{APIFY_PO}">Run it on Apify</a> &nbsp; <a class="tag" href="/metrology/examples/porosity-demo-report.pdf">Example report (PDF)</a></p>
+<p><a class="btn pro" href="{APIFY_PO}">Run it on Apify</a><a class="btn ghost" href="/metrology/examples/porosity-demo-report.pdf">Example report (PDF)</a></p>
 <h2>Built for porosity, not adapted from a generic tool</h2>
 <ul>
 <li><b>Prudent threshold.</b> The lower of the Otsu threshold and the noise limit of the material, so that grain contrast and polishing
@@ -196,7 +204,7 @@ smearing) are not detected automatically; a 2D section does not give volume poro
                      "relative accuracy, pore sizes, largest pores, gas vs lack-of-fusion pores and a PDF report.",
                      body, jsonld=[app_ld("Porosity Analyzer for Metallography (AM & Coatings)",
                                           "Area porosity and pore analysis from polished cross-section micrographs.",
-                                          f"{SITE}/metrology/porosity/", APIFY_PO), faq_ld(faq)]))
+                                          f"{SITE}/metrology/porosity/", APIFY_PO), faq_ld(faq)], alt=alt_for("po")))
 
     # ------------------------------------------------------------------ fibres
     faq = [
@@ -217,7 +225,7 @@ smearing) are not detected automatically; a 2D section does not give volume poro
 <p class="lede">For electrospun nanofiber mats, filter media, nonwovens and scaffolds: upload SEM images and get the length-weighted
 diameter distribution with its 95% confidence interval, D10/D50/D90, beads, fiber alignment, eight quality checks and a PDF
 report. No more drawing 100 lines by hand.</p>
-<p><a class="tag hot" href="{APIFY_FI}">Run it on Apify</a> &nbsp; <a class="tag" href="/metrology/examples/fiber-diameter-demo-report.pdf">Example report (PDF)</a></p>
+<p><a class="btn pro" href="{APIFY_FI}">Run it on Apify</a><a class="btn ghost" href="/metrology/examples/fiber-diameter-demo-report.pdf">Example report (PDF)</a></p>
 <h2>Measured like a line width, not guessed from a threshold</h2>
 <p>Most automatic tools measure fibers on a black-and-white mask, so the result moves with the threshold. Here the fiber axis is
 traced, and at each point the width is read on the grey-level profile across the fiber, at half maximum, to a fraction of a pixel.
@@ -240,7 +248,7 @@ style="max-width:100%;height:auto;border-radius:10px;border:1px solid var(--line
                      "beads and alignment, measured like a CD-SEM line width. 1 USD per image, free demo.",
                      body, jsonld=[app_ld("Fiber Diameter Analyzer for SEM",
                                           "Fiber diameter distribution, beads and alignment from SEM images of fiber mats.",
-                                          f"{SITE}/metrology/fiber-diameter/", APIFY_FI), faq_ld(faq)]))
+                                          f"{SITE}/metrology/fiber-diameter/", APIFY_FI), faq_ld(faq)], alt=alt_for("fi")))
 
     # ------------------------------------------------------------------ outil gratuit : contrôle d'échelle (navigateur)
     faq = [
@@ -354,6 +362,7 @@ français. 1 USD par image, démonstration gratuite.</p></div>
                      "Ce que dit la recommandation 2022/C 229/01 (50 % des particules en nombre avec une dimension de 1 à 100 nm), "
                      "pourquoi la microscopie électronique, et comment lire un résultat de dépistage.", body, lang="fr", alt=alt))
 
+    urls += build_asia()
     today = dt.date.today().isoformat()
     sm = "".join(f"<url><loc>{u}</loc><lastmod>{today}</lastmod></url>" for u in urls)
     (ROOT / "metrology" / "sitemap.xml").write_text(
@@ -361,6 +370,74 @@ français. 1 USD par image, démonstration gratuite.</p></div>
     return urls
 
 
+def build_asia():
+    """Hub et pages des 3 outils en japonais, chinois et coréen (textes : i18n_metro.py)."""
+    from i18n_metro import T
+    urls = []
+    img = 'style="max-width:100%;height:auto;border-radius:10px;border:1px solid var(--line)"'
+    li = lambda xs: "<ul>" + "".join(f"<li>{x}</li>" for x in xs) + "</ul>"
+    for lang in ASIA:
+        L, c = T[lang], T[lang]["common"]
+        u = lambda k: f"/{lang}/metrology/{SUB[k]}"
+        btns = lambda apify, pdf: (f'<p><a class="btn pro" href="{apify}">{c["run"]}</a>'
+                                   f'<a class="btn ghost" href="/metrology/examples/{pdf}">{c["ex"]}</a></p>')
+        # hub
+        h = L["hub"]
+        hrefs = [u("ps"), u("po"), u("fi"), "/metrology/scale-check/"]
+        tiles = "".join(f'<a class="tile" href="{href}"><div class="k">{k}</div><div class="t">{t}</div><div class="s">{d}</div></a>'
+                        for href, (k, t, d) in zip(hrefs, h["tiles"]))
+        body = (f'<h1>{h["h1"]}</h1><p class="lede">{h["lede"]}</p><div class="grid">{tiles}</div>'
+                f'<h2>{h["diff_h"]}</h2>{li(h["diff"])}'
+                f'<p class="small">{h["hf"]}<a href="https://huggingface.co/spaces/jovianlabs/microscopy-image-analysis">Microscopy Image Analysis</a></p>'
+                f'<div class="cta"><b>{h["cta_h"]}</b><p class="small">{h["cta_t"].format(mail=f"<a href=mailto:{MAIL}>{MAIL}</a>")}</p></div>')
+        urls.append(page(f"{lang}/metrology/", h["title"], h["desc"], body, lang=lang, alt=alt_for("hub"), foot=c["foot"]))
+        # granulométrie
+        t = L["ps"]
+        rows = "".join(f"<tr><td>{a}</td><td>{b}</td></tr>" for a, b in t["out_rows"])
+        body = (f'<h1>{t["h1"]}</h1><p class="lede">{t["lede"]}</p>{btns(APIFY_PS, "particle-size-demo-report.pdf")}'
+                f'<h2>{t["nano_h"]}</h2><p>{t["nano_p"].format(guide="/metrology/eu-nanomaterial-definition/")}</p>'
+                f'<h2>{t["out_h"]}</h2><div class="card"><table><thead><tr><th>{t["out_th"][0]}</th><th>{t["out_th"][1]}</th></tr></thead>'
+                f'<tbody>{rows}</tbody></table></div><h2>{t["acc_h"]}</h2>{li(t["acc"])}'
+                f'<h2>{c["sheet_h"]}</h2><p><img src="/metrology/examples/particle-size-control-sheet.jpg" alt="{t["alt"]}" {img}></p>'
+                f'<h2>{c["faq_h"]}</h2>{faq_html(t["faq"])}'
+                f'<div class="cta"><b>{t["try_h"]}</b><p class="small">{t["try_t"].format(apify=APIFY_PS)}</p></div>')
+        urls.append(page(f"{lang}/metrology/particle-size/", t["title"], t["desc"], body, lang=lang, alt=alt_for("ps"), foot=c["foot"],
+                         jsonld=[app_ld("SEM/TEM Particle Size & Nanomaterial Screening", t["desc"], f"{SITE}/{lang}/metrology/particle-size/",
+                                        APIFY_PS), faq_ld(t["faq"])]))
+        # porosité
+        t = L["po"]
+        data = [("0.59%", "0.59%", 29, "137.0", "138.6"), ("2.17%", "2.19%", 104, "152.7", "152.8"), ("6.16%", "6.21%", 244, "153.7", "154.0")]
+        po, pc = ("(", ")") if lang == "ko" else ("（", "）")
+        rows = "".join(f'<tr><td class="num">{a}</td><td class="num">{b}</td><td class="num">{n} {t["of"]} {n}</td>'
+                       f'<td class="num">{m} µm {po}{t["true"]} {tv}{pc}</td></tr>' for a, b, n, m, tv in data)
+        body = (f'<h1>{t["h1"]}</h1><p class="lede">{t["lede"]}</p>{btns(APIFY_PO, "porosity-demo-report.pdf")}'
+                f'<h2>{t["built_h"]}</h2>{li(t["built"])}'
+                f'<h2>{t["acc_h"]}</h2><div class="card"><table><thead><tr>{"".join(f"<th>{x}</th>" for x in t["acc_th"])}</tr></thead>'
+                f'<tbody>{rows}</tbody></table></div><p class="small">{t["acc_note"]}</p>'
+                f'<h2>{c["sheet_h"]}</h2><p><img src="/metrology/examples/porosity-control-sheet.jpg" alt="{t["alt"]}" {img}></p>'
+                f'<h2>{c["faq_h"]}</h2>{faq_html(t["faq"])}<p class="small">{t["limits"]}</p>')
+        urls.append(page(f"{lang}/metrology/porosity/", t["title"], t["desc"], body, lang=lang, alt=alt_for("po"), foot=c["foot"],
+                         jsonld=[app_ld("Porosity Analyzer for Metallography (AM & Coatings)", t["desc"], f"{SITE}/{lang}/metrology/porosity/",
+                                        APIFY_PO), faq_ld(t["faq"])]))
+        # fibres
+        t = L["fi"]
+        data = [("295 nm", "292 nm", "284–300 nm"), ("299 nm", "295 nm", "287–304 nm"), ("148 nm", "153 nm", "150–156 nm"),
+                ("305 nm", "302 nm", "293–311 nm")]
+        rows = "".join(f'<tr><td>{case}</td><td class="num">{a}</td><td class="num">{b}</td><td class="num">{ci}</td></tr>'
+                       for case, (a, b, ci) in zip(t["cases"], data))
+        body = (f'<h1>{t["h1"]}</h1><p class="lede">{t["lede"]}</p>{btns(APIFY_FI, "fiber-diameter-demo-report.pdf")}'
+                f'<h2>{t["how_h"]}</h2><p>{t["how_p"]}</p>'
+                f'<h2>{t["acc_h"]}</h2><div class="card"><table><thead><tr>{"".join(f"<th>{x}</th>" for x in t["acc_th"])}</tr></thead>'
+                f'<tbody>{rows}</tbody></table></div><p class="small">{t["acc_note"]}</p>'
+                f'<h2>{c["sheet_h"]}</h2><p><img src="/metrology/examples/fiber-control-sheet.jpg" alt="{t["alt"]}" {img}></p>'
+                f'<h2>{c["faq_h"]}</h2>{faq_html(t["faq"])}')
+        urls.append(page(f"{lang}/metrology/fiber-diameter/", t["title"], t["desc"], body, lang=lang, alt=alt_for("fi"), foot=c["foot"],
+                         jsonld=[app_ld("Fiber Diameter Analyzer for SEM", t["desc"], f"{SITE}/{lang}/metrology/fiber-diameter/", APIFY_FI),
+                                 faq_ld(t["faq"])]))
+    return urls
+
+
 if __name__ == "__main__":
+    build()  # 1re passe : crée les pages traduites (les liens du menu vers elles n'existent qu'ensuite)
     for u in build():
         print(u)
