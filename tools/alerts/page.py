@@ -18,7 +18,7 @@ LIVE = bool(CFG["checkout_links"].get("free") and CFG["checkout_links"].get("pro
 COUNTRY_FR = {"FRA": "France", "DEU": "Allemagne", "ITA": "Italie", "ESP": "Espagne", "POL": "Pologne", "ROU": "Roumanie",
               "NLD": "Pays-Bas", "BEL": "Belgique", "AUT": "Autriche", "PRT": "Portugal", "CZE": "Tchéquie", "SWE": "Suède",
               "FIN": "Finlande", "DNK": "Danemark", "IRL": "Irlande", "GRC": "Grèce"}
-MAIL = CFG.get("contact", "jovianlabsstudio@gmail.com")
+MAIL = CFG.get("contact", "contact@jovianlabsstudio.com")
 
 TXT = {
     "en": dict(

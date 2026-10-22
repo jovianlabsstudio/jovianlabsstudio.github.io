@@ -201,7 +201,7 @@ with gr.Blocks(title="Microscopy image analysis · Jovian Labs", theme=gr.themes
         f"<small>Free demo: {DAILY_CAP} analyses per day for everyone, one image each. Images are sent to Apify for the "
         "analysis; the uploaded file is deleted right after the run, and run outputs are removed automatically by Apify "
         "after a few days. Automated image analysis, not an accredited (ISO/IEC 17025) measurement. "
-        "Contact: jovianlabsstudio@gmail.com</small>"
+        "Contact: contact@jovianlabsstudio.com</small>"
     )
 
 if __name__ == "__main__":

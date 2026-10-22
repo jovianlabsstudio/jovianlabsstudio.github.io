@@ -19,7 +19,7 @@ from tenderslib import boamp, ted  # noqa: E402
 
 SITE = "https://jovianlabsstudio.com"
 ACTOR = "https://apify.com/jovianlabs/failed-public-tenders"
-EMAIL = "jovianlabsstudio@gmail.com"
+EMAIL = "contact@jovianlabsstudio.com"
 
 COUNTRIES = {"FRA": ("France", "france"), "DEU": ("Germany", "germany"), "ITA": ("Italy", "italy"), "ESP": ("Spain", "spain"),
              "POL": ("Poland", "poland"), "ROU": ("Romania", "romania"), "NLD": ("Netherlands", "netherlands"),

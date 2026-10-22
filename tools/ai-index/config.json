@@ -1,7 +1,7 @@
 {
   "site_base": "https://jovianlabsstudio.com",
   "path": "ai-index",
-  "contact_email": "jovianlabsstudio@gmail.com",
+  "contact_email": "contact@jovianlabsstudio.com",
   "categories": [
     {"slug": "plumbers", "singular": "plumber", "plural": "plumbers", "label": "Plumbers"},
     {"slug": "dentists", "singular": "dentist", "plural": "dentists", "label": "Dentists"}

@@ -12,7 +12,7 @@ SITE = "https://jovianlabsstudio.com"
 APIFY_PS = "https://apify.com/jovianlabs/sem-tem-particle-size"
 APIFY_PO = "https://apify.com/jovianlabs/porosity-analyzer"
 APIFY_FI = "https://apify.com/jovianlabs/fiber-diameter-analyzer"
-MAIL = "jovianlabsstudio@gmail.com"
+MAIL = "contact@jovianlabsstudio.com"
 
 
 def page(path, title, desc, body, lang="en", jsonld=None, alt=None, head=""):
