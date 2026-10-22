@@ -1,69 +1,69 @@
 {
- "date": "2026-10-19",
+ "date": "2026-10-22",
  "stats": {
   "FRA": {
-   "relaunch": 109,
-   "failed": 69
+   "relaunch": 114,
+   "failed": 70
   },
   "DEU": {
-   "relaunch": 143,
-   "failed": 231
+   "relaunch": 131,
+   "failed": 246
   },
   "ITA": {
-   "relaunch": 43,
-   "failed": 243
+   "relaunch": 41,
+   "failed": 199
   },
   "ESP": {
-   "relaunch": 53,
+   "relaunch": 50,
    "failed": 117
   },
   "POL": {
-   "relaunch": 623,
-   "failed": 457
+   "relaunch": 577,
+   "failed": 510
   },
   "ROU": {
-   "relaunch": 206,
-   "failed": 151
+   "relaunch": 191,
+   "failed": 72
   },
   "NLD": {
-   "relaunch": 9,
-   "failed": 17
+   "relaunch": 8,
+   "failed": 19
   },
   "BEL": {
-   "relaunch": 10,
-   "failed": 38
+   "relaunch": 7,
+   "failed": 43
   },
   "AUT": {
-   "relaunch": 4,
-   "failed": 8
+   "relaunch": 3,
+   "failed": 10
   },
   "PRT": {
    "relaunch": 16,
-   "failed": 45
+   "failed": 43
   },
   "CZE": {
-   "relaunch": 96,
-   "failed": 97
+   "relaunch": 91,
+   "failed": 100
   },
   "SWE": {
-   "relaunch": 25,
-   "failed": 38
+   "relaunch": 20,
+   "failed": 35
   },
   "FIN": {
-   "relaunch": 8,
-   "failed": 25
+   "relaunch": 5,
+   "failed": 26
   },
   "DNK": {
-   "relaunch": 11,
-   "failed": 26
+   "relaunch": 12,
+   "failed": 30
   },
   "IRL": {
    "relaunch": 2,
-   "failed": 18
+   "failed": 21
   },
   "GRC": {
-   "relaunch": 9,
-   "failed": 30
+   "relaunch": 7,
+   "failed": 33
   }
  },
  "failures": []
