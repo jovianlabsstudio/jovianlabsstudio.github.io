@@ -16,22 +16,38 @@ from chrome import MAIL, SITE, esc, footer, header, hreflang_links  # noqa: E402
 
 LANGS = ("en", "fr")
 BASE = {"en": "/games/", "fr": "/fr/jeux/"}
-GAMES = ("counterpoise", "equipoise")
-SHOTS = {"counterpoise": 4, "equipoise": 3}
+GAMES = ("monster-steps", "counterpoise", "equipoise")
+SHOTS = {"monster-steps": 3, "counterpoise": 4, "equipoise": 3}
+NAMES = {"monster-steps": "Monster Steps", "counterpoise": "Counterpoise", "equipoise": "Equipoise"}
 PLAY = {
+    "monster-steps": [("Playgama", "https://playgama.ai/play/vky5ziuu5m3eor")],
     "counterpoise": [("Playgama", "https://playgama.ai/play/ve3y5vovpfap7n"), ("itch.io", "https://jovianlabs.itch.io/counterpoise")],
     "equipoise": [("Playgama", "https://playgama.ai/play/phiyufgxws5ylk"), ("itch.io", "https://jovianlabs.itch.io/equipoise")],
 }
 
 T = {
     "en": dict(
-        title="Games · Jovian Labs", desc="Free puzzle games for the browser by Jovian Labs: Counterpoise and Equipoise. Mouse or touch, no sign-in.",
+        title="Games · Jovian Labs", desc="Free puzzle games for the browser by Jovian Labs: Monster Steps, Counterpoise and Equipoise. Mouse or touch, no sign-in.",
         h1="Games", lede="Calm, clever puzzle games for the browser. Free to play with a mouse or a finger, nothing to install, no sign-in.",
-        facts=["40 levels each, every one tested to be solvable", "A new daily puzzle every day", "English and French"],
+        facts=["Every level tested to be solvable", "Mouse, touch or keyboard", "English and French"],
         play="Play on {p}", more="About the game", how_h="How to play", feat_h="Features", shots_h="Screenshots",
         where_h="Where to play", fair="Fair by design: the pieces and puzzles never change to push you toward an ad.",
         back="All games", contact="Questions or a bug? Write to {mail}.",
         games={
+            "monster-steps": dict(
+                k="Halloween puzzle", tag="A turn-based Halloween escape: every step you take, the monsters take theirs.",
+                desc="Lead a little witch to the glowing door, one tile at a time, while a mummy, a werewolf, a vampire and Anubis close in. "
+                     "After each of your steps, every monster takes its own: red claw marks show the tiles where you would be caught, "
+                     "and footprints show where each monster is about to go. Think ahead, wait at the right moment, "
+                     "and lure two monsters into each other to knock them out.",
+                how=[("Step", "Tap a tile next to you, swipe or use the arrow keys. Tap yourself to wait a turn."),
+                     ("Watch", "Red claws mark the deadly tiles. The mummy and the vampire take one step, the werewolf two; Anubis charges along his line."),
+                     ("Escape", "Reach the door. Never caught, no hint and within par: three stars.")],
+                feat=["33 levels over four haunted nights: graveyard, dark woods, castle and the tomb of Anubis",
+                      "Four monsters with their own rules, introduced one at a time",
+                      "Undo any step, even after being gobbled",
+                      "Every level checked by a solver; par is the shortest way out"],
+                alt="Monster Steps: a little witch with a pumpkin lantern surrounded by a mummy, a werewolf, a vampire and Anubis under a full moon"),
             "counterpoise": dict(
                 k="Block puzzle", tag="A block puzzle on a balancing board: fill rows and columns, but don't tip it over.",
                 desc="Drag gem blocks onto an 8×8 grid and fill a row or a column to clear it. The board rests on a golden pivot: "
@@ -59,13 +75,27 @@ T = {
                 alt="Equipoise: a golden hanging mobile with numbered gem weights in front of Jupiter"),
         }),
     "fr": dict(
-        title="Jeux · Jovian Labs", desc="Jeux de réflexion gratuits dans le navigateur, par Jovian Labs : Counterpoise et Equipoise. À la souris ou au doigt, sans inscription.",
+        title="Jeux · Jovian Labs", desc="Jeux de réflexion gratuits dans le navigateur, par Jovian Labs : Monster Steps, Counterpoise et Equipoise. À la souris ou au doigt, sans inscription.",
         h1="Jeux", lede="Des jeux de réflexion calmes et malins, dans le navigateur. Gratuits, à la souris ou au doigt, rien à installer, sans inscription.",
-        facts=["40 niveaux chacun, tous vérifiés solubles", "Un nouveau défi chaque jour", "En français et en anglais"],
+        facts=["Chaque niveau vérifié soluble", "Souris, doigt ou clavier", "En français et en anglais"],
         play="Jouer sur {p}", more="Le jeu en détail", how_h="Comment jouer", feat_h="Ce qu'il propose", shots_h="Captures",
         where_h="Où jouer", fair="Loyal par principe : les pièces et les énigmes ne changent jamais pour vous pousser vers une pub.",
         back="Tous les jeux", contact="Une question ou un bug ? Écrivez à {mail}.",
         games={
+            "monster-steps": dict(
+                k="Puzzle d'Halloween", tag="Une évasion au tour par tour pour Halloween : à chaque pas que vous faites, les monstres font le leur.",
+                desc="Guidez une petite sorcière jusqu'à la porte lumineuse, case par case, pendant qu'une momie, un loup-garou, un vampire "
+                     "et Anubis se rapprochent. Après chacun de vos pas, chaque monstre fait le sien : des griffes rouges montrent les cases "
+                     "où l'on vous attraperait, et des empreintes montrent où chaque monstre va aller. Anticipez, attendez au bon moment, "
+                     "et faites se percuter deux monstres pour les assommer.",
+                how=[("Avancer", "Touchez une case voisine, glissez ou utilisez les flèches. Touchez-vous pour attendre un tour."),
+                     ("Observer", "Les griffes rouges marquent les cases mortelles. La momie et le vampire font un pas, le loup-garou deux ; Anubis fonce dans sa ligne."),
+                     ("S'évader", "Atteignez la porte. Jamais attrapé, sans indice et dans le par : trois étoiles.")],
+                feat=["33 niveaux sur quatre nuits hantées : cimetière, bois sombre, château et tombeau d'Anubis",
+                      "Quatre monstres aux règles différentes, présentés un par un",
+                      "Annuler n'importe quel pas, même après s'être fait croquer",
+                      "Chaque niveau vérifié par un solveur ; le par est le plus court chemin"],
+                alt="Monster Steps : une petite sorcière avec une lanterne citrouille, entourée d'une momie, d'un loup-garou, d'un vampire et d'Anubis sous la pleine lune"),
             "counterpoise": dict(
                 k="Puzzle de blocs", tag="Un puzzle de blocs sur un plateau en équilibre : remplissez lignes et colonnes sans le faire basculer.",
                 desc="Glissez des blocs « gemmes » sur une grille de 8 × 8 et remplissez une ligne ou une colonne pour l'effacer. "
@@ -131,7 +161,7 @@ def buttons(lang, game, more=False):
 
 def videogame_ld(lang, game):
     g = T["en"]["games"][game]
-    return {"@context": "https://schema.org", "@type": "VideoGame", "name": game.capitalize(), "url": f"{SITE}{page_path(lang, game)}",
+    return {"@context": "https://schema.org", "@type": "VideoGame", "name": NAMES[game], "url": f"{SITE}{page_path(lang, game)}",
             "description": T[lang]["games"][game]["tag"], "image": f"{SITE}/assets/img/games/{game}-cover.jpg",
             "genre": ["Puzzle", g["k"]], "gamePlatform": "Web browser", "operatingSystem": "Any", "applicationCategory": "Game",
             "playMode": "SinglePlayer", "inLanguage": ["en", "fr"], "isAccessibleForFree": True,
@@ -146,7 +176,7 @@ def index(lang):
     for i, game in enumerate(GAMES):
         g = t["games"][game]
         sections += (f'<section class="prod{" flip" if i % 2 else ""}"><div><div class="k">{esc(g["k"])}</div>'
-                     f'<h2>{game.capitalize()}</h2><p>{esc(g["tag"])}</p><ul>{"".join(f"<li>{esc(x)}</li>" for x in g["feat"][:3])}</ul>'
+                     f'<h2>{NAMES[game]}</h2><p>{esc(g["tag"])}</p><ul>{"".join(f"<li>{esc(x)}</li>" for x in g["feat"][:3])}</ul>'
                      f'{buttons(lang, game, more=True)}</div><div class="media"><a href="{page_path(lang, game)}">'
                      f'<img src="/assets/img/games/{game}-cover.jpg" width="1280" height="720" alt="{esc(g["alt"])}" loading="lazy"></a></div></section>')
     mail = f'<a href="mailto:{MAIL}">{MAIL}</a>'
@@ -156,12 +186,12 @@ def index(lang):
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": t["h1"],
           "itemListElement": [{"@type": "ListItem", "position": k + 1, "url": f"{SITE}{page_path(lang, g)}"} for k, g in enumerate(GAMES)]}
     write(page_path(lang), shell(lang, page_path(lang), t["title"], t["desc"], body, {l: page_path(l) for l in LANGS},
-                                 "/assets/img/games/counterpoise-cover.jpg", ld))
+                                 "/assets/img/games/monster-steps-cover.jpg", ld))
 
 
 def game_page(lang, game):
     t, g = T[lang], T[lang]["games"][game]
-    name = game.capitalize()
+    name = NAMES[game]
     how = "".join(f"<div><b>{esc(a)}</b><p>{esc(b)}</p></div>" for a, b in g["how"])
     shots = "".join(f'<img src="/assets/img/games/{game}-{i}.jpg" width="960" height="540" alt="{name} – {esc(t["shots_h"])} {i}" loading="lazy">'
                     for i in range(1, SHOTS[game] + 1))
