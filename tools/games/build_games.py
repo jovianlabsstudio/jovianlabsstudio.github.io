@@ -141,7 +141,7 @@ def shell(lang, path, title, desc, body, alternates, image, jsonld=None):
             f'<style>.shots{{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:12px 0}}'
             f'.shots img{{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}}'
             f'.gamehero{{border-radius:16px;overflow:hidden;border:1px solid var(--line);margin:16px 0}}.gamehero img{{display:block;width:100%;height:auto}}</style>'
-            f'{ld}</head><body>{header(lang, None, alternates)}<main>{body}</main>{footer(lang)}</body></html>')
+            f'{ld}</head><body>{header(lang, "games", alternates)}<main>{body}</main>{footer(lang)}</body></html>')
 
 
 def write(path, text):

@@ -19,6 +19,20 @@ HOME_PATH = {l: ("/" if l == "en" else f"/{l}/") for l in LANGS}
 PRICING_PATH = {l: ("/pricing/" if l == "en" else f"/{l}/pricing/") for l in LANGS}
 
 
+# Bloc « Jeux » de l'accueil (les pages des jeux existent en anglais et en français ; les autres langues renvoient à l'anglais).
+GAMES_HOME = {
+    "en": dict(k="Games", h="Puzzle games by Jovian Labs", p="Short, honest puzzle games that run in any browser: nothing to download, no sign-up, and no difficulty tricks to sell ads. The newest, Monster Steps, is a turn-based Halloween escape in 33 levels.", b1="See our games", alt="Covers of Monster Steps, Counterpoise and Equipoise"),
+    "fr": dict(k="Jeux", h="Les jeux de réflexion Jovian Labs", p="Des puzzles courts et honnêtes, jouables dans n'importe quel navigateur : rien à télécharger, pas d'inscription, aucune difficulté truquée pour vendre des pubs. Le dernier, Monster Steps, est une évasion d'Halloween au tour par tour en 33 niveaux.", b1="Voir nos jeux", alt="Couvertures de Monster Steps, Counterpoise et Equipoise"),
+    "de": dict(k="Spiele", h="Denkspiele von Jovian Labs", p="Kurze, faire Puzzlespiele für jeden Browser: kein Download, keine Anmeldung und keine versteckten Schwierigkeitstricks für mehr Werbung. Das neueste, Monster Steps, ist eine rundenbasierte Halloween-Flucht mit 33 Levels.", b1="Zu unseren Spielen", alt="Cover von Monster Steps, Counterpoise und Equipoise"),
+    "es": dict(k="Juegos", h="Juegos de lógica de Jovian Labs", p="Puzles cortos y honestos que funcionan en cualquier navegador: sin descargas, sin registro y sin trucos de dificultad para vender anuncios. El más nuevo, Monster Steps, es una huida de Halloween por turnos con 33 niveles.", b1="Ver nuestros juegos", alt="Portadas de Monster Steps, Counterpoise y Equipoise"),
+    "it": dict(k="Giochi", h="I giochi di logica di Jovian Labs", p="Puzzle brevi e onesti che funzionano in qualsiasi browser: niente da scaricare, nessuna registrazione e nessun trucco sulla difficoltà per vendere pubblicità. L'ultimo, Monster Steps, è una fuga di Halloween a turni in 33 livelli.", b1="Scopri i nostri giochi", alt="Copertine di Monster Steps, Counterpoise ed Equipoise"),
+    "ja": dict(k="ゲーム", h="Jovian Labs のパズルゲーム", p="ブラウザですぐ遊べる、短くて誠実なパズルゲーム。ダウンロードも登録も不要で、広告のために難易度を操作することもありません。最新作「Monster Steps」は全33ステージのターン制ハロウィン脱出パズルです。", b1="ゲーム一覧へ", alt="Monster Steps、Counterpoise、Equipoise のカバー画像"),
+    "zh": dict(k="游戏", h="Jovian Labs 益智游戏", p="简短而诚实的益智游戏，任何浏览器都能玩：无需下载，无需注册，也不会为了卖广告暗中调整难度。最新作品《Monster Steps》是一款共 33 关的回合制万圣节逃脱解谜游戏。", b1="查看我们的游戏", alt="Monster Steps、Counterpoise 和 Equipoise 的封面"),
+    "ko": dict(k="게임", h="Jovian Labs 퍼즐 게임", p="어떤 브라우저에서나 바로 즐기는 짧고 정직한 퍼즐 게임입니다. 다운로드도 가입도 필요 없고, 광고를 위해 난이도를 조작하지도 않습니다. 최신작 Monster Steps는 33개 레벨의 턴제 핼러윈 탈출 퍼즐입니다.", b1="게임 보기", alt="Monster Steps, Counterpoise, Equipoise 커버 이미지"),
+}
+MS_PAGE = {"en": "/games/monster-steps/", "fr": "/fr/jeux/monster-steps/"}
+
+
 def shell(lang, path, title, desc, body, active=None, jsonld=None, noindex=False, alternates=None,
           image="/assets/img/home-alerts.jpg"):
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
@@ -68,7 +82,12 @@ def home(lang, stats):
 <div class="k">{esc(t['i_k'])}</div><h2>{esc(t['i_h'])}</h2><p>{esc(t['i_p'])}</p><span class="price">{esc(t['i_price'])}</span>
 <p><a class="btn pro" href="/ai-index/">{esc(t['i_b1'])}</a><a class="btn ghost" href="/ai-index/methodology/">{esc(t['i_b2'])}</a></p>
 </div><div class="media"><img src="/assets/img/home-ai-index.jpg" width="948" height="482" alt="{esc(t['i_alt'])}" loading="lazy"></div>"""
-    order = [metro, ai, alerts] if lang in ASIA else [alerts, metro, ai]
+    g = GAMES_HOME[lang]
+    games = f"""<div>
+<div class="k">{esc(g['k'])}</div><h2>{esc(g['h'])}</h2><p>{esc(g['p'])}</p>
+<p><a class="btn pro" href="{route('games', lang)}">{esc(g['b1'])}</a><a class="btn ghost" href="{MS_PAGE.get(lang, MS_PAGE['en'])}">Monster Steps</a></p>
+</div><div class="media"><img src="/assets/img/home-games.jpg" width="800" height="681" alt="{esc(g['alt'])}" loading="lazy"></div>"""
+    order = [metro, ai, alerts, games] if lang in ASIA else [alerts, metro, ai, games]
     sections = "".join(f'<section class="prod{" flip" if i % 2 else ""}">{s}</section>' for i, s in enumerate(order))
     if lang in ASIA:
         b1, b2 = (route("metrology", lang), t["b_alerts"]), (route("pricing", lang), t["b_metro"])

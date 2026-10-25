@@ -28,16 +28,16 @@ ROUTES = {
     "scale-check": {"en": "/metrology/scale-check/"},
     "games": {"en": "/games/", "fr": "/fr/jeux/"},
 }
-NAV_ORDER = ["tenders", "alerts", "metrology", "ai-index", "pricing"]
+NAV_ORDER = ["tenders", "alerts", "metrology", "ai-index", "games", "pricing"]
 NAV_LABELS = {
-    "en": {"tenders": "Tenders", "alerts": "Alerts", "metrology": "Metrology", "ai-index": "AI Index", "pricing": "Pricing"},
-    "fr": {"tenders": "Appels d'offres", "alerts": "Alertes", "metrology": "Métrologie", "ai-index": "Index IA", "pricing": "Tarifs"},
-    "de": {"tenders": "Ausschreibungen", "alerts": "E-Mail-Alerts", "metrology": "Bildanalyse", "ai-index": "KI-Index", "pricing": "Preise"},
-    "es": {"tenders": "Licitaciones", "alerts": "Alertas", "metrology": "Metrología", "ai-index": "Índice IA", "pricing": "Precios"},
-    "it": {"tenders": "Gare", "alerts": "Avvisi", "metrology": "Metrologia", "ai-index": "Indice IA", "pricing": "Prezzi"},
-    "ja": {"tenders": "入札", "alerts": "アラート", "metrology": "画像計測", "ai-index": "AIインデックス", "pricing": "料金"},
-    "zh": {"tenders": "招标", "alerts": "提醒", "metrology": "图像测量", "ai-index": "AI 指数", "pricing": "价格"},
-    "ko": {"tenders": "입찰", "alerts": "알림", "metrology": "이미지 계측", "ai-index": "AI 지수", "pricing": "가격"},
+    "en": {"tenders": "Tenders", "alerts": "Alerts", "metrology": "Metrology", "ai-index": "AI Index", "games": "Games", "pricing": "Pricing"},
+    "fr": {"tenders": "Appels d'offres", "alerts": "Alertes", "metrology": "Métrologie", "ai-index": "Index IA", "games": "Jeux", "pricing": "Tarifs"},
+    "de": {"tenders": "Ausschreibungen", "alerts": "E-Mail-Alerts", "metrology": "Bildanalyse", "ai-index": "KI-Index", "games": "Spiele", "pricing": "Preise"},
+    "es": {"tenders": "Licitaciones", "alerts": "Alertas", "metrology": "Metrología", "ai-index": "Índice IA", "games": "Juegos", "pricing": "Precios"},
+    "it": {"tenders": "Gare", "alerts": "Avvisi", "metrology": "Metrologia", "ai-index": "Indice IA", "games": "Giochi", "pricing": "Prezzi"},
+    "ja": {"tenders": "入札", "alerts": "アラート", "metrology": "画像計測", "ai-index": "AIインデックス", "games": "ゲーム", "pricing": "料金"},
+    "zh": {"tenders": "招标", "alerts": "提醒", "metrology": "图像测量", "ai-index": "AI 指数", "games": "游戏", "pricing": "价格"},
+    "ko": {"tenders": "입찰", "alerts": "알림", "metrology": "이미지 계측", "ai-index": "AI 지수", "games": "게임", "pricing": "가격"},
 }
 
 FOOT = {
