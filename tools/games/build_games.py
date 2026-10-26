@@ -29,7 +29,7 @@ T = {
     "en": dict(
         title="Games · Jovian Labs", desc="Free puzzle games for the browser by Jovian Labs: Monster Steps, Counterpoise and Equipoise. Mouse or touch, no sign-in.",
         h1="Games", lede="Calm, clever puzzle games for the browser. Free to play with a mouse or a finger, nothing to install, no sign-in.",
-        facts=["Every level tested to be solvable", "Mouse, touch or keyboard", "English and French"],
+        facts=["Every level tested to be solvable", "Mouse, touch or keyboard", "Plays in 11 languages"],
         play="Play on {p}", more="About the game", how_h="How to play", feat_h="Features", shots_h="Screenshots",
         where_h="Where to play", fair="Fair by design: the pieces and puzzles never change to push you toward an ad.",
         back="All games", contact="Questions or a bug? Write to {mail}.",
@@ -77,7 +77,7 @@ T = {
     "fr": dict(
         title="Jeux · Jovian Labs", desc="Jeux de réflexion gratuits dans le navigateur, par Jovian Labs : Monster Steps, Counterpoise et Equipoise. À la souris ou au doigt, sans inscription.",
         h1="Jeux", lede="Des jeux de réflexion calmes et malins, dans le navigateur. Gratuits, à la souris ou au doigt, rien à installer, sans inscription.",
-        facts=["Chaque niveau vérifié soluble", "Souris, doigt ou clavier", "En français et en anglais"],
+        facts=["Chaque niveau vérifié soluble", "Souris, doigt ou clavier", "Jouable en 11 langues"],
         play="Jouer sur {p}", more="Le jeu en détail", how_h="Comment jouer", feat_h="Ce qu'il propose", shots_h="Captures",
         where_h="Où jouer", fair="Loyal par principe : les pièces et les énigmes ne changent jamais pour vous pousser vers une pub.",
         back="Tous les jeux", contact="Une question ou un bug ? Écrivez à {mail}.",
@@ -126,6 +126,109 @@ T = {
 }
 
 
+GAME_LANGS = ["en", "fr", "de", "es", "pt", "it", "nl", "pl", "tr", "ru", "id"]
+RELEASED = {"monster-steps": "2026-10-25", "counterpoise": "2026-10-24", "equipoise": "2026-10-24"}
+PRESS_PATH = {"en": "/games/press/", "fr": "/fr/jeux/presse/"}
+PRIVACY_PATH = {"en": "/games/privacy/", "fr": "/fr/jeux/confidentialite/"}
+PRIVACY_PUBLISHED = False   # brouillon tant que le propriétaire n'a pas validé le texte (noindex, aucun lien)
+
+PRESS = {
+    "en": dict(
+        title="Press kit · Jovian Labs games", desc="Press kit for Jovian Labs games: studio facts, logos, covers, screenshots and descriptions of Monster Steps, Counterpoise and Equipoise.",
+        h1="Press kit", lede="Everything you need to write about our games: studio facts, logos, covers and screenshots. You are free to use these texts and images in articles, videos and game listings.",
+        studio_h="About the studio",
+        studio="Jovian Labs is an independent studio that makes calm, honest puzzle games for the browser. Every level is checked by a solver before release, the games run on any phone or computer without installing anything, and the difficulty never changes to push players toward an ad.",
+        facts_h="Facts", facts=[("Studio", "Jovian Labs"), ("Games", "Monster Steps, Counterpoise, Equipoise"), ("Platforms", "Web browser, desktop and mobile"),
+                                ("Languages", "English, French, German, Spanish, Portuguese, Italian, Dutch, Polish, Turkish, Russian, Indonesian"),
+                                ("Price", "Free to play"), ("Contact", "{mail}")],
+        logos_h="Logos", logo_alt="Jovian Labs logo", logos=[("PNG 512 px", "jovian-labs-logo-512.png"), ("PNG 1024 px", "jovian-labs-logo-1024.png"), ("PNG 512 px, transparent", "jovian-labs-logo-transparent-512.png")],
+        games_h="Games", released="Released", genre="Genre", cover="Cover (1280 × 720)", page="Game page",
+        contact="For interviews, review questions or anything else, write to {mail}. We answer in English or French.",
+        privacy="Privacy policy"),
+    "fr": dict(
+        title="Kit presse · jeux Jovian Labs", desc="Kit presse des jeux Jovian Labs : informations sur le studio, logos, couvertures, captures et descriptions de Monster Steps, Counterpoise et Equipoise.",
+        h1="Kit presse", lede="Tout ce qu'il faut pour parler de nos jeux : informations sur le studio, logos, couvertures et captures. Vous pouvez utiliser librement ces textes et ces images dans vos articles, vidéos et fiches de jeux.",
+        studio_h="Le studio",
+        studio="Jovian Labs est un studio indépendant qui crée des jeux de réflexion calmes et honnêtes pour le navigateur. Chaque niveau est vérifié par un solveur avant la sortie, les jeux tournent sur n'importe quel téléphone ou ordinateur sans rien installer, et la difficulté ne change jamais pour pousser vers une pub.",
+        facts_h="En bref", facts=[("Studio", "Jovian Labs"), ("Jeux", "Monster Steps, Counterpoise, Equipoise"), ("Plateformes", "Navigateur web, ordinateur et mobile"),
+                                  ("Langues", "anglais, français, allemand, espagnol, portugais, italien, néerlandais, polonais, turc, russe, indonésien"),
+                                  ("Prix", "Gratuit"), ("Contact", "{mail}")],
+        logos_h="Logos", logo_alt="Logo Jovian Labs", logos=[("PNG 512 px", "jovian-labs-logo-512.png"), ("PNG 1024 px", "jovian-labs-logo-1024.png"), ("PNG 512 px, fond transparent", "jovian-labs-logo-transparent-512.png")],
+        games_h="Les jeux", released="Sortie", genre="Genre", cover="Couverture (1280 × 720)", page="Page du jeu",
+        contact="Pour une interview, une question de test ou autre chose, écrivez à {mail}. Nous répondons en français ou en anglais.",
+        privacy="Politique de confidentialité"),
+}
+
+PRIVACY = {
+    "en": dict(
+        title="Privacy policy · Jovian Labs games", h1="Privacy policy for our games", updated="Last updated: 26 October 2026",
+        draft="DRAFT, not yet in force: to be checked by the owner before publication.",
+        rows=[
+            ("Who we are", "Jovian Labs publishes the browser games Monster Steps, Counterpoise and Equipoise. For any question about this policy, write to {mail}."),
+            ("No account, no personal details", "Our games never ask for your name, email address or any account. You can play everything without signing in."),
+            ("Your progress", "The levels you have finished, your stars, best scores and settings (sound, music) are saved on your device, in your browser's storage, or in the save system of the platform where you play. They are not sent to us."),
+            ("Gameplay statistics", "On Playgama, the games send anonymous gameplay events through Playgama's analytics service: for example a level started or finished, the length of a session or the game's frame rate. They contain no name or contact details. We only see totals, which help us make levels fairer and fix problems."),
+            ("Ads and gaming platforms", "The games are free. On gaming platforms (Playgama, GamePix, GameMonetize, Y8, GameDistribution, CrazyGames), ads are shown by the platform and its advertising partners, who may use cookies or similar technologies and process data such as your IP address or device identifiers. This happens under each platform's own privacy policy and consent settings; we do not receive this data. The versions on itch.io and on our website show no ads."),
+            ("Our website", "Our website uses no advertising or analytics trackers. It remembers the language you choose in your browser. Like any website, the services that deliver it (GitHub Pages for hosting, Cloudflare for the domain name) may record technical data such as your IP address in their server logs."),
+            ("Children", "Our games are suitable for all ages and do not knowingly collect personal data from anyone, including children. Ad settings for younger players are managed by each platform."),
+            ("Your rights", "Because we do not hold personal data about players, we usually cannot identify you. For data held by a gaming platform, please contact that platform. For anything else, write to {mail} and we will answer."),
+            ("Changes", "If this policy changes, the new version will be published on this page with its date."),
+        ]),
+    "fr": dict(
+        title="Politique de confidentialité · jeux Jovian Labs", h1="Politique de confidentialité de nos jeux", updated="Dernière mise à jour : 26 octobre 2026",
+        draft="BROUILLON, pas encore en vigueur : à valider par le propriétaire avant publication.",
+        rows=[
+            ("Qui sommes-nous", "Jovian Labs publie les jeux pour navigateur Monster Steps, Counterpoise et Equipoise. Pour toute question sur cette politique, écrivez à {mail}."),
+            ("Pas de compte, pas de données personnelles", "Nos jeux ne demandent jamais votre nom, votre adresse e-mail ni de compte. Tout se joue sans connexion."),
+            ("Votre progression", "Les niveaux réussis, vos étoiles, vos records et vos réglages (son, musique) sont enregistrés sur votre appareil, dans le stockage de votre navigateur, ou dans le système de sauvegarde de la plateforme où vous jouez. Ils ne nous sont pas envoyés."),
+            ("Statistiques de jeu", "Sur Playgama, les jeux envoient des événements de jeu anonymes par le service de statistiques de Playgama : par exemple un niveau commencé ou réussi, la durée d'une partie ou la fluidité du jeu. Ils ne contiennent ni nom ni coordonnées. Nous ne voyons que des totaux, qui nous aident à rendre les niveaux plus justes et à corriger les problèmes."),
+            ("Publicités et plateformes de jeux", "Les jeux sont gratuits. Sur les plateformes de jeux (Playgama, GamePix, GameMonetize, Y8, GameDistribution, CrazyGames), les publicités sont affichées par la plateforme et ses partenaires publicitaires, qui peuvent utiliser des cookies ou des technologies similaires et traiter des données comme votre adresse IP ou des identifiants d'appareil. Cela se fait selon la politique de confidentialité et les réglages de consentement de chaque plateforme ; nous ne recevons pas ces données. Les versions sur itch.io et sur notre site n'affichent aucune publicité."),
+            ("Notre site", "Notre site n'utilise aucun traceur publicitaire ni de mesure d'audience. Il retient dans votre navigateur la langue que vous choisissez. Comme tout site, les services qui le diffusent (GitHub Pages pour l'hébergement, Cloudflare pour le nom de domaine) peuvent enregistrer des données techniques comme votre adresse IP dans leurs journaux."),
+            ("Enfants", "Nos jeux conviennent à tous les âges et ne collectent sciemment aucune donnée personnelle, y compris auprès des enfants. Les réglages publicitaires pour les jeunes joueurs sont gérés par chaque plateforme."),
+            ("Vos droits", "Comme nous ne détenons pas de données personnelles sur les joueurs, nous ne pouvons généralement pas vous identifier. Pour les données détenues par une plateforme de jeux, adressez-vous à cette plateforme. Pour tout le reste, écrivez à {mail} et nous vous répondrons."),
+            ("Modifications", "Si cette politique change, la nouvelle version sera publiée sur cette page avec sa date."),
+        ]),
+}
+
+
+def press(lang):
+    t, tg = PRESS[lang], T[lang]
+    mail = f'<a href="mailto:{MAIL}">{MAIL}</a>'
+    facts = "".join(f"<li><b>{esc(a)}</b>\u00a0: {esc(b).replace('{mail}', mail)}</li>" if lang == "fr" else
+                    f"<li><b>{esc(a)}:</b> {esc(b).replace('{mail}', mail)}</li>" for a, b in t["facts"])
+    logos = "".join(f'<li><a href="/assets/press/{f}" download>{esc(lbl)}</a></li>' for lbl, f in t["logos"])
+    games = ""
+    colon = "\u00a0: " if lang == "fr" else ": "
+    for game in GAMES:
+        g = tg["games"][game]
+        shots = "".join(f'<a href="/assets/img/games/{game}-{i}.jpg" download><img src="/assets/img/games/{game}-{i}.jpg" width="960" height="540" '
+                        f'alt="{NAMES[game]} {i}" loading="lazy"></a>' for i in range(1, SHOTS[game] + 1))
+        games += (f'<section><h3>{NAMES[game]}</h3><p class="small">{esc(t["genre"])}{colon}{esc(g["k"])} · {esc(t["released"])}{colon}{RELEASED[game]}</p>'
+                  f'<p>{esc(g["tag"])}</p><p>{esc(g["desc"])}</p><ul>{"".join(f"<li>{esc(x)}</li>" for x in g["feat"])}</ul>'
+                  f'<p><a class="btn ghost" href="/assets/img/games/{game}-cover.jpg" download>{esc(t["cover"])}</a>'
+                  f'<a class="btn ghost" href="{page_path(lang, game)}">{esc(t["page"])}</a></p><div class="shots">{shots}</div></section>')
+    body = (f'<p class="small"><a href="{page_path(lang)}">← {esc(tg["back"])}</a></p>'
+            f'<section class="hero"><h1>{esc(t["h1"])}</h1><p class="lede">{esc(t["lede"])}</p></section>'
+            f'<h2>{esc(t["studio_h"])}</h2><p>{esc(t["studio"])}</p>'
+            f'<h2>{esc(t["facts_h"])}</h2><ul>{facts}</ul>'
+            f'<h2>{esc(t["logos_h"])}</h2><p><img src="/assets/press/jovian-labs-logo-512.png" width="128" height="128" alt="{esc(t["logo_alt"])}"></p><ul>{logos}</ul>'
+            f'<h2>{esc(t["games_h"])}</h2>{games}'
+            f'<p class="small">{esc(t["contact"]).replace("{mail}", mail)}</p>')
+    write(PRESS_PATH[lang], shell(lang, PRESS_PATH[lang], t["title"], t["desc"], body, PRESS_PATH, "/assets/img/games/monster-steps-cover.jpg"))
+
+
+def privacy(lang):
+    t = PRIVACY[lang]
+    mail = f'<a href="mailto:{MAIL}">{MAIL}</a>'
+    rows = "".join(f"<h2>{esc(a)}</h2><p>{esc(b).replace('{mail}', mail)}</p>" for a, b in t["rows"])
+    draft = "" if PRIVACY_PUBLISHED else f'<p style="background:#fff3c4;color:#5a4300;padding:10px 14px;border-radius:10px"><b>{esc(t["draft"])}</b></p>'
+    body = f'{draft}<section class="hero"><h1>{esc(t["h1"])}</h1><p class="small">{esc(t["updated"])}</p></section>{rows}'
+    html = shell(lang, PRIVACY_PATH[lang], t["title"], t["h1"], body, PRIVACY_PATH, "/assets/img/games/monster-steps-cover.jpg")
+    if not PRIVACY_PUBLISHED:
+        html = html.replace('<link rel="canonical"', '<meta name="robots" content="noindex"><link rel="canonical"', 1)
+    write(PRIVACY_PATH[lang], html)
+
+
 def page_path(lang, game=None):
     return BASE[lang] + (f"{game}/" if game else "")
 
@@ -164,7 +267,7 @@ def videogame_ld(lang, game):
     return {"@context": "https://schema.org", "@type": "VideoGame", "name": NAMES[game], "url": f"{SITE}{page_path(lang, game)}",
             "description": T[lang]["games"][game]["tag"], "image": f"{SITE}/assets/img/games/{game}-cover.jpg",
             "genre": ["Puzzle", g["k"]], "gamePlatform": "Web browser", "operatingSystem": "Any", "applicationCategory": "Game",
-            "playMode": "SinglePlayer", "inLanguage": ["en", "fr"], "isAccessibleForFree": True,
+            "playMode": "SinglePlayer", "inLanguage": GAME_LANGS, "isAccessibleForFree": True,
             "author": {"@type": "Organization", "name": "Jovian Labs", "url": f"{SITE}/"},
             "publisher": {"@type": "Organization", "name": "Jovian Labs", "url": f"{SITE}/"},
             "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "url": PLAY[game][0][1]}}
@@ -182,7 +285,9 @@ def index(lang):
     mail = f'<a href="mailto:{MAIL}">{MAIL}</a>'
     body = (f'<section class="hero"><h1>{esc(t["h1"])}</h1><p class="lede">{esc(t["lede"])}</p>'
             f'<ul class="facts">{"".join(f"<li>{esc(x)}</li>" for x in t["facts"])}</ul></section>{sections}'
-            f'<p class="small">{esc(t["fair"])} {esc(t["contact"]).replace("{mail}", mail)}</p>')
+            f'<p class="small">{esc(t["fair"])} {esc(t["contact"]).replace("{mail}", mail)}</p>'
+            f'<p class="small"><a href="{PRESS_PATH[lang]}">{esc(PRESS[lang]["h1"])}</a>'
+            + (f' · <a href="{PRIVACY_PATH[lang]}">{esc(PRESS[lang]["privacy"])}</a>' if PRIVACY_PUBLISHED else "") + '</p>')
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": t["h1"],
           "itemListElement": [{"@type": "ListItem", "position": k + 1, "url": f"{SITE}{page_path(lang, g)}"} for k, g in enumerate(GAMES)]}
     write(page_path(lang), shell(lang, page_path(lang), t["title"], t["desc"], body, {l: page_path(l) for l in LANGS},
@@ -214,7 +319,7 @@ def game_page(lang, game):
 
 
 def sitemap(today):
-    urls = [page_path(l, g) for l in LANGS for g in (None,) + GAMES]
+    urls = [page_path(l, g) for l in LANGS for g in (None,) + GAMES] + list(PRESS_PATH.values()) + (list(PRIVACY_PATH.values()) if PRIVACY_PUBLISHED else [])
     sm = "".join(f"<url><loc>{SITE}{u}</loc><lastmod>{today}</lastmod></url>" for u in urls)
     (ROOT / "games" / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
@@ -231,6 +336,8 @@ def main():
             index(lang)
             for game in GAMES:
                 game_page(lang, game)
+            press(lang)
+            privacy(lang)
     sitemap(dt.date.today().isoformat())
     print("games pages:", ", ".join(page_path(l, g) for l in LANGS for g in (None,) + GAMES))
 
