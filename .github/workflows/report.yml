@@ -1,0 +1,41 @@
+name: Monday report (email)
+
+on:
+  schedule:
+    - cron: "37 7 * * 1"        # chaque lundi 07:37 UTC, après les appels d'offres, les alertes et l'index IA
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build and send the report
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          POLAR_TOKEN: ${{ secrets.POLAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python tools/report/weekly.py
+      - name: Commit the public Apify history
+        run: |
+          git config user.name "Jovian Labs"
+          git config user.email "jovianlabsstudio@gmail.com"
+          git add tools/report/history.json
+          if git diff --cached --quiet; then echo "No change"; exit 0; fi
+          git commit -m "Report: Apify history $(date -u +%F)"
+          git pull --rebase
+          git push

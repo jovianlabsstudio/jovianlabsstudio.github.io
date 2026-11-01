@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 tools/ai-index/data/*-mock.json
 tools/alerts/preview/
+tools/report/preview.html
