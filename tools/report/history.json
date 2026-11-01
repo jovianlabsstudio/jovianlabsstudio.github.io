@@ -1,0 +1,20 @@
+{
+ "2026-11-01": {
+  "failed-public-tenders": {
+   "runs": 16,
+   "users": 2
+  },
+  "fiber-diameter-analyzer": {
+   "runs": 12,
+   "users": 2
+  },
+  "porosity-analyzer": {
+   "runs": 12,
+   "users": 2
+  },
+  "sem-tem-particle-size": {
+   "runs": 19,
+   "users": 2
+  }
+ }
+}
