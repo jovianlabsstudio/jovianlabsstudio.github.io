@@ -20,9 +20,9 @@ GAMES = ("monster-steps", "counterpoise", "equipoise")
 SHOTS = {"monster-steps": 3, "counterpoise": 4, "equipoise": 3}
 NAMES = {"monster-steps": "Monster Steps", "counterpoise": "Counterpoise", "equipoise": "Equipoise"}
 PLAY = {
-    "monster-steps": [("Playgama", "https://playgama.ai/play/vky5ziuu5m3eor")],
+    "monster-steps": [("Playgama", "https://playgama.ai/play/vky5ziuu5m3eor"), ("itch.io", "https://jovianlabs.itch.io/monster-steps")],
     "counterpoise": [("Playgama", "https://playgama.ai/play/ve3y5vovpfap7n"), ("itch.io", "https://jovianlabs.itch.io/counterpoise")],
-    "equipoise": [("Playgama", "https://playgama.ai/play/phiyufgxws5ylk"), ("itch.io", "https://jovianlabs.itch.io/equipoise")],
+    "equipoise": [("Playgama", "https://playgama.ai/play/phiyufgxws5ylk"), ("itch.io", "https://jovianlabs.itch.io/equipoise"), ("Y8", "https://y8.com/games/equipoise_balance_puzzle")],
 }
 
 T = {
