@@ -1,7 +1,7 @@
 """Veille : conversations publiques des 7 derniers jours où nos outils peuvent aider quelqu'un.
 
 Lecture seule, sources ouvertes, sans compte : Hacker News (API Algolia), Stack Overflow (API Stack Exchange),
-forum image.sc (Discourse), Reddit (flux RSS publics ; ignoré si Reddit refuse la connexion).
+Reddit (flux RSS publics ; ignoré si Reddit refuse la connexion). Le forum image.sc refuse les robots (403) : à consulter à la main.
 Rien n'est publié automatiquement : la liste arrive dans le rapport du lundi, et c'est un humain qui répond.
 
 python tools/report/watch.py   -> affiche la liste (contenu public, sans risque dans les journaux)
@@ -70,7 +70,10 @@ def imagesc(q, since):
                  url=f"https://forum.image.sc/t/{t.get('slug')}/{t.get('id')}") for t in d.get("topics", [])]
 
 
-def reddit(sub, q, since):
+def reddit(sub, queries, since):
+    """Une seule requête par sous-forum (requêtes en OU), puis on garde les messages qui contiennent tous les mots d'une requête."""
+    time.sleep(2)  # Reddit limite fortement les lectures anonymes
+    q = " OR ".join(f'"{x}"' for x in queries)
     url = (f"https://www.reddit.com/r/{sub}/search.rss?" +
            urllib.parse.urlencode({"q": q, "restrict_sr": 1, "sort": "new", "t": "week"}))
     root = ET.fromstring(_get(url, raw=True))
@@ -79,9 +82,11 @@ def reddit(sub, q, since):
     for e in root.findall("a:entry", ns):
         date = (e.findtext("a:updated", default="", namespaces=ns) or "")[:10]
         link = e.find("a:link", ns)
-        if date >= since.date().isoformat() and link is not None:
-            out.append(dict(source=f"Reddit r/{sub}", title=e.findtext("a:title", default="", namespaces=ns), date=date,
-                            url=link.get("href")))
+        title = e.findtext("a:title", default="", namespaces=ns)
+        text = (title + " " + re.sub("<[^>]+>", " ", e.findtext("a:content", default="", namespaces=ns))).lower()
+        hit = next((x for x in queries if all(w.lower() in text for w in re.findall(r"[A-Za-z]{3,}", x))), None)
+        if hit and date >= since.date().isoformat() and link is not None:
+            out.append(dict(source=f"Reddit r/{sub}", title=title, date=date, url=link.get("href"), query=hit))
     return out
 
 
@@ -91,18 +96,16 @@ def watch(days=7, limit=20):
     for topic, queries in TOPICS.items():
         for q in queries:
             for name, fn in (("hn", lambda: hn(q, since)), ("so", lambda: stackoverflow(q, since, SO_TAGS[topic])),
-                             ("imagesc", lambda: imagesc(q, since) if topic == "metrology" else [])):
+                             ):
                 try:
                     items += [dict(it, topic=topic, query=q) for it in fn()]
                 except Exception as e:  # noqa: BLE001 — une source en panne ne bloque pas les autres
                     errors.add(f"{name}: {getattr(e, 'code', type(e).__name__)}")
         for sub in REDDIT[topic]:
-            for q in queries[:4]:
-                try:
-                    items += [dict(it, topic=topic, query=q) for it in reddit(sub, q, since)]
-                except Exception as e:  # noqa: BLE001
-                    errors.add(f"reddit: {getattr(e, 'code', type(e).__name__)}")
-                    break
+            try:
+                items += [dict(it, topic=topic) for it in reddit(sub, queries, since)]
+            except Exception as e:  # noqa: BLE001
+                errors.add(f"reddit: {getattr(e, 'code', type(e).__name__)}")
     seen, uniq = set(), []
     for it in sorted(items, key=lambda x: x["date"], reverse=True):
         if it["url"] and it["url"] not in seen:
