@@ -8,6 +8,8 @@ python tools/report/watch.py   -> affiche la liste (contenu public, sans risque 
 """
 import datetime as dt
 import json
+import time
+import urllib.error
 import re
 import urllib.parse
 import urllib.request
@@ -40,7 +42,11 @@ def hn(q, since):
            urllib.parse.urlencode({"query": q, "tags": "(story,comment)", "numericFilters": f"created_at_i>{int(since.timestamp())}",
                                    "hitsPerPage": 10}))
     out = []
+    words = [w.lower() for w in re.findall(r"[A-Za-z]{3,}", q)]
     for h in _get(url).get("hits", []):
+        text = " ".join(str(h.get(k) or "") for k in ("title", "story_title", "comment_text", "story_text")).lower()
+        if not all(w in text for w in words):  # la recherche d'Algolia est trop large : on exige tous les mots
+            continue
         title = h.get("title") or h.get("story_title") or (h.get("comment_text") or "")[:90]
         out.append(dict(source="Hacker News", title=re.sub("<[^>]+>", "", title), date=(h.get("created_at") or "")[:10],
                         url=f"https://news.ycombinator.com/item?id={h.get('objectID')}"))
@@ -58,6 +64,7 @@ def stackoverflow(q, since, tags):
 
 
 def imagesc(q, since):
+    time.sleep(1.5)  # Discourse limite le nombre de recherches par minute
     d = _get("https://forum.image.sc/search.json?" + urllib.parse.urlencode({"q": f"{q} after:{since.date().isoformat()}"}))
     return [dict(source="image.sc", title=t.get("title", ""), date=(t.get("created_at") or "")[:10],
                  url=f"https://forum.image.sc/t/{t.get('slug')}/{t.get('id')}") for t in d.get("topics", [])]
@@ -88,13 +95,13 @@ def watch(days=7, limit=20):
                 try:
                     items += [dict(it, topic=topic, query=q) for it in fn()]
                 except Exception as e:  # noqa: BLE001 — une source en panne ne bloque pas les autres
-                    errors.add(f"{name}: {type(e).__name__}")
+                    errors.add(f"{name}: {getattr(e, 'code', type(e).__name__)}")
         for sub in REDDIT[topic]:
             for q in queries[:4]:
                 try:
                     items += [dict(it, topic=topic, query=q) for it in reddit(sub, q, since)]
                 except Exception as e:  # noqa: BLE001
-                    errors.add(f"reddit: {type(e).__name__}")
+                    errors.add(f"reddit: {getattr(e, 'code', type(e).__name__)}")
                     break
     seen, uniq = set(), []
     for it in sorted(items, key=lambda x: x["date"], reverse=True):
