@@ -137,7 +137,7 @@ def history_delta(ap, today):
 
 
 # --------------------------------------------------------------------------- rendu
-def render(ap, prev, prev_key, po, si, ac, today, week):
+def render(ap, prev, prev_key, po, si, ac, today, week, wt=None):
     TD = "padding:6px 8px;border-bottom:1px solid #e4e2da;font-size:14px;vertical-align:top"
     TH = "padding:6px 8px;border-bottom:2px solid #e4e2da;font-size:12px;color:#55566e;text-align:left;text-transform:uppercase"
     table = lambda head, rows: (f"<table style='border-collapse:collapse;width:100%'><tr>{''.join(f'<th style={chr(39)}{TH}{chr(39)}>{esc(h)}</th>' for h in head)}</tr>"
@@ -195,6 +195,17 @@ def render(ap, prev, prev_key, po, si, ac, today, week):
     if si["failures"]:
         todo.append("Des pays n'ont pas pu être mis à jour cette semaine.")
     parts.append("<h3>5. À retenir</h3><ul>" + "".join(f"<li>{esc(t)}</li>" for t in todo or ["Rien d'anormal."]) + "</ul>")
+    # 6. veille
+    if wt is not None:
+        found, errs = wt
+        label = {"metrology": "microscopie", "tenders": "appels d'offres"}
+        rows = [[esc(it["date"]), esc(it["source"]), f"<a href='{esc(it['url'])}'>{esc(it['title'][:110])}</a>",
+                 esc(label.get(it["topic"], it["topic"]))] for it in found]
+        parts.append("<h3>6. Conversations où nos outils peuvent aider (7 jours)</h3>"
+                     "<p class='s'>Lecture seule de sources publiques. Réponds toi-même, seulement si la réponse aide vraiment la personne ; "
+                     "copie-moi le fil pour que je rédige la réponse.</p>"
+                     + (table(["Date", "Source", "Sujet", "Domaine"], rows) if rows else "<p>Rien de pertinent cette semaine.</p>")
+                     + (f"<p class='s'>Sources indisponibles : {esc(', '.join(errs))}.</p>" if errs else ""))
     body = (f"<div style='font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#16173a;max-width:760px;margin:0 auto'>"
             f"<p style='font-weight:700;font-size:16px;margin:0 0 4px'>Jovian Labs · rapport du lundi · {week}</p>"
             f"<p style='color:#55566e;margin:0 0 16px'>{today} · <a href='{SITE}'>{SITE.replace('https://', '')}</a></p>"
@@ -228,7 +239,12 @@ def main():
     po = polar(os.environ.get("POLAR_TOKEN"), products)
     si = site()
     ac = actions(os.environ.get("GITHUB_TOKEN"))
-    subject, body = render(ap, prev, prev_key, po, si, ac, today.isoformat(), week)
+    try:
+        from watch import watch
+        wt = watch()
+    except Exception as e:  # noqa: BLE001 — la veille ne doit jamais bloquer le rapport
+        wt = ([], [f"veille: {type(e).__name__}"])
+    subject, body = render(ap, prev, prev_key, po, si, ac, today.isoformat(), week, wt)
     if a.dry_run:
         (HERE / "preview.html").write_text(f"<!doctype html><meta charset='utf-8'><title>{esc(subject)}</title>{body}", encoding="utf-8")
         print(subject)
