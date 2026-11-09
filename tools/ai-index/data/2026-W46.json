@@ -1,0 +1,3014 @@
+{
+ "week": "2026-W46",
+ "date": "2026-11-09",
+ "mock": false,
+ "calls": 240,
+ "engines": {
+  "gemini": "Google Gemini (with Google Search)"
+ },
+ "records": [
+  {
+   "category": "plumbers",
+   "city": "new-york-ny",
+   "prompt": "Who is the best plumber in New York, NY?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Fred Smith Plumbing & Heating",
+    "Hub Plumbing & Mechanical",
+    "Petri Plumbing, Heating, Cooling & Drain Cleaning",
+    "Vigilante Plumbing & Heating",
+    "Gateway Plumbing & Heating"
+   ],
+   "sources": [
+    "https://franklinreport.com/",
+    "https://bestplumbersnyc.com/",
+    "https://consumeraffairs.com/",
+    "https://plumberusamagazine.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "new-york-ny",
+   "prompt": "Who is the best plumber in New York, NY?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Fred Smith Plumbing & Heating Co.",
+    "Gateway Plumbing & Heating",
+    "Petri Plumbing, Heating, Cooling & Drain Cleaning",
+    "Vigilante Plumbing, Heating & Air Conditioning",
+    "Hub Plumbing and Mechanical",
+    "Rite Plumbing NYC",
+    "Lopez Plumbing & Heating Mechanical"
+   ],
+   "sources": [
+    "https://franklinreport.com/",
+    "https://plumberusamagazine.com/",
+    "https://bestplumbersnyc.com/",
+    "https://riteplumbingnyc.com/",
+    "https://angi.com/",
+    "https://homeadvisor.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "new-york-ny",
+   "prompt": "Can you recommend a reliable plumber in New York, NY?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Fred Smith Plumbing & Heating Co.",
+    "Karl’s Plumbing, Heating & Cooling",
+    "Hub Plumbing & Mechanical",
+    "Petri Plumbing, Heating, Cooling & Drain Cleaning",
+    "Rite Plumbing & Heating",
+    "Vigilante Plumbing, Heating & Air Conditioning"
+   ],
+   "sources": [
+    "https://reddit.com/",
+    "https://karlsplumbing.com/",
+    "https://franklinreport.com/",
+    "https://bestplumbersnyc.com/",
+    "https://riteplumbingnyc.com/",
+    "https://plumberusamagazine.com/",
+    "https://threebestrated.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "new-york-ny",
+   "prompt": "Can you recommend a reliable plumber in New York, NY?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Hub Plumbing & Mechanical",
+    "Rite Plumbing & Heating",
+    "Petri Plumbing, Heating, Cooling & Drain Cleaning",
+    "A Good Plumber",
+    "Balkan Sewer & Water Main Service"
+   ],
+   "sources": [
+    "https://bestplumbersnyc.com/",
+    "https://consumeraffairs.com/",
+    "https://petriplumbing.com/",
+    "https://agoodplumber.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "new-york-ny",
+   "prompt": "What are the top-rated plumbers in New York, NY?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Fred Smith Plumbing & Heating",
+    "Gateway Plumbing & Heating",
+    "Vigilante Plumbing, Heating & Air Conditioning",
+    "Petri Plumbing, Heating, Cooling & Drain Cleaning",
+    "Hub Plumbing & Mechanical",
+    "Rite Plumbing & Heating",
+    "Harris Water Main & Sewer Contractors"
+   ],
+   "sources": [
+    "https://franklinreport.com/",
+    "https://plumberusamagazine.com/",
+    "https://consumeraffairs.com/",
+    "https://bestplumbersnyc.com/",
+    "https://riteplumbingnyc.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "new-york-ny",
+   "prompt": "What are the top-rated plumbers in New York, NY?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Fred Smith Plumbing & Heating",
+    "Gateway Plumbing & Heating",
+    "Hub Plumbing & Mechanical",
+    "Rite Plumbing NYC",
+    "Vigilante Plumbing, Heating & Air Conditioning",
+    "Philco Plumbing",
+    "Harris Water Main and Sewer Contractors"
+   ],
+   "sources": [
+    "https://franklinreport.com/",
+    "https://bestplumbersnyc.com/",
+    "https://riteplumbingnyc.com/",
+    "https://plumberusamagazine.com/",
+    "https://threebestrated.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "los-angeles-ca",
+   "prompt": "Who is the best plumber in Los Angeles, CA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Monkey Wrench Plumbing, Heating & Air",
+    "Pacific Plumbing Team",
+    "Western Rooter & Plumbing",
+    "John’s Plumbing & Drain Services",
+    "Power Pro Plumbing Heating & Air"
+   ],
+   "sources": [
+    "https://rotorooter.com/",
+    "https://consumeraffairs.com/",
+    "https://reddit.com/",
+    "https://forbes.com/",
+    "https://quora.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "los-angeles-ca",
+   "prompt": "Who is the best plumber in Los Angeles, CA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Monkey Wrench Plumbing, Heating & Air",
+    "Boss Plumbing",
+    "Pacific Plumbing Team",
+    "Red Lilly Plumbing",
+    "JW Plumbing, Heating and Air",
+    "Rooter Hero Plumbing"
+   ],
+   "sources": [
+    "https://consumeraffairs.com/",
+    "https://bestplumbingservicesinlosangeles.com/",
+    "https://rotorooter.com/",
+    "https://reddit.com/",
+    "https://redlillyplumbing.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "los-angeles-ca",
+   "prompt": "Can you recommend a reliable plumber in Los Angeles, CA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Boss Plumbing",
+    "Monkey Wrench Plumbing, Heating, Air & Electric",
+    "Moe Plumbing Services (H.L. Moe Co., Inc.)",
+    "Red Lilly Plumbing",
+    "RooterGuy Plumbing"
+   ],
+   "sources": [
+    "https://bestplumbingservicesinlosangeles.com/",
+    "https://reddit.com/",
+    "https://rotorooter.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "los-angeles-ca",
+   "prompt": "Can you recommend a reliable plumber in Los Angeles, CA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Boss Plumbing",
+    "Moe Plumbing Services (H.L. Moe Co.)",
+    "Pacific Plumbing Team",
+    "Red Lilly Plumbing & Rooter",
+    "Leading Edge Plumbing & Rooter"
+   ],
+   "sources": [
+    "https://bestplumbingservicesinlosangeles.com/",
+    "https://diamondcertified.org/",
+    "https://rotorooter.com/",
+    "https://consumeraffairs.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "los-angeles-ca",
+   "prompt": "What are the top-rated plumbers in Los Angeles, CA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "John’s Plumbing & Drain Services",
+    "Boss Plumbing",
+    "Red Lilly Plumbing",
+    "Monkey Wrench Plumbing, Heating & Air",
+    "Twin Home Experts",
+    "Pacific Plumbing Team"
+   ],
+   "sources": [
+    "https://localservicemastery.com/",
+    "https://consumeraffairs.com/",
+    "https://bestplumbingservicesinlosangeles.com/",
+    "https://plumbingconnectionla.com/",
+    "https://bossplumbing.com/",
+    "https://redlillyplumbing.com/",
+    "https://experience.com/",
+    "https://reddit.com/",
+    "https://angi.com/",
+    "https://guildquality.com/",
+    "https://usa-electricians.com/",
+    "https://monkeywrenchplumbers.com/",
+    "https://bbb.org/",
+    "https://twinplumbing.com/",
+    "https://twinhomerodentcontrol.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "los-angeles-ca",
+   "prompt": "What are the top-rated plumbers in Los Angeles, CA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Boss Plumbing",
+    "Monkey Wrench Plumbing, Heating & Air",
+    "JW Plumbing, Heating and Air",
+    "H.L. Moe Co., Inc. (Moe Plumbing Services)",
+    "Red Lilly Plumbing",
+    "Ritz Plumbing & Electrical"
+   ],
+   "sources": [
+    "https://bestplumbingservicesinlosangeles.com/",
+    "https://reddit.com/",
+    "https://redlillyplumbing.com/",
+    "https://rotorooter.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "chicago-il",
+   "prompt": "Who is the best plumber in Chicago, IL?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Vanguard Plumbing & Sewer",
+    "Rescue Plumbing",
+    "Power Plumbing Inc.",
+    "The Scottish Plumber",
+    "Apex Plumbing & Sewer",
+    "J. Blanton Plumbing"
+   ],
+   "sources": [
+    "https://forbes.com/",
+    "https://vanguardplumbingandsewer.com/",
+    "https://serviceagent.ai/",
+    "https://guildquality.com/",
+    "https://consumeraffairs.com/",
+    "https://suburbanplumbingexperts.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "chicago-il",
+   "prompt": "Who is the best plumber in Chicago, IL?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Rescue Plumbing Inc.",
+    "Vanguard Plumbing & Sewer",
+    "Apex Plumbing & Sewer, Inc.",
+    "J. Blanton Plumbing",
+    "ABC Plumbing, Sewer, Heating, Cooling and Electric"
+   ],
+   "sources": [
+    "https://consumeraffairs.com/",
+    "https://expertise.com/",
+    "https://checkbook.org/",
+    "https://suburbanplumbingexperts.com/",
+    "https://4abc.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "chicago-il",
+   "prompt": "Can you recommend a reliable plumber in Chicago, IL?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Vanguard Plumbing & Sewer",
+    "Moody Plumbing Inc.",
+    "DiFoggio & Sons Plumbing",
+    "Rescue Plumbing",
+    "J. Blanton Plumbing"
+   ],
+   "sources": [
+    "https://reddit.com/",
+    "https://consumeraffairs.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "chicago-il",
+   "prompt": "Can you recommend a reliable plumber in Chicago, IL?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Vanguard Plumbing & Sewer",
+    "Rescue Plumbing",
+    "J. Blanton Plumbing",
+    "ABC Plumbing, Sewer, Heating, Cooling and Electric"
+   ],
+   "sources": [
+    "https://consumeraffairs.com/",
+    "https://reddit.com/",
+    "https://chicagobusinessinfo.com/",
+    "https://vanguardplumbingandsewer.com/",
+    "https://birdeye.com/",
+    "https://contractorimages.com/",
+    "https://myrescueplumbing.com/",
+    "https://trustanalytica.org/",
+    "https://suburbanplumbingexperts.com/",
+    "https://4abc.com/",
+    "https://bestpickreports.com/",
+    "https://homeadvisor.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "chicago-il",
+   "prompt": "What are the top-rated plumbers in Chicago, IL?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Vanguard Plumbing & Sewer",
+    "Baethke Plumbing",
+    "Rescue Plumbing",
+    "J Sewer & Drain Plumbing",
+    "ABC Plumbing, Sewer, Heating, Cooling and Electric",
+    "Suburban Plumbing Experts"
+   ],
+   "sources": [
+    "https://reddit.com/",
+    "https://consumeraffairs.com/",
+    "https://vanguardplumbingandsewer.com/",
+    "https://contractorimages.com/",
+    "https://chicagobusinessinfo.com/",
+    "https://baethkeplumbing.com/",
+    "https://homelistry.com/",
+    "https://4abc.com/",
+    "https://bestpickreports.com/",
+    "https://suburbanplumbingexperts.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "chicago-il",
+   "prompt": "What are the top-rated plumbers in Chicago, IL?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Vanguard Plumbing & Sewer",
+    "Rescue Plumbing",
+    "Baethke Plumbing (John Baethke & Son)",
+    "Apex Plumbing & Sewer",
+    "The Scottish Plumber",
+    "ABC Plumbing, Sewer, Heating, Cooling and Electric"
+   ],
+   "sources": [
+    "https://vanguardplumbingandsewer.com/",
+    "https://bestpickreports.com/",
+    "https://myrescueplumbing.com/",
+    "https://trustanalytica.org/",
+    "https://angi.com/",
+    "https://bbb.org/",
+    "https://reddit.com/",
+    "https://apexplumbingchicago.com/",
+    "https://consumeraffairs.com/",
+    "https://gctask.com/",
+    "https://4abc.com/",
+    "https://baethkeplumbing.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "houston-tx",
+   "prompt": "Who is the best plumber in Houston, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Nick’s Plumbing & Air Conditioning",
+    "Texas Quality Plumbing",
+    "Santhoff Plumbing Company",
+    "Cooper Plumbing",
+    "Abacus Plumbing, Air Conditioning & Electrical"
+   ],
+   "sources": [
+    "https://texasqualityplumbing.com/",
+    "https://plumberranker.com/",
+    "https://reddit.com/",
+    "https://nicksplumbing.com/",
+    "https://angi.com/",
+    "https://consumeraffairs.com/",
+    "https://bestpickreports.com/",
+    "https://bestplumbing.net/",
+    "https://johnmooreservices.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "houston-tx",
+   "prompt": "Who is the best plumber in Houston, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Santhoff Plumbing Co.",
+    "Nick's Plumbing & Air Conditioning",
+    "S&B Plumbing",
+    "Pillar Plumbing",
+    "Abacus Plumbing, Air Conditioning & Electrical",
+    "Village Plumbing & Air"
+   ],
+   "sources": [
+    "https://forbes.com/",
+    "https://plumberranker.com/",
+    "https://nicksplumbing.com/",
+    "https://reddit.com/",
+    "https://bestpickreports.com/",
+    "https://bestplumbing.net/",
+    "https://consumeraffairs.com/",
+    "https://homeadvisor.com/",
+    "https://homeguide.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "houston-tx",
+   "prompt": "Can you recommend a reliable plumber in Houston, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Santhoff Plumbing Company",
+    "Nick’s Plumbing & Air Conditioning",
+    "Cooper Plumbing",
+    "Abacus Plumbing, Air Conditioning & Electrical",
+    "Show Plumbing",
+    "Pillar Plumbing",
+    "Milton Frank Plumbing"
+   ],
+   "sources": [
+    "https://plumberranker.com/",
+    "https://consumeraffairs.com/",
+    "https://angi.com/",
+    "https://forbes.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "houston-tx",
+   "prompt": "Can you recommend a reliable plumber in Houston, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Santhoff Plumbing Company",
+    "Nick’s Plumbing & Air Conditioning",
+    "Texas Quality Plumbing",
+    "Village Plumbing, Air & Electric",
+    "Pillar Plumbing"
+   ],
+   "sources": [
+    "https://santhoffplumbingco.com/",
+    "https://trustanalytica.org/",
+    "https://angi.com/",
+    "https://trustpilot.com/",
+    "https://bbb.org/",
+    "https://customerlobby.com/",
+    "https://texasqualityplumbing.com/",
+    "https://homelistry.com/",
+    "https://forbes.com/",
+    "https://bestplumbing.net/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "houston-tx",
+   "prompt": "What are the top-rated plumbers in Houston, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Santhoff Plumbing",
+    "Nick's Plumbing, Air Conditioning & Sewer Service",
+    "Texas Quality Plumbing",
+    "MET Plumbing, LLC",
+    "Abacus Plumbing, Air Conditioning & Electrical",
+    "Best Plumbing, LLC",
+    "S&B Plumbing",
+    "Pillar Plumbing",
+    "Cooper Plumbing"
+   ],
+   "sources": [
+    "https://plumberranker.com/",
+    "https://bestpickreports.com/",
+    "https://texasqualityplumbing.com/",
+    "https://consumeraffairs.com/",
+    "https://reddit.com/",
+    "https://bestplumbing.net/",
+    "https://forbes.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "houston-tx",
+   "prompt": "What are the top-rated plumbers in Houston, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Santhoff Plumbing Company",
+    "Nick’s Plumbing & Air Conditioning",
+    "Cooper Plumbing",
+    "Texas Quality Plumbing",
+    "S&B Plumbing",
+    "Village Plumbing, Air & Electric",
+    "Abacus Plumbing, Air Conditioning & Electrical"
+   ],
+   "sources": [
+    "https://angi.com/",
+    "https://plumberranker.com/",
+    "https://consumeraffairs.com/",
+    "https://texasqualityplumbing.com/",
+    "https://reddit.com/",
+    "https://homeguide.com/",
+    "https://bestpickreports.com/",
+    "https://bestplumbing.net/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "phoenix-az",
+   "prompt": "Who is the best plumber in Phoenix, AZ?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "The Aussie Plumber",
+    "Wyman Plumbing & Mechanical",
+    "AZ Family Plumbing",
+    "George Brazil Plumbing & Electrical",
+    "PlumbSmart Plumbing Heating and Air"
+   ],
+   "sources": [
+    "https://serviceagent.ai/",
+    "https://theaussieplumber.com/",
+    "https://angi.com/",
+    "https://rotorooter.com/",
+    "https://reddit.com/",
+    "https://consumeraffairs.com/",
+    "https://thumbtack.com/",
+    "https://goettl.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "phoenix-az",
+   "prompt": "Who is the best plumber in Phoenix, AZ?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "George Brazil Plumbing & Electrical",
+    "The Aussie Plumber",
+    "PlumbSmart Plumbing Heating & Air",
+    "Robins Plumbing",
+    "AZ Family Plumbing",
+    "Penguin Air, Plumbing & Electrical",
+    "Goettl"
+   ],
+   "sources": [
+    "https://rotorooter.com/",
+    "https://theaussieplumber.com/",
+    "https://thumbtack.com/",
+    "https://reddit.com/",
+    "https://goettl.com/",
+    "https://consumeraffairs.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "phoenix-az",
+   "prompt": "Can you recommend a reliable plumber in Phoenix, AZ?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "The Aussie Plumber",
+    "Robins Plumbing",
+    "AZ Family Plumbing",
+    "PlumbSmart Plumbing, Heating & Air",
+    "Day & Night Air Conditioning, Heating & Plumbing",
+    "George Brazil Plumbing & Electrical"
+   ],
+   "sources": [
+    "https://azcharged.com/",
+    "https://theaussieplumber.com/",
+    "https://reddit.com/",
+    "https://thumbtack.com/",
+    "https://angi.com/",
+    "https://rotorooter.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "phoenix-az",
+   "prompt": "Can you recommend a reliable plumber in Phoenix, AZ?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Day & Night Air Conditioning, Heating & Plumbing",
+    "George Brazil Plumbing & Electrical",
+    "Parker & Sons",
+    "The Aussie Plumber",
+    "PlumbSmart Plumbing Heating and Air",
+    "AZ Family Plumbing"
+   ],
+   "sources": [
+    "https://azcharged.com/",
+    "https://theaussieplumber.com/",
+    "https://thumbtack.com/",
+    "https://angi.com/",
+    "https://rotorooter.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "phoenix-az",
+   "prompt": "What are the top-rated plumbers in Phoenix, AZ?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "The Aussie Plumber",
+    "Wyman Plumbing & Mechanical",
+    "AZ Family Plumbing",
+    "Robins Plumbing",
+    "George Brazil Plumbing & Electrical",
+    "Penguin Air, Plumbing & Electrical",
+    "PlumbSmart Plumbing Heating and Air"
+   ],
+   "sources": [
+    "https://serviceagent.ai/",
+    "https://theaussieplumber.com/",
+    "https://forbes.com/",
+    "https://angi.com/",
+    "https://rotorooter.com/",
+    "https://reddit.com/",
+    "https://consumeraffairs.com/",
+    "https://thumbtack.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "phoenix-az",
+   "prompt": "What are the top-rated plumbers in Phoenix, AZ?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "The Aussie Plumber",
+    "Robins Plumbing, Inc.",
+    "AZ Family Plumbing",
+    "Trident Plumbing & Drain",
+    "Wyman Plumbing & Mechanical",
+    "George Brazil Plumbing & Electrical",
+    "PlumbSmart Plumbing, Heating and Air"
+   ],
+   "sources": [
+    "https://theaussieplumber.com/",
+    "https://serviceagent.ai/",
+    "https://dirttrades.com/",
+    "https://birdeye.com/",
+    "https://robinsplumbing.com/",
+    "https://rotorooter.com/",
+    "https://reddit.com/",
+    "https://forbes.com/",
+    "https://angi.com/",
+    "https://consumeraffairs.com/",
+    "https://thumbtack.com/",
+    "https://goettl.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "philadelphia-pa",
+   "prompt": "Who is the best plumber in Philadelphia, PA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Goodman Plumbing",
+    "Plumbing Pals",
+    "VinKo Plumbing & Heating",
+    "Joseph Giannone Plumbing & Heating",
+    "Bill Frusco Plumbing & Heating",
+    "Jack Edmonson, Inc."
+   ],
+   "sources": [
+    "https://phillymag.com/",
+    "https://angi.com/",
+    "https://goodmanplumbers.com/",
+    "https://consumeraffairs.com/",
+    "https://threebestrated.com/",
+    "https://reddit.com/",
+    "https://bradfordwhite.com/",
+    "https://jgiannoneplumbingheating.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "philadelphia-pa",
+   "prompt": "Who is the best plumber in Philadelphia, PA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Mr. Tubs Plumbing & Heating",
+    "Plumbing Pals",
+    "VinKo Plumbing",
+    "Goodman Plumbing",
+    "Roger Ross Plumbing & Heating",
+    "Gorilla Inc."
+   ],
+   "sources": [
+    "https://consumeraffairs.com/",
+    "https://phillymag.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "philadelphia-pa",
+   "prompt": "Can you recommend a reliable plumber in Philadelphia, PA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "VinKo Plumbing",
+    "Mr. Tubs Plumbing & Heating",
+    "Plumbing Pals",
+    "Goodman Plumbing",
+    "Gorilla Inc. Plumbing & Heating",
+    "Roger Ross Plumbing & Heating"
+   ],
+   "sources": [
+    "https://consumeraffairs.com/",
+    "https://diamondcertified.org/",
+    "https://phillymag.com/",
+    "https://reddit.com/",
+    "https://forbes.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "philadelphia-pa",
+   "prompt": "Can you recommend a reliable plumber in Philadelphia, PA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Plumbing Pals",
+    "Goodman Plumbing",
+    "Bill Frusco Plumbing, Heating & Cooling",
+    "Roger Ross Plumbing & Heating",
+    "Joseph Giannone Plumbing, Heating & Air Conditioning"
+   ],
+   "sources": [
+    "https://reddit.com/",
+    "https://goodmanplumbers.com/",
+    "https://localreviews.buzz/",
+    "https://athomepros.com/",
+    "https://billfrusco.com/",
+    "https://consumeraffairs.com/",
+    "https://bradfordwhite.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "philadelphia-pa",
+   "prompt": "What are the top-rated plumbers in Philadelphia, PA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "VinKo Plumbing",
+    "Goodman Plumbing",
+    "Gorilla Inc.",
+    "Plumbing Pals",
+    "Roger Ross Plumbing & Heating",
+    "iFixdit, LLC",
+    "Joseph Giannone Plumbing & Heating",
+    "Bill Frusco Plumbing & Heating"
+   ],
+   "sources": [
+    "https://phillymag.com/",
+    "https://consumeraffairs.com/",
+    "https://reddit.com/",
+    "https://deltafaucet.com/",
+    "https://indeed.com/",
+    "https://angi.com/",
+    "https://billfrusco.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "philadelphia-pa",
+   "prompt": "What are the top-rated plumbers in Philadelphia, PA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "VinKo Plumbing",
+    "Plumbing Pals",
+    "Mr. Tubs Plumbing & Heating",
+    "Gorilla Inc.",
+    "Goodman Plumbing",
+    "Bill Frusco Plumbing & Heating",
+    "Roger Ross Plumbing & Heating",
+    "IFIXDIT Plumbing & Drains"
+   ],
+   "sources": [
+    "https://consumeraffairs.com/",
+    "https://phillymag.com/",
+    "https://reddit.com/",
+    "https://angi.com/",
+    "https://serviceagent.ai/",
+    "https://billfrusco.com/",
+    "https://getoncode.net/",
+    "https://ifixplumbinganddrains.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "san-antonio-tx",
+   "prompt": "Who is the best plumber in San Antonio, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Chambliss Plumbing Company",
+    "The Bearded Plumber",
+    "Lujan Plumbing",
+    "Smith & Sons Plumbing",
+    "Reliant Plumbing",
+    "Mr. Plumber",
+    "Beyer Plumbing"
+   ],
+   "sources": [
+    "https://plumberranker.com/",
+    "https://thebeardedplumbertx.com/",
+    "https://mysanantonio.com/",
+    "https://smithandsonstx.com/",
+    "https://reliantplumbing.com/",
+    "https://consumeraffairs.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "san-antonio-tx",
+   "prompt": "Who is the best plumber in San Antonio, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Reliant Plumbing",
+    "Mai Vu Plumbing",
+    "Chambliss Plumbing Company",
+    "Shafer Services Plus",
+    "Lujan Plumbing",
+    "5th Street Services Plumbing & Drain"
+   ],
+   "sources": [
+    "https://reliantplumbing.com/",
+    "https://forbes.com/",
+    "https://angi.com/",
+    "https://bbb.org/",
+    "https://mysanantonio.com/",
+    "https://goettl.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "san-antonio-tx",
+   "prompt": "Can you recommend a reliable plumber in San Antonio, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Chambliss Plumbing Company",
+    "Will’s Plumbing & Testing Service",
+    "Pulliam Plumbing Services",
+    "Reliant Plumbing",
+    "Shafer Services Plus",
+    "Beyer Plumbing (Beyer Boys)"
+   ],
+   "sources": [
+    "https://plumberranker.com/",
+    "https://forbes.com/",
+    "https://thumbtack.com/",
+    "https://consumeraffairs.com/",
+    "https://mysanantonio.com/",
+    "https://reddit.com/",
+    "https://reliantplumbing.com/",
+    "https://bbb.org/",
+    "https://goettl.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "san-antonio-tx",
+   "prompt": "Can you recommend a reliable plumber in San Antonio, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Chambliss Plumbing Company",
+    "George Plumbing Co.",
+    "Beyer Plumbing (The Beyer Boys)",
+    "Will’s Plumbing & Testing Service",
+    "Reliant Plumbing"
+   ],
+   "sources": [
+    "https://plumberranker.com/",
+    "https://angi.com/",
+    "https://downtobid.com/",
+    "https://consumeraffairs.com/",
+    "https://mysanantonio.com/",
+    "https://reliantplumbing.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "san-antonio-tx",
+   "prompt": "What are the top-rated plumbers in San Antonio, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Chambliss Plumbing Company",
+    "Beyer Plumbing",
+    "The Bearded Plumber",
+    "Reliant Plumbing",
+    "Jilly Plumbing",
+    "Smith & Sons Plumbing"
+   ],
+   "sources": [
+    "https://chamblissplumbing.com/",
+    "https://dashpages.io/",
+    "https://thingstodoinsatx.com/",
+    "https://angi.com/",
+    "https://beyerplumbing.com/",
+    "https://thebeardedplumbertx.com/",
+    "https://closecrew.ai/",
+    "https://ksat.com/",
+    "https://reliantplumbing.com/",
+    "https://youtube.com/",
+    "https://trustindex.io/",
+    "https://smithandsonstx.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "san-antonio-tx",
+   "prompt": "What are the top-rated plumbers in San Antonio, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Reliant Plumbing",
+    "Chambliss Plumbing Company",
+    "Beyer Plumbing (The Beyer Boys)",
+    "Jilly Plumbing",
+    "Primo Plumbing Inc.",
+    "Big City Plumbing"
+   ],
+   "sources": [
+    "https://angi.com/",
+    "https://bbb.org/",
+    "https://reliantplumbing.com/",
+    "https://mysanantonio.com/",
+    "https://consumeraffairs.com/",
+    "https://goettl.com/",
+    "https://smithandsonstx.com/",
+    "https://plumberranker.com/",
+    "https://forbes.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "san-diego-ca",
+   "prompt": "Who is the best plumber in San Diego, CA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Bill Howe Plumbing, Heating & Air",
+    "California Plumbing SD",
+    "Black Mountain Plumbing",
+    "Ideal Plumbing, Heating, Air & Electrical",
+    "Smart Plumbing Solutions Inc",
+    "Mission Bay Plumbing",
+    "Cali Craftsman Plumbing"
+   ],
+   "sources": [
+    "https://forbes.com/",
+    "https://homeadvisor.com/",
+    "https://blackmountainplumbing.com/",
+    "https://reddit.com/",
+    "https://angi.com/",
+    "https://consumeraffairs.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "san-diego-ca",
+   "prompt": "Who is the best plumber in San Diego, CA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Bill Howe Plumbing, Heating & Air",
+    "California Plumbing SD",
+    "Ideal Plumbing, Heating, Air & Electrical",
+    "Black Mountain Plumbing",
+    "American Plumbing Co."
+   ],
+   "sources": [
+    "https://consumeraffairs.com/",
+    "https://forbes.com/",
+    "https://angi.com/",
+    "https://thumbtack.com/",
+    "https://blackmountainplumbing.com/",
+    "https://plumbersandiegoonline.com/",
+    "https://homeguide.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "san-diego-ca",
+   "prompt": "Can you recommend a reliable plumber in San Diego, CA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Bill Howe Plumbing, Heating & Air",
+    "Ideal Plumbing, Heating, Air & Electrical",
+    "Black Mountain Plumbing",
+    "Courtesy Plumbing",
+    "Exodus Plumbing",
+    "Mission Bay Plumbing"
+   ],
+   "sources": [
+    "https://forbes.com/",
+    "https://plumbersup.com/",
+    "https://blackmountainplumbing.com/",
+    "https://consumeraffairs.com/",
+    "https://reddit.com/",
+    "https://angi.com/",
+    "https://trustworthyplumbingsd.com/",
+    "https://thumbtack.com/",
+    "https://homeguide.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "san-diego-ca",
+   "prompt": "Can you recommend a reliable plumber in San Diego, CA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Bill Howe Plumbing, Heating & Air",
+    "Ideal Plumbing, Heating, Air & Electrical",
+    "Black Mountain Plumbing",
+    "California Plumbing SD Inc.",
+    "Colepepper Plumbing & Drains"
+   ],
+   "sources": [
+    "https://forbes.com/",
+    "https://blackmountainplumbing.com/",
+    "https://angi.com/",
+    "https://sdlocalpros.com/",
+    "https://consumeraffairs.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "san-diego-ca",
+   "prompt": "What are the top-rated plumbers in San Diego, CA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Bill Howe Plumbing, Heating & Air",
+    "Black Mountain Plumbing",
+    "Courtesy Plumbing",
+    "Exodus Plumbing",
+    "Colepepper Plumbing",
+    "Elite Rooter Plumbers",
+    "American Plumbing Co."
+   ],
+   "sources": [
+    "https://blackmountainplumbing.com/",
+    "https://consumeraffairs.com/",
+    "https://angi.com/",
+    "https://forbes.com/",
+    "https://reddit.com/",
+    "https://sdlocalpros.com/",
+    "https://plumbersandiegoonline.com/",
+    "https://homeguide.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "san-diego-ca",
+   "prompt": "What are the top-rated plumbers in San Diego, CA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Black Mountain Plumbing",
+    "American Plumbing Co.",
+    "Bill Howe Plumbing, Heating & Air",
+    "Courtesy Plumbing Inc.",
+    "California Plumbing SD Inc.",
+    "Ideal Plumbing, Heating, Air & Electrical"
+   ],
+   "sources": [
+    "https://homelistry.com/",
+    "https://blackmountainplumbing.com/",
+    "https://plumbersandiegoonline.com/",
+    "https://forbes.com/",
+    "https://bbb.org/",
+    "https://angi.com/",
+    "https://homeguide.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "dallas-tx",
+   "prompt": "Who is the best plumber in Dallas, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Baker Brothers Plumbing",
+    "Milestone",
+    "Legacy Plumbing",
+    "Metro-Flow Plumbing",
+    "Dallas Plumbing Company",
+    "AugerPros Plumbing & Drain"
+   ],
+   "sources": [
+    "https://bluemoonplumbingdfw.com/",
+    "https://callmilestone.com/",
+    "https://angi.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "dallas-tx",
+   "prompt": "Who is the best plumber in Dallas, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Baker Brothers Plumbing, Air & Electrical",
+    "Dallas Plumbing Company",
+    "Metro-Flow Plumbing",
+    "Milestone Home Services",
+    "Cody & Sons Plumbing, Heating & Air"
+   ],
+   "sources": [
+    "https://bluemoonplumbingdfw.com/",
+    "https://bestpickreports.com/",
+    "https://bakerbrothersplumbing.com/",
+    "https://callmilestone.com/",
+    "https://consumeraffairs.com/",
+    "https://homeguide.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "dallas-tx",
+   "prompt": "Can you recommend a reliable plumber in Dallas, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Baker Brothers Plumbing, Air & Electric",
+    "Milestone Electric, A/C & Plumbing",
+    "Berkeys Air Conditioning & Plumbing",
+    "AugerPros Plumbing & Drain",
+    "Live Oak Plumbing Company",
+    "Viper Plumbing"
+   ],
+   "sources": [
+    "https://bakerbrothersplumbing.com/",
+    "https://callmilestone.com/",
+    "https://berkeys.com/",
+    "https://plumberranker.com/",
+    "https://angi.com/",
+    "https://forbes.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "dallas-tx",
+   "prompt": "Can you recommend a reliable plumber in Dallas, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Cody & Sons Plumbing, Heating & Air",
+    "Baker Brothers Plumbing, Air & Electric",
+    "Legacy Plumbing",
+    "Tribeca Plumbing"
+   ],
+   "sources": [
+    "https://consumeraffairs.com/",
+    "https://reddit.com/",
+    "https://bluemoonplumbingdfw.com/",
+    "https://plumberranker.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "dallas-tx",
+   "prompt": "What are the top-rated plumbers in Dallas, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Baker Brothers Plumbing, Air & Electrical",
+    "Milestone Electric, A/C, & Plumbing",
+    "Metro-Flow Plumbing",
+    "Legacy Plumbing",
+    "AugerPros Plumbing & Drain",
+    "Dallas Plumbing & Air Conditioning",
+    "Public Service Plumbers"
+   ],
+   "sources": [
+    "https://angi.com/",
+    "https://bestpickreports.com/",
+    "https://callmilestone.com/",
+    "https://bakerbrothersplumbing.com/",
+    "https://serviceagent.ai/",
+    "https://reddit.com/",
+    "https://thumbtack.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "dallas-tx",
+   "prompt": "What are the top-rated plumbers in Dallas, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Milestone Electric, A/C, & Plumbing",
+    "Baker Brothers Plumbing, Air & Electrical",
+    "Berkeys Plumbing, Air & Electrical",
+    "AugerPros Plumbing & Drain",
+    "Casa View Plumbing",
+    "Live Oak Plumbing Co.",
+    "Wasden Plumbing Services"
+   ],
+   "sources": [
+    "https://berkeys.com/",
+    "https://callmilestone.com/",
+    "https://reddit.com/",
+    "https://bakerbrothersplumbing.com/",
+    "https://angi.com/",
+    "https://forbes.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "austin-tx",
+   "prompt": "Who is the best plumber in Austin, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Radiant Plumbing & Air Conditioning",
+    "Reliant Plumbing",
+    "Clarke Kent Plumbing",
+    "Cold is on the Right Plumbing",
+    "Stan’s Heating, Air & Plumbing",
+    "L&P Plumbing"
+   ],
+   "sources": [
+    "https://radiantplumbing.com/",
+    "https://expertise.com/",
+    "https://youtube.com/",
+    "https://reliantplumbing.com/",
+    "https://virtuance.com/",
+    "https://consumeraffairs.com/",
+    "https://angi.com/",
+    "https://austinchronicle.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "austin-tx",
+   "prompt": "Who is the best plumber in Austin, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Clarke Kent Plumbing",
+    "Crow’s Plumbing",
+    "Excalibur Plumbing",
+    "Moore & More Plumbing",
+    "Peanut Plumbing",
+    "S&D Plumbing",
+    "Reliant Plumbing",
+    "ABC Home & Commercial Services",
+    "Radiant Plumbing & Air Conditioning",
+    "Everest Plumbing",
+    "Blue Dragon Plumbing"
+   ],
+   "sources": [
+    "https://forbes.com/",
+    "https://redbudplumbing.com/",
+    "https://reddit.com/",
+    "https://virtuance.com/",
+    "https://consumeraffairs.com/",
+    "https://homeguide.com/",
+    "https://reliantplumbing.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "austin-tx",
+   "prompt": "Can you recommend a reliable plumber in Austin, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Clarke Kent Plumbing",
+    "Peanut Plumbing",
+    "S & D Plumbing",
+    "Crow’s Plumbing Service",
+    "Everest Plumbing",
+    "Reliant Plumbing",
+    "Excalibur Plumbing"
+   ],
+   "sources": [
+    "https://reddit.com/",
+    "https://forbes.com/",
+    "https://virtuance.com/",
+    "https://reliantplumbing.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "austin-tx",
+   "prompt": "Can you recommend a reliable plumber in Austin, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Clarke Kent Plumbing",
+    "Reliant Plumbing",
+    "Excalibur Plumbing",
+    "Radiant Plumbing & Air",
+    "Aloha Plumbing"
+   ],
+   "sources": [
+    "https://reliantplumbing.com/",
+    "https://redbudplumbing.com/",
+    "https://consumeraffairs.com/",
+    "https://virtuance.com/",
+    "https://homeguide.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "austin-tx",
+   "prompt": "What are the top-rated plumbers in Austin, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Cold is on the Right Plumbing & Air",
+    "Crow’s Plumbing, Heating & Air",
+    "Blue Dragon Plumbing",
+    "Plumb ATX",
+    "Reliant Plumbing",
+    "Austin’s Best Plumbing",
+    "Clarke Kent Plumbing"
+   ],
+   "sources": [
+    "https://consumeraffairs.com/",
+    "https://forbes.com/",
+    "https://angi.com/",
+    "https://virtuance.com/",
+    "https://reddit.com/",
+    "https://reliantplumbing.com/",
+    "https://redbudplumbing.com/",
+    "https://austinsbestplumbing.com/",
+    "https://callproven.com/",
+    "https://thumbtack.com/"
+   ]
+  },
+  {
+   "category": "plumbers",
+   "city": "austin-tx",
+   "prompt": "What are the top-rated plumbers in Austin, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Crow’s Plumbing Service",
+    "Clarke Kent Plumbing",
+    "Austin’s Best Plumbing",
+    "Cold is on the Right Plumbing",
+    "Reliant Plumbing",
+    "Abacus Plumbing, Air Conditioning & Electrical",
+    "Radiant Plumbing & Air Conditioning"
+   ],
+   "sources": [
+    "https://reddit.com/",
+    "https://angi.com/",
+    "https://consumeraffairs.com/",
+    "https://virtuance.com/",
+    "https://expertise.com/",
+    "https://austinsbestplumbing.com/",
+    "https://dirttrades.com/",
+    "https://reliantplumbing.com/",
+    "https://threebestrated.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "new-york-ny",
+   "prompt": "Who is the best dentist in New York, NY?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Lowenberg, Lituchy & Kantor",
+    "Dr. Michael J. Wei, DDS",
+    "NYC Smile Design",
+    "Cosmetic Dental Studios",
+    "Sachar Dental NYC",
+    "Grand Street Dental",
+    "Tribeca Dental Studio",
+    "209 NYC Dental"
+   ],
+   "sources": [
+    "https://castleconnolly.com/",
+    "https://grandstreetdental.com/",
+    "https://drmarclazare.com/",
+    "https://lowenberglituchykantor.com/",
+    "https://hauteliving.com/",
+    "https://sachardental.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "new-york-ny",
+   "prompt": "Who is the best dentist in New York, NY?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Apa Aesthetic",
+    "Lowenberg, Lituchy & Kantor (LLK)",
+    "Sachar Dental NYC",
+    "209 NYC Dental",
+    "Gramercy Dental Arts",
+    "Rejuvenation Dentistry",
+    "Tend Dental",
+    "NYU College of Dentistry",
+    "Columbia University College of Dental Medicine"
+   ],
+   "sources": [
+    "https://lowenberglituchykantor.com/",
+    "https://sachardental.com/",
+    "https://reddit.com/",
+    "https://zocdoc.com/",
+    "https://deltadental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "new-york-ny",
+   "prompt": "Can you recommend a reliable dentist in New York, NY?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "209 NYC Dental",
+    "Zen Dentistry",
+    "Sachar Dental NYC",
+    "Advanced Dental Arts NYC",
+    "Lowenberg, Lituchy & Kantor (LLK)"
+   ],
+   "sources": [
+    "https://209nycdental.com/",
+    "https://opencare.com/",
+    "https://sachardental.com/",
+    "https://reddit.com/",
+    "https://lowenberglituchykantor.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "new-york-ny",
+   "prompt": "Can you recommend a reliable dentist in New York, NY?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "209 NYC Dental",
+    "Central Park West Dentistry",
+    "Sachar Dental NYC",
+    "Grand Street Dental",
+    "Downtown Dental",
+    "Lowenberg, Lituchy & Kantor",
+    "Smile Design Manhattan",
+    "NYU College of Dentistry Dental Center"
+   ],
+   "sources": [
+    "https://209nycdental.com/",
+    "https://sachardental.com/",
+    "https://grandstreetdental.com/",
+    "https://downtowndentalbrooklyn.com/",
+    "https://lowenberglituchykantor.com/",
+    "https://zocdoc.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "new-york-ny",
+   "prompt": "What are the top-rated dentists in New York, NY?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "209 NYC Dental",
+    "Tribeca Dental Studio",
+    "Tribeca Dental Care",
+    "Sachar Dental NYC",
+    "NYC Smile Design",
+    "Lowenberg, Lituchy & Kantor (LLK)",
+    "Gramercy Dental Studio",
+    "Zen Dentistry",
+    "Tend"
+   ],
+   "sources": [
+    "https://209nycdental.com/",
+    "https://guestspostservices.com/",
+    "https://netizenschoice.com/",
+    "https://sachardental.com/",
+    "https://sitelike.org/",
+    "https://lowenberglituchykantor.com/",
+    "https://opencare.com/",
+    "https://reddit.com/",
+    "https://deltadental.com/",
+    "https://zocdoc.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "new-york-ny",
+   "prompt": "What are the top-rated dentists in New York, NY?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "209 NYC Dental",
+    "Sachar Dental NYC",
+    "Sky Dental",
+    "Smile Arts of NY",
+    "Lowenberg, Lituchy & Kantor",
+    "Apa Aesthetic",
+    "Gramercy Dental Arts",
+    "Zen Dentistry",
+    "Tend"
+   ],
+   "sources": [
+    "https://209nycdental.com/",
+    "https://sachardental.com/",
+    "https://toprateddentist.com/",
+    "https://lowenberglituchykantor.com/",
+    "https://opencare.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "los-angeles-ca",
+   "prompt": "Who is the best dentist in Los Angeles, CA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Beverly Hills Institute of Dental Esthetics",
+    "Dr. Bill Dorfman, DDS",
+    "Dr. Kevin B. Sands, DDS",
+    "Dr. Arthur A. Kezian, DDS",
+    "Smile L.A. Downtown Modern Dentistry",
+    "Fuller Smiles",
+    "UCLA School of Dentistry Faculty Group Practice",
+    "USC Herman Ostrow School of Dentistry Faculty Practice"
+   ],
+   "sources": [
+    "https://cosmetic-dentistry.com/",
+    "https://billdorfmandds.com/",
+    "https://beverlyhillscosmeticdentist.com/",
+    "https://90210dentist.net/",
+    "https://nexunom.com/",
+    "https://toprateddentist.com/",
+    "https://smilela.com/",
+    "https://deltadental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "los-angeles-ca",
+   "prompt": "Who is the best dentist in Los Angeles, CA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Dr. Arthur A. Kezian, DDS",
+    "Fuller Smiles",
+    "Smile LA",
+    "Los Angeles Dental Arts",
+    "Century City Aesthetic Dentistry",
+    "Dr. Kevin Sands, DDS",
+    "Dr. Anthony Mobasser",
+    "First Dental Implant Center",
+    "UCLA School of Dentistry Faculty Group Practice"
+   ],
+   "sources": [
+    "https://toprateddentist.com/",
+    "https://losangelesdentalrating.com/",
+    "https://nexunom.com/",
+    "https://thedentallist.com/",
+    "https://billdorfmandds.com/",
+    "https://beverlyhillscosmeticdentist.com/",
+    "https://90210dentist.net/",
+    "https://celebritydentist.com/",
+    "https://zocdoc.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "los-angeles-ca",
+   "prompt": "Can you recommend a reliable dentist in Los Angeles, CA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Dr. Arthur A. Kezian, DDS",
+    "Smile LA Downtown Modern Dentistry",
+    "Fuller Smiles",
+    "Dental Design of Brentwood",
+    "Dr. Lawrence Joe, DDS",
+    "Healthy Smiles Dental Office"
+   ],
+   "sources": [
+    "https://nexunom.com/",
+    "https://toprateddentist.com/",
+    "https://zocdoc.com/",
+    "https://reddit.com/",
+    "https://smilela.com/",
+    "https://smileagaindentalgroup.com/",
+    "https://birdeye.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "los-angeles-ca",
+   "prompt": "Can you recommend a reliable dentist in Los Angeles, CA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Dr. Arthur A. Kezian, DDS",
+    "Larchmont Dental Associates",
+    "Smile LA Downtown Modern Dentistry",
+    "Esthetic Dentistry",
+    "Fuller Smiles",
+    "Santa Monica Bay Dental",
+    "Century City Aesthetic Dentistry",
+    "S&C Dental Beverly Hills",
+    "Healthy Smiles Dental Office"
+   ],
+   "sources": [
+    "https://toprateddentist.com/",
+    "https://nexunom.com/",
+    "https://smilela.com/",
+    "https://opencare.com/",
+    "https://thedentallist.com/",
+    "https://santamonicabaydental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "los-angeles-ca",
+   "prompt": "What are the top-rated dentists in Los Angeles, CA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Dr. Arthur A. Kezian, DDS",
+    "Larchmont Dental Associates",
+    "Exquisite Dentistry",
+    "Smile LA Downtown Modern Dentistry",
+    "Dental Design of Brentwood",
+    "Fuller Smiles",
+    "Cosmetic Dental of Westwood – Dr. Sandra Shakibkhoo",
+    "Birdseye Dentistry",
+    "LACOMS - Los Angeles Center for Oral & Maxillofacial Surgery"
+   ],
+   "sources": [
+    "https://toprateddentist.com/",
+    "https://nexunom.com/",
+    "https://smilela.com/",
+    "https://birdeye.com/",
+    "https://dentistoflosangeles.com/",
+    "https://deltadental.com/",
+    "https://opencare.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "los-angeles-ca",
+   "prompt": "What are the top-rated dentists in Los Angeles, CA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Dr. Arthur A. Kezian, DDS",
+    "Larchmont Dental Associates",
+    "Smile L.A. Downtown Modern Dentistry",
+    "Dr. Bill Dorfman, DDS",
+    "Dr. Joseph M. Goodman, DDS",
+    "Fuller Smiles",
+    "Playa District Dental",
+    "Studio Dental by Alexander Ash, DDS",
+    "Healthy Smiles Dental Office"
+   ],
+   "sources": [
+    "https://nexunom.com/",
+    "https://toprateddentist.com/",
+    "https://smilela.com/",
+    "https://webmd.com/",
+    "https://playadistrictdental.com/",
+    "https://opencare.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "chicago-il",
+   "prompt": "Who is the best dentist in Chicago, IL?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Dental Professionals",
+    "The Chicago Dental Studio",
+    "Sugar Fix Dental Loft",
+    "DentArt Chicago",
+    "Boca Dental Studio",
+    "UIC College of Dentistry",
+    "Northwestern Dental"
+   ],
+   "sources": [
+    "https://dentalprofessionals.com/",
+    "https://drfiss.com/",
+    "https://dentartchicago.com/",
+    "https://reddit.com/",
+    "https://zocdoc.com/",
+    "https://deltadental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "chicago-il",
+   "prompt": "Who is the best dentist in Chicago, IL?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Dental Professionals",
+    "The Chicago Dental Studio",
+    "Dr. Benjamin S. Fiss, DDS",
+    "Sugar Fix Dental Loft",
+    "Lakeview Dental Arts",
+    "DentArt Chicago"
+   ],
+   "sources": [
+    "https://dentalprofessionals.com/",
+    "https://castleconnolly.com/",
+    "https://chicagodentalstudio.com/",
+    "https://drfiss.com/",
+    "https://chicagoaestheticdentistry.com/",
+    "https://reddit.com/",
+    "https://dentartchicago.com/",
+    "https://deltadental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "chicago-il",
+   "prompt": "Can you recommend a reliable dentist in Chicago, IL?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Pure Dental Spa",
+    "Chicago Loop Dentistry",
+    "DentArt Chicago",
+    "West Loop Dental Associates",
+    "Sugar Fix Dental Loft",
+    "Lakeview Smiles",
+    "Smile Science Chicago",
+    "Dentologie"
+   ],
+   "sources": [
+    "https://chicagoloopdentistry.com/",
+    "https://dentartchicago.com/",
+    "https://westloopdental.com/",
+    "https://chicagodentalstudio.com/",
+    "https://lakeviewsmileschicago.net/",
+    "https://reddit.com/",
+    "https://smilesciencechicago.com/",
+    "https://deltadental.com/",
+    "https://zocdoc.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "chicago-il",
+   "prompt": "Can you recommend a reliable dentist in Chicago, IL?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Strobel Dentistry",
+    "Dental Professionals",
+    "Enamel Dental Studio",
+    "Skyline Smiles",
+    "DentalQ",
+    "Art of Modern Dentistry",
+    "Sugar Fix Dental Loft",
+    "Bucktown Wicker Park Dental"
+   ],
+   "sources": [
+    "https://dentalprofessionals.com/",
+    "https://toprateddentist.com/",
+    "https://scoredoc.com/",
+    "https://opencare.com/",
+    "https://bucktowndental.com/",
+    "https://deltadental.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "chicago-il",
+   "prompt": "What are the top-rated dentists in Chicago, IL?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Dental Professionals",
+    "In The Loop Dental",
+    "The Magnificent Smile",
+    "Water Tower Dental Care",
+    "The Chicago Dental Studio",
+    "Enamel Dental Studio",
+    "Sky Dental",
+    "Sugar Fix Dental Loft",
+    "Lincoln Dental Lounge",
+    "Smile Science Chicago",
+    "Boca Dental Studio",
+    "Mitchell Dental Spa"
+   ],
+   "sources": [
+    "https://dentalprofessionals.com/",
+    "https://reddit.com/",
+    "https://zocdoc.com/",
+    "https://cosmetic-dentists-inc.com/",
+    "https://chicagodentalstudio.com/",
+    "https://toprateddentist.com/",
+    "https://threebestrated.com/",
+    "https://smilesciencechicago.com/",
+    "https://deltadental.com/",
+    "https://mitchelldentalspa.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "chicago-il",
+   "prompt": "What are the top-rated dentists in Chicago, IL?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "In The Loop Dental",
+    "Dentist on the Park",
+    "The Chicago Dental Studio",
+    "Smile Science Chicago",
+    "Modern Smiles",
+    "Rooted Dental Co.",
+    "DentArt Chicago",
+    "Boca Dental Studio"
+   ],
+   "sources": [
+    "https://zocdoc.com/",
+    "https://patientconnect365.com/",
+    "https://intheloopdentist.com/",
+    "https://reddit.com/",
+    "https://thechicago-dentist.com/",
+    "https://chicagodentalstudio.com/",
+    "https://birdeye.com/",
+    "https://dentistsranked.com/",
+    "https://smartmarketdental.com/",
+    "https://smilesciencechicago.com/",
+    "https://checkbook.org/",
+    "https://dentartchicago.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "houston-tx",
+   "prompt": "Who is the best dentist in Houston, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Texas Center for Cosmetic Dentistry",
+    "The Dentists at Houston Westchase",
+    "UT Dentists",
+    "URBN Dental",
+    "Dentiq Dentistry"
+   ],
+   "sources": [
+    "https://houstoniamag.com/",
+    "https://houstonwestchasedentists.com/",
+    "https://utdentists.com/",
+    "https://dentiq.dental/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "houston-tx",
+   "prompt": "Who is the best dentist in Houston, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Texas Center for Cosmetic Dentistry",
+    "The Houston Dentists",
+    "URBN Dental",
+    "Tippit Dental Group",
+    "Dentiq Dentistry",
+    "UT Dentists",
+    "UTHealth Houston School of Dentistry"
+   ],
+   "sources": [
+    "https://houstoniamag.com/",
+    "https://lovethatsmile.com/",
+    "https://drfrazar.com/",
+    "https://opencare.com/",
+    "https://toprateddentist.com/",
+    "https://dentiq.dental/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "houston-tx",
+   "prompt": "Can you recommend a reliable dentist in Houston, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Chase M. Baker, DDS",
+    "Heights Modern Dentistry",
+    "The Houston Dentists",
+    "Uptown Park Dental",
+    "Tippit Dental Group",
+    "Deborah J. Gennero, DDS",
+    "UT Dentists"
+   ],
+   "sources": [
+    "https://reddit.com/",
+    "https://houstoniamag.com/",
+    "https://realself.com/",
+    "https://toprateddentist.com/",
+    "https://zocdoc.com/",
+    "https://dentistsranked.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "houston-tx",
+   "prompt": "Can you recommend a reliable dentist in Houston, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "URBN Dental",
+    "The Houston Dentists",
+    "MDRN Dental",
+    "UT Dentists – Faculty Group Practice",
+    "Uptown Park Dental"
+   ],
+   "sources": [
+    "https://opencare.com/",
+    "https://dentistsranked.com/",
+    "https://houstoniamag.com/",
+    "https://realself.com/",
+    "https://dentiq.dental/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "houston-tx",
+   "prompt": "What are the top-rated dentists in Houston, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Montrose Advanced Dentistry",
+    "Tippit Dental Group",
+    "Bayou City Smiles",
+    "Scott Benoit, DDS",
+    "Dr. Robert B. Waheed, DDS",
+    "Dr. Terri Alani, DDS",
+    "URBN Dental",
+    "Best Dental",
+    "Texas Dental Center"
+   ],
+   "sources": [
+    "https://houstoniamag.com/",
+    "https://caringdentistryofhouston.com/",
+    "https://reddit.com/",
+    "https://opencare.com/",
+    "https://toprateddentist.com/",
+    "https://bestdentistinhouston.com/",
+    "https://zocdoc.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "houston-tx",
+   "prompt": "What are the top-rated dentists in Houston, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Montrose Advanced Dentistry",
+    "Bayou City Smiles",
+    "Urban Dental",
+    "Heights Smile Co.",
+    "Lush Dental",
+    "Tippit Dental Group",
+    "The Houston Dentists",
+    "Fawcett Center for Dentistry",
+    "UT Dentists"
+   ],
+   "sources": [
+    "https://reddit.com/",
+    "https://heightssmileco.com/",
+    "https://toprateddentist.com/",
+    "https://houstoniamag.com/",
+    "https://dentiq.dental/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "phoenix-az",
+   "prompt": "Who is the best dentist in Phoenix, AZ?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Studio B Smiles",
+    "North Central Family Dentistry",
+    "Artistic Dental at the Biltmore",
+    "Central Valley Dentistry",
+    "Arcadia Dental Arts",
+    "Arizona Biltmore Dentistry"
+   ],
+   "sources": [
+    "https://ncfdentistry.com/",
+    "https://azcharged.com/",
+    "https://toprateddentist.com/",
+    "https://arizonabiltmoredentistry.com/",
+    "https://doctorsnetwork.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "phoenix-az",
+   "prompt": "Who is the best dentist in Phoenix, AZ?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Studio B Smiles",
+    "North Central Family Dentistry",
+    "Arcadia Dental Arts",
+    "Biltmore Dental Center",
+    "Italian Smiles"
+   ],
+   "sources": [
+    "https://phoenixmag.com/",
+    "https://mcadamsdental.com/",
+    "https://studiobsmiles.com/",
+    "https://ncfdentistry.com/",
+    "https://smilearcadia.com/",
+    "https://dentistsranked.com/",
+    "https://thephoenixreview.com/",
+    "https://advanceddentalcareofaz.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "phoenix-az",
+   "prompt": "Can you recommend a reliable dentist in Phoenix, AZ?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Downtown Phoenix Dental",
+    "Central Valley Dentistry",
+    "Artistic Dental at the Biltmore",
+    "Biltmore Commons Dental Care",
+    "North Central Family Dentistry",
+    "Desert Dentistry"
+   ],
+   "sources": [
+    "https://reddit.com/",
+    "https://downtownphoenixdental.com/",
+    "https://toprateddentist.com/",
+    "https://dentistsranked.com/",
+    "https://arizonabiltmoredentistry.com/",
+    "https://ncfdentistry.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "phoenix-az",
+   "prompt": "Can you recommend a reliable dentist in Phoenix, AZ?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Arizona Biltmore Dentistry",
+    "Biltmore Dental Center",
+    "Downtown Phoenix Dental",
+    "North Central Family Dentistry (Dr. Matthew Lonier, DDS)",
+    "Phoenix Comprehensive Dentistry"
+   ],
+   "sources": [
+    "https://arizonabiltmoredentistry.com/",
+    "https://biltmoredentalcenter.com/",
+    "https://demandforce.com/",
+    "https://birdeye.com/",
+    "https://trustanalytica.org/",
+    "https://downtownphoenixdental.com/",
+    "https://ncfdentistry.com/",
+    "https://smilepcd.com/",
+    "https://zocdoc.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "phoenix-az",
+   "prompt": "What are the top-rated dentists in Phoenix, AZ?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Studio B Smiles",
+    "Central Valley Dentistry",
+    "Biltmore Commons Dental Care",
+    "Artistic Dental at the Biltmore",
+    "North Central Family Dentistry",
+    "Downtown Phoenix Dental",
+    "Desert Dentistry"
+   ],
+   "sources": [
+    "https://ncfdentistry.com/",
+    "https://phoenixmag.com/",
+    "https://azcharged.com/",
+    "https://toprateddentist.com/",
+    "https://dentistsranked.com/",
+    "https://arizonabiltmoredentistry.com/",
+    "https://downtownphoenixdental.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "phoenix-az",
+   "prompt": "What are the top-rated dentists in Phoenix, AZ?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Artistic Dental at the Biltmore",
+    "Central Valley Dentistry",
+    "North Central Family Dentistry",
+    "Harris Dental",
+    "Arizona Biltmore Dentistry",
+    "Downtown Phoenix Dental",
+    "Desert Dentistry"
+   ],
+   "sources": [
+    "https://phoenixmag.com/",
+    "https://toprateddentist.com/",
+    "https://dentistsranked.com/",
+    "https://dailyusinsider.blog/",
+    "https://artisticd.com/",
+    "https://smile24dentistry.com/",
+    "https://zocdoc.com/",
+    "https://patientconnect365.com/",
+    "https://ncfdentistry.com/",
+    "https://smyleee.com/",
+    "https://newsmileconsult.com/",
+    "https://gen4dental.com/",
+    "https://arizonabiltmoredentistry.com/",
+    "https://demandforce.com/",
+    "https://downtownphoenixdental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "philadelphia-pa",
+   "prompt": "Who is the best dentist in Philadelphia, PA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Rittenhouse Dentists",
+    "Independence Dental",
+    "Kaminsky Dental Associates",
+    "i.dentical",
+    "Main Street Dental",
+    "Advanced Dentistry of Center City",
+    "Philadelphia Oral & Maxillofacial Surgery",
+    "Doc Bresler’s Cavity Busters",
+    "Penn Dental Medicine"
+   ],
+   "sources": [
+    "https://phillymag.com/",
+    "https://suburbanlifemagazine.com/",
+    "https://opencare.com/",
+    "https://reddit.com/",
+    "https://dentist-philadelphia.com/",
+    "https://openyourmouth.com/",
+    "https://toprateddentist.com/",
+    "https://thesmilist.com/",
+    "https://mainlinedental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "philadelphia-pa",
+   "prompt": "Who is the best dentist in Philadelphia, PA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Rittenhouse Smiles",
+    "Dr. Richard Eidelson",
+    "I.Dentical – All About Your Smile",
+    "Rittenhouse Dentists",
+    "Laudenbach Periodontics & Dental Implants",
+    "Penn Dental Medicine"
+   ],
+   "sources": [
+    "https://phillymag.com/",
+    "https://rittenhousesmiles.com/",
+    "https://dentistphiladelphia.com/",
+    "https://openyourmouth.com/",
+    "https://dentist-philadelphia.com/",
+    "https://penndentalmedicine.org/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "philadelphia-pa",
+   "prompt": "Can you recommend a reliable dentist in Philadelphia, PA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Rittenhouse Smiles",
+    "Philly Smiles",
+    "Premier Dentist Philadelphia (Dr. Richard Eidelson)",
+    "Society Hill Dental",
+    "Penn Dental Family Practice",
+    "University Square Dental Associates",
+    "Penn Dental Medicine Clinic"
+   ],
+   "sources": [
+    "https://rittenhousesmiles.com/",
+    "https://reddit.com/",
+    "https://dentistphiladelphia.com/",
+    "https://penndentalmedicine.org/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "philadelphia-pa",
+   "prompt": "Can you recommend a reliable dentist in Philadelphia, PA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Rittenhouse Smiles",
+    "Philadelphia Dentistry",
+    "Advanced Dentistry of Center City",
+    "Philadelphia Dental",
+    "Penn Dental Medicine",
+    "Penn Dental Family Practice"
+   ],
+   "sources": [
+    "https://rittenhousesmiles.com/",
+    "https://phillydentistry.com/",
+    "https://centercityfamilydentist.com/",
+    "https://dentalsolutionscreatingsmiles.com/",
+    "https://penndentalmedicine.org/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "philadelphia-pa",
+   "prompt": "What are the top-rated dentists in Philadelphia, PA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Noble Dental Group",
+    "Rittenhouse Smiles",
+    "Smile Design Studio by KC",
+    "Penn Dental Family Practice",
+    "Center City Emergency Dentist (CCED)",
+    "Philadelphia Dental",
+    "Best Smile Dental"
+   ],
+   "sources": [
+    "https://phillymag.com/",
+    "https://zocdoc.com/",
+    "https://mynobledental.com/",
+    "https://rittenhousesmiles.com/",
+    "https://dentistsup.com/",
+    "https://penndentalmedicine.org/",
+    "https://reddit.com/",
+    "https://deltadental.com/",
+    "https://philadelphiadental.com/",
+    "https://dentistcityave.com/",
+    "https://mainlinedental.com/",
+    "https://southjerseycosmeticdentistry.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "philadelphia-pa",
+   "prompt": "What are the top-rated dentists in Philadelphia, PA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Rittenhouse Smiles",
+    "Center City Dental",
+    "Dentistry at 1818 Market St",
+    "Premier Dentist Philadelphia",
+    "Razavi Dental",
+    "Philadelphia Dental",
+    "Fishtown Dentistry",
+    "Team Dental – Northern Liberties",
+    "Penn Dental Medicine",
+    "Penn Dental Family Practice"
+   ],
+   "sources": [
+    "https://phillymag.com/",
+    "https://penndentalmedicine.org/",
+    "https://rittenhousesmiles.com/",
+    "https://thesmilist.com/",
+    "https://centercitydentist.com/",
+    "https://dentistphiladelphia.com/",
+    "https://openyourmouth.com/",
+    "https://opencare.com/",
+    "https://reddit.com/",
+    "https://denteldoc.com/",
+    "https://dentistsranked.com/",
+    "https://philadelphiadental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "san-antonio-tx",
+   "prompt": "Who is the best dentist in San Antonio, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "UT Dentistry (UT Health San Antonio)",
+    "Cosmetic Dentistry of San Antonio",
+    "Dominion Dental Spa",
+    "Crownridge Dental & Orthodontics",
+    "Elevate Dental",
+    "Pham Family Dentistry"
+   ],
+   "sources": [
+    "https://uthscsa.edu/",
+    "https://newsweaver.com/",
+    "https://cosmeticdentistryofsa.com/",
+    "https://dominion.dental/",
+    "https://elevatedmagazines.com/",
+    "https://reddit.com/",
+    "https://deltadental.com/",
+    "https://zocdoc.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "san-antonio-tx",
+   "prompt": "Who is the best dentist in San Antonio, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "UT Dentistry",
+    "Cosmetic Dentistry of San Antonio",
+    "Cosmetic Dental Associates",
+    "Crownridge Dental & Orthodontics",
+    "Orbis Dental Group",
+    "Dominion Smiles",
+    "Pediatric Dentistry of San Antonio",
+    "Alamo Kids Dental"
+   ],
+   "sources": [
+    "https://uthscsa.edu/",
+    "https://toprateddentist.com/",
+    "https://sanantoniodentists.com/",
+    "https://elevatedmagazines.com/",
+    "https://reddit.com/",
+    "https://opencare.com/",
+    "https://deltadental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "san-antonio-tx",
+   "prompt": "Can you recommend a reliable dentist in San Antonio, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "UT Dentistry",
+    "Elevate Dental",
+    "Legacy Dental SA",
+    "Cosmetic Dentistry of San Antonio",
+    "Dominion Smiles",
+    "7 to 7 Dental & Orthodontics",
+    "Huebner Smiles"
+   ],
+   "sources": [
+    "https://uthscsa.edu/",
+    "https://reddit.com/",
+    "https://toprateddentist.com/",
+    "https://opencare.com/",
+    "https://threebestrated.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "san-antonio-tx",
+   "prompt": "Can you recommend a reliable dentist in San Antonio, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "UT Dentistry",
+    "Thousand Oaks Dental",
+    "Alamo Heights Dental",
+    "San Antonio Downtown Dentistry",
+    "Pearl Dentistry",
+    "Villa Dental",
+    "Dominion Smiles / Dominion Dental Spa",
+    "7 to 7 Dental & Orthodontics"
+   ],
+   "sources": [
+    "https://uthscsa.edu/",
+    "https://reddit.com/",
+    "https://pearldentistrysa.com/",
+    "https://opencare.com/",
+    "https://dominion.dental/",
+    "https://deltadental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "san-antonio-tx",
+   "prompt": "What are the top-rated dentists in San Antonio, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "UT Dentistry (UT Health San Antonio School of Dentistry)",
+    "Cosmetic Dentistry of San Antonio",
+    "New Image Dentistry",
+    "Legacy Dental SA",
+    "Hollywood Park Dental",
+    "Dominion Smiles",
+    "Downtown Dentistry",
+    "7 to 7 Dental & Orthodontics"
+   ],
+   "sources": [
+    "https://uthscsa.edu/",
+    "https://cosmeticdentistryofsa.com/",
+    "https://toprateddentist.com/",
+    "https://sanantoniodentists.com/",
+    "https://aedit.com/",
+    "https://prnewswire.com/",
+    "https://opencare.com/",
+    "https://reddit.com/",
+    "https://zocdoc.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "san-antonio-tx",
+   "prompt": "What are the top-rated dentists in San Antonio, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "UT Dentistry (UT Health San Antonio)",
+    "Legacy Dental SA",
+    "Dominion Smiles",
+    "Elevate Dental",
+    "Huebner Smiles Dentistry and Orthodontics",
+    "Cosmetic Dentistry of San Antonio",
+    "Hollywood Park Dental",
+    "7 to 7 Dental & Orthodontics"
+   ],
+   "sources": [
+    "https://zocdoc.com/",
+    "https://uthscsa.edu/",
+    "https://toprateddentist.com/",
+    "https://opencare.com/",
+    "https://reddit.com/",
+    "https://threebestrated.com/",
+    "https://texasdentalhub.com/",
+    "https://deltadental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "san-diego-ca",
+   "prompt": "Who is the best dentist in San Diego, CA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Scripps Center for Dental Care",
+    "Sutra Dental Spa",
+    "Dean Nguyen, DDS",
+    "Gregg Johnson, DDS",
+    "Marcos Ortega, DDS",
+    "Brighton Dental",
+    "Pomerado Cosmetic Dentistry"
+   ],
+   "sources": [
+    "https://sutrads.com/",
+    "https://scrippsdentalcare.com/",
+    "https://pomeradocosmeticdentistry.com/",
+    "https://reddit.com/",
+    "https://mysandiegosmiles.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "san-diego-ca",
+   "prompt": "Who is the best dentist in San Diego, CA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Scripps Center for Dental Care",
+    "Sutra Dental Spa",
+    "Libby Dental",
+    "Marcos Ortega, DDS",
+    "George Georgaklis, DDS",
+    "Center for Dental Restorations"
+   ],
+   "sources": [
+    "https://scrippsdentalcare.com/",
+    "https://sutrads.com/",
+    "https://mysandiegosmiles.com/",
+    "https://drgeorgedds.com/",
+    "https://thedentallist.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "san-diego-ca",
+   "prompt": "Can you recommend a reliable dentist in San Diego, CA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Dean Van Nguyen, DDS",
+    "The Dental Docs",
+    "Mesa Dental",
+    "Scripps Center for Dental Care",
+    "Marcos Ortega, DDS"
+   ],
+   "sources": [
+    "https://reddit.com/",
+    "https://mesadentalsd.com/",
+    "https://scrippsdentalcare.com/",
+    "https://mysandiegosmiles.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "san-diego-ca",
+   "prompt": "Can you recommend a reliable dentist in San Diego, CA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Libby Dental",
+    "Marcos Ortega, DDS",
+    "Scripps Center for Dental Care",
+    "Dr. Dean Van Nguyen, DDS",
+    "Mesa Dental"
+   ],
+   "sources": [
+    "https://sdbestdentalimplants.com/",
+    "https://opencare.com/",
+    "https://reddit.com/",
+    "https://usa-dentist.com/",
+    "https://dentalplans.com/",
+    "https://mysandiegosmiles.com/",
+    "https://youtube.com/",
+    "https://scrippsdentalcare.com/",
+    "https://americandentalratings.com/",
+    "https://mesadentalsd.com/",
+    "https://deltadental.com/",
+    "https://practo.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "san-diego-ca",
+   "prompt": "What are the top-rated dentists in San Diego, CA?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Scripps Center for Dental Care",
+    "David S. Eshom, DDS",
+    "Center for Dental Restorations",
+    "Marcos Ortega, DDS",
+    "Mesa Dental",
+    "Sutra Dental Spa"
+   ],
+   "sources": [
+    "https://mysandiegosmiles.com/",
+    "https://toprateddentist.com/",
+    "https://scrippsdentalcare.com/",
+    "https://thedentallist.com/",
+    "https://americandentalratings.com/",
+    "https://mesadentalsd.com/",
+    "https://sutrads.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "san-diego-ca",
+   "prompt": "What are the top-rated dentists in San Diego, CA?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Scripps Center for Dental Care",
+    "David S. Eshom, DDS",
+    "Libby Dental",
+    "Marcos Ortega, DDS",
+    "Mesa Dental",
+    "Center for Dental Restorations – Dr. Pamela MacPherson",
+    "Dr. Karina Scalercio & Dr. Dean Van Nguyen"
+   ],
+   "sources": [
+    "https://scrippsdentalcare.com/",
+    "https://toprateddentist.com/",
+    "https://dentistsranked.com/",
+    "https://sandiegodentist.net/",
+    "https://incisaledgemagazine.com/",
+    "https://mysandiegosmiles.com/",
+    "https://mesadentalsd.com/",
+    "https://thedentallist.com/",
+    "https://reddit.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "dallas-tx",
+   "prompt": "Who is the best dentist in Dallas, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Katy Trail Dental",
+    "Turtle Creek Dental Associates",
+    "Highland Park Dental",
+    "Lakewood Dental Group",
+    "Dallas Dental Group",
+    "Pro Dental Dallas",
+    "Texas Center for Oral Surgery & Dental Implants"
+   ],
+   "sources": [
+    "https://oralsurgerytexas.com/",
+    "https://dmagazine.com/",
+    "https://katytrail.dental/",
+    "https://turtlecreekdental.com/",
+    "https://hpdentist.com/",
+    "https://reddit.com/",
+    "https://dallasdental.com/",
+    "https://prodentaldallas.com/",
+    "https://deltadental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "dallas-tx",
+   "prompt": "Who is the best dentist in Dallas, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Dallas Laser Dentistry",
+    "Highland Park Dental",
+    "Contemporary Dentistry",
+    "Dallas Dental Group",
+    "Katy Trail Dental",
+    "Bishop Arts Dental",
+    "Pro Dental Dallas",
+    "Beyond Dental & Implant Center",
+    "Texas Center for Oral Surgery & Dental Implants"
+   ],
+   "sources": [
+    "https://dmagazine.com/",
+    "https://prodentaldallas.com/",
+    "https://youtube.com/",
+    "https://hpdentist.com/",
+    "https://dallasdental.com/",
+    "https://katytrail.dental/",
+    "https://reddit.com/",
+    "https://thedentallist.com/",
+    "https://oralsurgerytexas.com/",
+    "https://zocdoc.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "dallas-tx",
+   "prompt": "Can you recommend a reliable dentist in Dallas, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Turtle Creek Dental Associates",
+    "Highland Park Dental",
+    "Dallas Dental Group",
+    "Pro Dental Dallas",
+    "Contemporary Dentistry Dallas"
+   ],
+   "sources": [
+    "https://turtlecreekdental.com/",
+    "https://hpdentist.com/",
+    "https://dallasdental.com/",
+    "https://prodentaldallas.com/",
+    "https://cddallas.com/",
+    "https://zocdoc.com/",
+    "https://deltadental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "dallas-tx",
+   "prompt": "Can you recommend a reliable dentist in Dallas, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Lakewood Dental Group",
+    "Katy Trail Dental",
+    "Highland Park Dental",
+    "Dallas Dental Group",
+    "Arts Family Dentistry"
+   ],
+   "sources": [
+    "https://katytrail.dental/",
+    "https://hpdentist.com/",
+    "https://dallasdental.com/",
+    "https://toprateddentist.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "dallas-tx",
+   "prompt": "What are the top-rated dentists in Dallas, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Dallas Dental Group",
+    "Highland Park Dental",
+    "Lakewood Dental Group",
+    "Turtle Creek Dental Associates",
+    "Dallas Esthetics",
+    "Dallas Laser Dentistry",
+    "North Dallas Cosmetic Dentistry",
+    "Pro Dental Dallas",
+    "Texas Center for Oral Surgery & Dental Implants"
+   ],
+   "sources": [
+    "https://prodentaldallas.com/",
+    "https://dmagazine.com/",
+    "https://toprateddentist.com/",
+    "https://dallasdental.com/",
+    "https://turtlecreekdental.com/",
+    "https://hpdentist.com/",
+    "https://reddit.com/",
+    "https://demandforce.com/",
+    "https://dallascosmeticdentist.us/",
+    "https://robertmitchelldds.com/",
+    "https://jasonroedds.com/",
+    "https://oralsurgerytexas.com/",
+    "https://biglove.to/",
+    "https://zocdoc.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "dallas-tx",
+   "prompt": "What are the top-rated dentists in Dallas, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Highland Park Dental",
+    "Turtle Creek Dental Associates",
+    "Lakewood Dental Group",
+    "East Lake Dental",
+    "Dallas Dental Group",
+    "Midtown Family Dentistry of Dallas",
+    "Pro Dental Dallas",
+    "Dallas Affordable Smiles"
+   ],
+   "sources": [
+    "https://hpdentist.com/",
+    "https://reddit.com/",
+    "https://dmagazine.com/",
+    "https://turtlecreekdental.com/",
+    "https://dallasdental.com/",
+    "https://dentistsranked.com/",
+    "https://prodentaldallas.com/",
+    "https://zocdoc.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "austin-tx",
+   "prompt": "Who is the best dentist in Austin, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Forest Family Dentistry",
+    "Shoal Creek Dental Care",
+    "Balcones Family Dental",
+    "Toothbar",
+    "Enamel Dentistry",
+    "Austin Dental Spa",
+    "Austin Artistic Dental",
+    "Smile 360",
+    "12 Oaks Dental",
+    "South Austin Dental Associates"
+   ],
+   "sources": [
+    "https://zocdoc.com/",
+    "https://reddit.com/",
+    "https://superdentists.com/",
+    "https://theaustinnewsletter.com/",
+    "https://toothbar.com/",
+    "https://austindentalspa.com/",
+    "https://austinartisticdental.com/",
+    "https://toprateddentist.com/",
+    "https://deltadental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "austin-tx",
+   "prompt": "Who is the best dentist in Austin, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Forest Family Dentistry",
+    "Shoal Creek Dental Care",
+    "South Austin Dental Associates",
+    "Austin Dental Spa",
+    "Austin Artistic Dental",
+    "Toothbar",
+    "Smile 360",
+    "East Austin Dental"
+   ],
+   "sources": [
+    "https://austindentalspa.com/",
+    "https://reddit.com/",
+    "https://theaustinnewsletter.com/",
+    "https://southaustindentalassociates.com/",
+    "https://toprateddentist.com/",
+    "https://zocdoc.com/",
+    "https://opencare.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "austin-tx",
+   "prompt": "Can you recommend a reliable dentist in Austin, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Baines Dental Wellness",
+    "Austin Dental Spa",
+    "South Austin Dental Associates",
+    "Craft of Dentistry",
+    "Tech Ridge Dental",
+    "Walden Dental"
+   ],
+   "sources": [
+    "https://reddit.com/",
+    "https://austindentalspa.com/",
+    "https://southaustindentalassociates.com/",
+    "https://dentistsouthaustintx.com/",
+    "https://techridgedental.com/",
+    "https://toprateddentist.com/",
+    "https://hammonsfamilydental.com/",
+    "https://opencare.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "austin-tx",
+   "prompt": "Can you recommend a reliable dentist in Austin, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Forest Family Dentistry",
+    "Shoal Creek Dental Care",
+    "Toothbar",
+    "Smile 360",
+    "South Austin Dental Associates",
+    "McLane Family Dental",
+    "East Austin Dental"
+   ],
+   "sources": [
+    "https://theaustinnewsletter.com/",
+    "https://southaustindentalassociates.com/",
+    "https://mclanefamilydental.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "austin-tx",
+   "prompt": "What are the top-rated dentists in Austin, TX?",
+   "sample": 0,
+   "engine": "gemini",
+   "names": [
+    "Baines Dentistry",
+    "38th Street Dental",
+    "Shoal Creek Dental Care",
+    "McLane Family Dental",
+    "Austin Dental Spa",
+    "Austin Artistic Dental",
+    "SWISH Dental",
+    "Forest Family Dentistry"
+   ],
+   "sources": [
+    "https://reddit.com/",
+    "https://theaustinnewsletter.com/",
+    "https://mclanefamilydental.com/",
+    "https://austindentalspa.com/",
+    "https://austinartisticdental.com/",
+    "https://swishsmiles.com/",
+    "https://forestfamily.com/",
+    "https://birdeye.com/",
+    "https://toprateddentist.com/",
+    "https://covercapy.com/"
+   ]
+  },
+  {
+   "category": "dentists",
+   "city": "austin-tx",
+   "prompt": "What are the top-rated dentists in Austin, TX?",
+   "sample": 1,
+   "engine": "gemini",
+   "names": [
+    "Austin Dental Spa",
+    "Walden Dental",
+    "Enamel Dentistry",
+    "Swish Dental",
+    "Forest Family Dentistry",
+    "Tech Ridge Dental",
+    "Baines Dental Wellness"
+   ],
+   "sources": [
+    "https://austindentalspa.com/",
+    "https://patch.com/",
+    "https://toprateddentist.com/",
+    "https://enameldentistry.com/",
+    "https://youtube.com/",
+    "https://swishsmiles.com/",
+    "https://reddit.com/",
+    "https://forestfamily.com/",
+    "https://techridgedental.com/",
+    "https://covercapy.com/",
+    "https://247localdentist.com/"
+   ]
+  }
+ ],
+ "errors": []
+}
