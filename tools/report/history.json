@@ -52,5 +52,23 @@
    "runs": 26,
    "users": 2
   }
+ },
+ "2026-11-16": {
+  "failed-public-tenders": {
+   "runs": 29,
+   "users": 2
+  },
+  "fiber-diameter-analyzer": {
+   "runs": 24,
+   "users": 2
+  },
+  "porosity-analyzer": {
+   "runs": 24,
+   "users": 2
+  },
+  "sem-tem-particle-size": {
+   "runs": 32,
+   "users": 2
+  }
  }
 }
